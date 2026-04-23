@@ -1,0 +1,99 @@
+<section class="locator-page">
+  <div class="locator-hero">
+    <div class="locator-hero-content">
+      <span class="section-pill">Distributor Network</span>
+      <h1>Locate an authorized VNH distributor</h1>
+      <p>
+        Search our distribution network by city, distributor name, contact person,
+        phone number, or address to quickly connect with the right partner in your region.
+      </p>
+    </div>
+  </div>
+
+  <div class="locator-toolbar">
+    <div class="search-box">
+      <label for="distributorSearch">Search Distributor</label>
+      <input
+        id="distributorSearch"
+        type="text"
+        [(ngModel)]="searchTerm"
+        placeholder="Search by city, distributor, contact, phone, or address..."
+      />
+    </div>
+
+    <div class="result-badge" *ngIf="!loading">
+      {{ filteredDistributors.length }} Distributor{{ filteredDistributors.length === 1 ? '' : 's' }}
+    </div>
+  </div>
+
+  <div class="loading-state" *ngIf="loading">
+    <div class="state-card">
+      <h3>Loading distributors...</h3>
+      <p>Please wait while we fetch the latest distributor network.</p>
+    </div>
+  </div>
+
+  <div class="error-state" *ngIf="!loading && errorMessage">
+    <div class="state-card error-card">
+      <h3>Unable to load distributors</h3>
+      <p>{{ errorMessage }}</p>
+      <button type="button" class="btn-primary" (click)="loadDistributors()">Retry</button>
+    </div>
+  </div>
+
+  <div
+    class="distributor-grid"
+    *ngIf="!loading && !errorMessage && filteredDistributors.length"
+  >
+    <article
+      class="distributor-card"
+      *ngFor="let distributor of filteredDistributors; trackBy: trackByDistributor"
+    >
+      <div class="card-top">
+        <span class="region-chip">{{ distributor.region }}</span>
+      </div>
+
+      <h3>{{ distributor.name }}</h3>
+
+      <div class="card-info">
+        <div class="info-row">
+          <span class="label">Address</span>
+          <span class="value">{{ distributor.address }}</span>
+        </div>
+
+        <div class="info-row" *ngIf="distributor.contact_person">
+          <span class="label">Contact Person</span>
+          <span class="value">{{ distributor.contact_person }}</span>
+        </div>
+
+        <div class="info-row" *ngIf="distributor.mobile_no">
+          <span class="label">Mobile</span>
+          <span class="value">{{ distributor.mobile_no }}</span>
+        </div>
+
+        <div class="info-row" *ngIf="distributor.landline">
+          <span class="label">Landline</span>
+          <span class="value">{{ distributor.landline }}</span>
+        </div>
+
+        <div class="info-row" *ngIf="distributor.email">
+          <span class="label">Email</span>
+          <span class="value">{{ distributor.email }}</span>
+        </div>
+      </div>
+
+      <div class="card-actions">
+        <button type="button" class="btn-primary" (click)="openMap(distributor)">
+          View on Maps
+        </button>
+      </div>
+    </article>
+  </div>
+
+  <div class="empty-state" *ngIf="!loading && !errorMessage && !filteredDistributors.length">
+    <div class="state-card">
+      <h3>No distributors found</h3>
+      <p>Try searching with another city, name, phone number, or address.</p>
+    </div>
+  </div>
+</section>

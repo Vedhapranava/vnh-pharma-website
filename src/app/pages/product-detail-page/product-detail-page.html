@@ -1,0 +1,178 @@
+<section class="detail-shell">
+  <div class="detail-hero" *ngIf="!loading() && !errorMsg() && product() as productData">
+    <div class="detail-left">
+      <a routerLink="/products" class="back-link">← Back to Products</a>
+
+      <span class="section-tag">Product Detail</span>
+
+      <div class="category-badge" [attr.data-category]="productData.category">
+        {{ productData.category }}
+      </div>
+
+      <h1>{{ productData.name }}</h1>
+
+      <p class="short-text">
+        {{ productData.shortDescription }}
+      </p>
+
+      <div class="meta-row">
+        <div class="meta-card">
+          <span class="meta-label">Product Slug</span>
+          <strong>{{ productData.slug }}</strong>
+        </div>
+
+        <div class="meta-card">
+          <span class="meta-label">Division</span>
+          <strong>{{ productData.divisions?.name || 'General' }}</strong>
+        </div>
+      </div>
+
+      <div class="detail-actions">
+        <a routerLink="/contact" class="btn btn-primary">Enquire Now</a>
+        <a routerLink="/products" class="btn btn-ghost">Explore More</a>
+      </div>
+    </div>
+
+    <div class="detail-right">
+      <div class="product-visual-card">
+        <div class="visual-top-line"></div>
+
+        <div class="visual-bottle-wrap">
+          <div class="product-pack-shot">
+            <ng-container *ngIf="primaryImageUrl(); else detailNoImage">
+              <img
+                [src]="primaryImageUrl()"
+                [alt]="productData.name"
+                class="main-product-image"
+              />
+            </ng-container>
+
+            <ng-template #detailNoImage>
+              <div class="pack-inner">
+                <div class="pack-badge">{{ productData.category }}</div>
+                <div class="pack-name">{{ productData.name }}</div>
+                <div class="pack-sku">{{ productData.slug }}</div>
+
+                <div class="pack-icon">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <rect x="5" y="4" width="14" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/>
+                    <path d="M9 8H15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M9 12H15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  </svg>
+                </div>
+              </div>
+            </ng-template>
+          </div>
+
+          <div class="thumb-row" *ngIf="images().length > 1">
+            <button
+              type="button"
+              class="thumb-btn"
+              *ngFor="let img of images()"
+              (click)="setPrimary(img.image_url)"
+            >
+              <img
+                [src]="img.image_url"
+                [alt]="img.alt_text || productData.name"
+              />
+            </button>
+          </div>
+        </div>
+
+        <div class="mini-points">
+          <div class="mini-point">
+            <span></span>
+            Premium product positioning
+          </div>
+          <div class="mini-point">
+            <span></span>
+            Refined therapeutic identity
+          </div>
+          <div class="mini-point">
+            <span></span>
+            Strong visual communication
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="detail-grid" *ngIf="!loading() && !errorMsg() && product() as productData">
+    <article class="info-card">
+      <div class="card-head">
+        <span class="section-tag">Overview</span>
+        <h2>Product overview</h2>
+      </div>
+      <p>{{ productData.overview }}</p>
+    </article>
+
+    <article class="info-card">
+      <div class="card-head">
+        <span class="section-tag">Composition</span>
+        <h2>Key composition highlights</h2>
+      </div>
+
+      <ul class="bullet-list">
+        <li *ngFor="let item of productData.compositionLines">
+          <span class="bullet-icon"></span>
+          {{ item }}
+        </li>
+      </ul>
+    </article>
+
+    <article class="info-card benefits-card">
+      <div class="card-head">
+        <span class="section-tag">Benefits</span>
+        <h2>Positioning advantages</h2>
+      </div>
+
+      <div class="benefit-grid">
+        <div class="benefit-box" *ngFor="let item of productData.benefits">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 3L19 6V11C19 15 16.5 18.5 12 21C7.5 18.5 5 15 5 11V6L12 3Z" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M9.5 11.5L11.4 13.4L15 9.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <p>{{ item }}</p>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <section class="related-section" *ngIf="!loading() && !errorMsg() && relatedProducts().length > 0">
+    <div class="related-head">
+      <div>
+        <span class="section-tag">Related Products</span>
+        <h2>Explore more from VNH</h2>
+      </div>
+      <a routerLink="/products" class="view-all-link">View full portfolio →</a>
+    </div>
+
+    <div class="related-grid">
+      <a
+        class="related-card"
+        *ngFor="let item of relatedProducts()"
+        [routerLink]="['/products', item.divisions?.slug || product()?.divisions?.slug, item.slug]"
+      >
+        <div class="related-top">
+          <span class="category-badge small" [attr.data-category]="item.category">
+            {{ item.category }}
+          </span>
+        </div>
+
+        <h3>{{ item.name }}</h3>
+        <p>{{ item.slug }}</p>
+        <span class="explore-link">Explore product →</span>
+      </a>
+    </div>
+  </section>
+
+  <div class="state-card" *ngIf="loading()">
+    Loading product details...
+  </div>
+
+  <div class="state-card error" *ngIf="errorMsg() as err">
+    {{ err }}
+  </div>
+</section>

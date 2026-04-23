@@ -1,0 +1,131 @@
+<header class="site-header" [class.scrolled]="isScrolled">
+  <div class="navbar-shell">
+    <div class="navbar-main">
+      <a routerLink="/" class="brand-logo" aria-label="VNH Pharmaceuticals Home">
+        <img src="assets/logo.jpg" alt="VNH Pharma logo" />
+      </a>
+
+      <div class="nav-right-group">
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <a
+            routerLink="/"
+            routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="nav-link"
+          >
+            Home
+          </a>
+
+          <a routerLink="/about" routerLinkActive="active-link" class="nav-link">
+            About
+          </a>
+
+          <a routerLink="/products" routerLinkActive="active-link" class="nav-link">
+            Products
+          </a>
+
+          <a
+            routerLink="/distributor-locator"
+            routerLinkActive="active-link"
+            class="nav-link"
+          >
+            Locate Distributor
+          </a>
+
+          <a routerLink="/careers" routerLinkActive="active-link" class="nav-link">
+            Careers
+          </a>
+        </nav>
+
+        <div class="nav-actions">
+          <a routerLink="/contact" class="contact-btn">Contact Us</a>
+
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Toggle navigation menu"
+            (click)="toggleMobileMenu()"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="marquee-strip">
+      <div class="marquee-track">
+        <span class="marquee-item">MNC Quality</span>
+        <span class="marquee-item">Economical Pricing</span>
+        <span class="marquee-item">Trusted Healthcare</span>
+        <span class="marquee-item">Baby Care Portfolio</span>
+        <span class="marquee-item">Nutraceutical Brands</span>
+        <span class="marquee-item">Quality-Driven Formulations</span>
+        <span class="marquee-item">VNH Pharmaceuticals</span>
+
+        <span class="marquee-item">MNC Quality</span>
+        <span class="marquee-item">Economical Pricing</span>
+        <span class="marquee-item">Trusted Healthcare</span>
+        <span class="marquee-item">Baby Care Portfolio</span>
+        <span class="marquee-item">Nutraceutical Brands</span>
+        <span class="marquee-item">Quality-Driven Formulations</span>
+        <span class="marquee-item">VNH Pharmaceuticals</span>
+      </div>
+    </div>
+
+    <div class="mobile-panel" [class.open]="mobileMenuOpen">
+      <nav class="mobile-nav" aria-label="Mobile navigation">
+        <a
+          routerLink="/"
+          routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="mobile-link"
+          (click)="closeMobileMenu()"
+        >
+          Home
+        </a>
+
+        <a
+          routerLink="/about"
+          routerLinkActive="active-link"
+          class="mobile-link"
+          (click)="closeMobileMenu()"
+        >
+          About
+        </a>
+
+        <a
+          routerLink="/products"
+          routerLinkActive="active-link"
+          class="mobile-link"
+          (click)="closeMobileMenu()"
+        >
+          Products
+        </a>
+
+        <a
+          routerLink="/distributor-locator"
+          routerLinkActive="active-link"
+          class="mobile-link"
+          (click)="closeMobileMenu()"
+        >
+          Locate Distributor
+        </a>
+
+        <a
+          routerLink="/careers"
+          routerLinkActive="active-link"
+          class="mobile-link"
+          (click)="closeMobileMenu()"
+        >
+          Careers
+        </a>
+
+        <a routerLink="/contact" class="mobile-contact-btn" (click)="closeMobileMenu()">
+          Contact Us
+        </a>
+      </nav>
+    </div>
+  </div>
+</header>

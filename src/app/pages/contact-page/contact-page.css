@@ -1,0 +1,29 @@
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.contact-grid > div {
+  padding: 22px;
+  border-radius: 20px;
+  background: var(--bg-section);
+  border: 1px solid var(--border);
+}
+
+.contact-grid h3 {
+  color: var(--primary-dark);
+  margin-bottom: 10px;
+}
+
+.contact-grid p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+@media (max-width: 640px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}

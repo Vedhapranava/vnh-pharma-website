@@ -1,0 +1,120 @@
+.trust-section {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--primary-dark), var(--primary));
+  padding: 110px 64px;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: all 0.85s ease;
+}
+
+.trust-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.trust-section::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  top: -120px;
+  right: -70px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(168, 212, 236, 0.18), transparent 70%);
+}
+
+.trust-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.section-tag-dark {
+  background: rgba(168, 212, 236, 0.12);
+  color: var(--accent-light);
+}
+
+.trust-inner h2 {
+  margin: 20px 0 16px;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  color: #fff;
+}
+
+.trust-inner > p {
+  max-width: 760px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.68);
+  line-height: 1.8;
+}
+
+.trust-grid {
+  margin-top: 42px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.trust-card {
+  text-align: left;
+  padding: 26px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(91, 163, 201, 0.2);
+  transition: all 0.3s ease;
+}
+
+.trust-card:hover {
+  background: rgba(255, 255, 255, 0.11);
+  transform: translateY(-4px);
+}
+
+.trust-icon {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: rgba(168, 212, 236, 0.12);
+  color: var(--accent-light);
+  margin-bottom: 18px;
+}
+
+.trust-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.trust-card h3 {
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 1.28rem;
+}
+
+.trust-card p {
+  color: rgba(255, 255, 255, 0.68);
+  line-height: 1.8;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .trust-section {
+    padding: 96px 32px;
+  }
+
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .trust-section {
+    padding: 72px 16px;
+  }
+
+  .trust-grid {
+    grid-template-columns: 1fr;
+  }
+}

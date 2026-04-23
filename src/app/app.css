@@ -1,0 +1,27 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(79, 147, 197, 0.04), transparent 22%),
+    radial-gradient(circle at bottom right, rgba(232, 106, 22, 0.04), transparent 20%),
+    linear-gradient(180deg, #f8fbfd 0%, #f3f7fb 100%);
+  color: #102847;
+}
+
+.app-main {
+  display: block;
+  min-height: calc(100vh - 120px);
+  padding-top: 138px;
+}
+
+@media (max-width: 1024px) {
+  .app-main {
+    padding-top: 126px;
+  }
+}
+
+@media (max-width: 640px) {
+  .app-main {
+    padding-top: 118px;
+  }
+}

@@ -1,0 +1,110 @@
+<section class="about-page">
+  <div class="page-shell">
+    <section class="hero-card">
+      <div class="hero-copy">
+        <span class="section-tag">About VNH</span>
+        <h1>Built on trust. Framed by quality.</h1>
+        <p>
+          VNH Pharmaceuticals brings together ethical healthcare thinking,
+          premium product presentation, and value-led market positioning.
+        </p>
+
+        <div class="hero-pills">
+          <span class="hero-pill">MNC Standards</span>
+          <span class="hero-pill">Franchise Pricing</span>
+          <span class="hero-pill">Doctor-First Values</span>
+        </div>
+      </div>
+
+      <div class="hero-badge-card">
+        <div class="badge-ring">
+          <div class="badge-core badge-logo-core">
+            <img src="assets/logo.jpg" alt="VNH Pharmaceuticals logo" class="badge-logo" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-grid">
+      <article class="story-card philosophy-card">
+        <span class="card-kicker">Philosophy</span>
+        <h2>Why VNH</h2>
+        <p>
+          VNH stands for <strong>Vaidhyo Narayano Hari</strong> — a belief that
+          respects the doctor’s role and keeps patient trust at the center.
+        </p>
+      </article>
+
+      <article class="story-card founder-card">
+        <span class="card-kicker">Founder</span>
+        <h2>Led by experience</h2>
+        <p>
+          Founded by <strong>Mr. Srinivas Mateti</strong>, VNH is built on
+          <strong>18 years</strong> of continuous pharmaceutical marketing experience.
+        </p>
+      </article>
+    </section>
+
+    <section class="highlights-section">
+      <div class="section-head centered">
+        <span class="section-tag">What Defines VNH</span>
+        <h2>Short. Clear. Credible.</h2>
+      </div>
+
+      <div class="highlights-grid">
+        <article class="highlight-card" *ngFor="let item of highlights; let i = index">
+          <span class="highlight-no">0{{ i + 1 }}</span>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.text }}</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="experience-panel">
+      <div class="experience-copy">
+        <span class="card-kicker">Foundation</span>
+        <h2>A company shaped by trust and support.</h2>
+        <p>
+          VNH was founded with strong market confidence and a mission to deliver
+          quality products, stronger presentation, and better affordability.
+        </p>
+      </div>
+
+      <div class="experience-points">
+        <div class="point-card" *ngFor="let item of differentiators">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.text }}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="partners-section">
+      <div class="section-head centered">
+        <span class="section-tag">Manufacturing Network</span>
+        <h2>Trusted quality ecosystem.</h2>
+        <p>
+          We work with reputed manufacturing partners and recognized compliance systems.
+        </p>
+      </div>
+
+      <div class="partners-grid">
+        <div class="partner-chip" *ngFor="let partner of partners">
+          {{ partner }}
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-card">
+      <span class="section-tag">Move Forward With VNH</span>
+      <h2>Built for trust. Designed for growth.</h2>
+      <p>
+        Explore our portfolio, connect with our team, or discover partnership opportunities.
+      </p>
+
+      <div class="cta-actions">
+        <a routerLink="/products" class="btn-primary">Explore Products</a>
+        <a routerLink="/contact" class="btn-secondary">Contact VNH</a>
+      </div>
+    </section>
+  </div>
+</section>

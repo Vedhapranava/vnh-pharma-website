@@ -1,0 +1,9 @@
+<section class="stats-bar" #statsSection [class.visible]="visible">
+  <div class="stats-inner">
+    <div class="stat-item" *ngFor="let stat of stats; let last = last">
+      <div class="stat-value">{{ stat.value }}</div>
+      <div class="stat-label">{{ stat.label }}</div>
+      <span class="divider" *ngIf="!last"></span>
+    </div>
+  </div>
+</section>

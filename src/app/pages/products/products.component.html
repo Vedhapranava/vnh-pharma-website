@@ -1,0 +1,139 @@
+<section class="products-section">
+  <div class="products-header">
+    <div class="header-copy">
+      <span class="section-tag">Product Portfolio</span>
+      <h2>Designed for a refined pharmaceutical identity</h2>
+      <p>
+        Explore division-wise products presented with a clean, premium structure
+        built for doctors, distributors, and institutional buyers.
+      </p>
+    </div>
+
+    <div class="count-badge">
+      {{ filteredProducts.length }} Products
+    </div>
+  </div>
+
+  <div class="toolbar-card">
+    <div class="search-wrap">
+      <label for="productSearch">Search Products</label>
+      <input
+        id="productSearch"
+        type="text"
+        [(ngModel)]="searchTerm"
+        (input)="onSearchChange()"
+        placeholder="Search by product name, composition, slug, or division..."
+      />
+    </div>
+
+    <div class="filter-wrap">
+      <span class="filter-title">Filter by Division</span>
+
+      <div class="filter-row">
+        <button
+          type="button"
+          class="filter-pill"
+          [class.active]="selectedDivisionId === null"
+          (click)="showAllProducts()"
+        >
+          All
+        </button>
+
+        <button
+          *ngFor="let division of divisions"
+          type="button"
+          class="filter-pill"
+          [class.active]="selectedDivisionId === division.id"
+          (click)="selectDivision(division)"
+        >
+          {{ division.name }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="loading" class="state-box">
+    Loading products...
+  </div>
+
+  <div *ngIf="errorMessage" class="state-box error">
+    {{ errorMessage }}
+  </div>
+
+  <div *ngIf="!loading && !errorMessage" class="results-summary">
+    <div>
+      <h3>{{ selectedDivisionName === 'All' ? 'All Products' : selectedDivisionName }}</h3>
+     
+    </div>
+
+    <div class="results-count">
+      {{ filteredProducts.length }} Result(s)
+    </div>
+  </div>
+
+  <div
+    *ngIf="!loading && !errorMessage && filteredProducts.length > 0"
+    class="product-grid"
+  >
+    <a
+      class="product-card"
+      #revealCard
+      *ngFor="let product of filteredProducts; trackBy: trackByProduct"
+      [routerLink]="['/products', product.divisions?.slug, product.slug]"
+    >
+      <div class="product-image-area">
+        <ng-container *ngIf="product.primaryImage?.image_url; else noImage">
+          <img
+            [src]="product.primaryImage.image_url"
+            [alt]="product.primaryImage?.alt_text || product.primaryImage?.file_name || product.name"
+            loading="lazy"
+            (error)="product.primaryImage = null"
+          />
+        </ng-container>
+
+        <ng-template #noImage>
+          <div class="image-placeholder">
+            <div class="placeholder-box">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="5" y="4" width="14" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M9 8H15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M9 12H15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+        </ng-template>
+
+        <div class="shimmer-line"></div>
+      </div>
+
+      <div class="product-card-body">
+        <span
+          class="category-badge"
+          [ngClass]="categoryClass(product.divisions?.name)"
+        >
+          {{ product.divisions?.name || 'General' }}
+        </span>
+
+        <h3>{{ product.name }}</h3>
+
+        <p class="sku">{{ product.slug }}</p>
+
+        <p class="product-desc">
+          {{ product.short_desc || 'Click to explore this product in detail.' }}
+        </p>
+
+        <span class="explore-link">
+          Explore product <span>→</span>
+        </span>
+      </div>
+    </a>
+  </div>
+
+  <div
+    *ngIf="!loading && !errorMessage && filteredProducts.length === 0"
+    class="empty-state"
+  >
+    <h3>No matching products found</h3>
+    <p>Try changing the search term or selecting another division.</p>
+  </div>
+</section>

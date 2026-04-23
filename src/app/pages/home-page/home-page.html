@@ -1,0 +1,248 @@
+<app-hero></app-hero>
+
+<!-- ═══════════════════════════════════════════════════
+     ABOUT STRIP
+════════════════════════════════════════════════════ -->
+<section class="hp-section hp-about">
+  <div class="hp-shell">
+    <div class="about-strip" #reveal>
+      <div class="about-strip__copy">
+        <span class="section-tag">About VNH</span>
+        <h2>MNC Manufacturers.<br>Assured Quality.<br>Attractive Packing.</h2>
+        <p>
+          VNH Pharmaceuticals brings together reputed manufacturing support,
+          dependable quality standards, and premium product presentation to build
+          strong and credible healthcare brands.
+        </p>
+      </div>
+
+      <div class="about-strip__stats">
+        <div class="astat">
+          <span class="astat__val">18+</span>
+          <span class="astat__lbl">Years Experience</span>
+        </div>
+        <div class="astat__divider"></div>
+        <div class="astat">
+          <span class="astat__val">MNC</span>
+          <span class="astat__lbl">Manufacturing Focus</span>
+        </div>
+        <div class="astat__divider"></div>
+        <div class="astat">
+          <span class="astat__val">Premium</span>
+          <span class="astat__lbl">Presentation Standards</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     DIVISIONS / CORE STRENGTHS
+════════════════════════════════════════════════════ -->
+<section class="hp-section hp-divisions">
+  <div class="hp-shell">
+    <div class="section-head" #reveal>
+      <span class="section-tag">Core Strengths</span>
+      <h2>Professional Positioning.<br>Trust-Led Brand Direction.</h2>
+      <p>
+        Our brand direction is built around quality manufacturing, assured
+        product confidence, attractive presentation, and stronger market appeal.
+      </p>
+    </div>
+
+    <div class="divisions-grid">
+      <article
+        class="division-card"
+        *ngFor="let d of divisions; let i = index"
+        #reveal
+        [attr.data-index]="i"
+      >
+        <div class="division-card__top">
+          <span class="division-card__icon" aria-hidden="true">{{ d.icon }}</span>
+          <span class="division-card__label">VNH Value</span>
+        </div>
+        <h3>{{ d.title }}</h3>
+        <p>{{ d.description }}</p>
+        <span class="division-card__arrow" aria-hidden="true">
+          <svg viewBox="0 0 16 16" fill="none">
+            <path
+              d="M3 8h10M9 4l4 4-4 4"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     PRODUCT CATALOGUE
+════════════════════════════════════════════════════ -->
+<section class="hp-section hp-catalogue">
+  <div class="hp-shell">
+    <div class="section-head section-head--center" #reveal>
+      <span class="section-tag">Featured Catalogue</span>
+      <h2>Products With Stronger<br>Visual Shelf Appeal.</h2>
+      <p>
+        A product presentation approach shaped by quality confidence, cleaner
+        branding, and attractive market-ready packaging.
+      </p>
+    </div>
+
+    <div class="catalogue-grid">
+      <article
+        class="catalogue-card"
+        *ngFor="let item of cataloguePreview"
+        #reveal
+      >
+        <div class="catalogue-card__media">
+          <div class="catalogue-card__frame">
+            <img
+              [src]="item.image"
+              [alt]="item.title"
+              class="catalogue-card__img"
+              loading="lazy"
+            />
+            <div class="catalogue-card__shimmer" aria-hidden="true"></div>
+          </div>
+
+          <video
+            *ngIf="item.hasVideo"
+            class="catalogue-card__video"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          >
+            <source [src]="item.video" type="video/mp4" />
+          </video>
+        </div>
+
+        <div class="catalogue-card__body">
+          <span class="catalogue-card__kicker">{{ item.subtitle }}</span>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.note }}</p>
+          <span class="catalogue-card__cta">
+            View product
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path
+                d="M3 8h10M9 4l4 4-4 4"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+        </div>
+      </article>
+    </div>
+
+    <div class="catalogue-footer" #reveal>
+      <a routerLink="/products" class="btn-primary">
+        Explore Full Portfolio
+        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path
+            d="M4 10h12M11 5l5 5-5 5"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     BRAND PROMISE / WHY VNH
+════════════════════════════════════════════════════ -->
+<section class="hp-section hp-mission">
+  <div class="hp-shell">
+    <div class="section-head section-head--center" #reveal>
+      <span class="section-tag">Why VNH</span>
+      <h2>Built On Trust.<br>Presented With Confidence.</h2>
+      <p>
+        Every VNH brand is shaped to reflect dependable manufacturing support,
+        assured quality, and stronger product presentation in the market.
+      </p>
+    </div>
+
+    <div class="mission-grid">
+      <article
+        class="mission-card"
+        *ngFor="let item of promiseCards"
+        #reveal
+      >
+        <div class="mission-card__icon" aria-hidden="true">{{ item.icon }}</div>
+        <div class="mission-card__body">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.text }}</p>
+        </div>
+        <div class="mission-card__glow" aria-hidden="true"></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     CTA BANNER
+════════════════════════════════════════════════════ -->
+<section class="hp-section hp-cta">
+  <div class="hp-shell">
+    <div class="cta-card" #reveal>
+      <div class="cta-card__bg" aria-hidden="true">
+        <div class="cta-card__orb cta-card__orb--1"></div>
+        <div class="cta-card__orb cta-card__orb--2"></div>
+      </div>
+
+      <div class="cta-card__inner">
+        <span class="section-tag">Connect With VNH</span>
+        <h2>Let’s Build Stronger<br>Healthcare Reach Together.</h2>
+        <p>
+          Explore our portfolio, discuss product opportunities, or connect with
+          our team to take VNH brands further into the market.
+        </p>
+
+        <div class="cta-card__contact">
+          <span class="cta-card__contact-label">Call us directly</span>
+          <a class="cta-card__phone" href="tel:7995936524">
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path
+                d="M2 3.5A1.5 1.5 0 0 1 3.5 2h2.16a1 1 0 0 1 .97.757l.887 3.547a1 1 0 0 1-.29.988L5.99 8.527a11.03 11.03 0 0 0 5.483 5.483l1.235-1.234a1 1 0 0 1 .988-.29l3.547.887A1 1 0 0 1 18 14.34V16.5A1.5 1.5 0 0 1 16.5 18C8.492 18 2 11.508 2 3.5z"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linejoin="round"
+              />
+            </svg>
+            {{ contactNumber }}
+          </a>
+        </div>
+
+        <div class="cta-card__actions">
+          <a routerLink="/products" class="btn-primary">
+            Explore Products
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path
+                d="M4 10h12M11 5l5 5-5 5"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+
+          <a routerLink="/contact" class="btn-ghost">
+            Contact VNH
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

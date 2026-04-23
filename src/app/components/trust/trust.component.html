@@ -1,0 +1,23 @@
+<section class="trust-section" #trustSection [class.visible]="visible">
+  <div class="trust-inner">
+    <span class="section-tag section-tag-dark">Why professionals trust VNH</span>
+    <h2>A premium framework for pharmaceutical growth</h2>
+    <p>
+      VNH Pharmaceuticals is positioned to combine credibility, structured presentation,
+      and elegant communication for a stronger healthcare brand experience.
+    </p>
+
+    <div class="trust-grid">
+      <article class="trust-card" *ngFor="let feature of features">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 3L19 6V11C19 15 16.5 18.5 12 21C7.5 18.5 5 15 5 11V6L12 3Z" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M9.5 11.5L11.4 13.4L15 9.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>{{ feature.title }}</h3>
+        <p>{{ feature.desc }}</p>
+      </article>
+    </div>
+  </div>
+</section>
