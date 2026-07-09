@@ -1,89 +1,140 @@
-<section class="products-section">
-  <div class="products-header">
-    <div class="header-copy">
-      <span class="section-tag">Product Portfolio</span>
-      <h2>Designed for a refined pharmaceutical identity</h2>
-      <p>
-        Explore division-wise products presented with a clean, premium structure
-        built for doctors, distributors, and institutional buyers.
-      </p>
-    </div>
+<section class="prd-section">
 
-    <div class="count-badge">
-      {{ filteredProducts.length }} Products
-    </div>
+  <!-- ── Ambient background blobs ─────────────────────────────── -->
+  <div class="prd-ambient" aria-hidden="true">
+    <div class="prd-ambient__blob prd-ambient__blob--1"></div>
+    <div class="prd-ambient__blob prd-ambient__blob--2"></div>
+    <div class="prd-ambient__blob prd-ambient__blob--3"></div>
   </div>
 
-  <div class="toolbar-card">
-    <div class="search-wrap">
-      <label for="productSearch">Search Products</label>
-      <input
-        id="productSearch"
-        type="text"
-        [(ngModel)]="searchTerm"
-        (input)="onSearchChange()"
-        placeholder="Search by product name, composition, slug, or division..."
-      />
-    </div>
-
-    <div class="filter-wrap">
-      <span class="filter-title">Filter by Division</span>
-
-      <div class="filter-row">
-        <button
-          type="button"
-          class="filter-pill"
-          [class.active]="selectedDivisionId === null"
-          (click)="showAllProducts()"
-        >
-          All
-        </button>
-
-        <button
-          *ngFor="let division of divisions"
-          type="button"
-          class="filter-pill"
-          [class.active]="selectedDivisionId === division.id"
-          (click)="selectDivision(division)"
-        >
-          {{ division.name }}
-        </button>
+  <!-- ── Page Header ──────────────────────────────────────────── -->
+  <header class="prd-header">
+    <div class="prd-header__copy">
+      <div class="prd-eyebrow">
+        <span class="prd-eyebrow__dot" aria-hidden="true"></span>
+        VNH Pharmaceuticals · Product Portfolio
+      </div>
+      <h1 class="prd-header__title">
+        Premium Healthcare<br>Products
+      </h1>
+      <p class="prd-header__sub">
+        Explore our division-wise pharmaceutical portfolio — MNC-standard products built for
+        doctors, hospitals, and healthcare institutions across India.
+      </p>
+      <div class="prd-header__badges">
+        <span class="prd-hbadge">MNC Standards</span>
+        <span class="prd-hbadge">Doctor-First</span>
+        <span class="prd-hbadge">Certified Quality</span>
       </div>
     </div>
-  </div>
 
-  <div *ngIf="loading" class="state-box">
-    Loading products...
-  </div>
-
-  <div *ngIf="errorMessage" class="state-box error">
-    {{ errorMessage }}
-  </div>
-
-  <div *ngIf="!loading && !errorMessage" class="results-summary">
-    <div>
-      <h3>{{ selectedDivisionName === 'All' ? 'All Products' : selectedDivisionName }}</h3>
-     
+    <div class="prd-count-wrap">
+      <div class="prd-count-badge" aria-live="polite">
+        <span class="prd-count-badge__num">{{ filteredProducts.length }}</span>
+        <span class="prd-count-badge__lbl">Products</span>
+      </div>
+      <p class="prd-count-badge__sub">across all divisions</p>
     </div>
+  </header>
 
-    <div class="results-count">
-      {{ filteredProducts.length }} Result(s)
+  <!-- ── Toolbar ──────────────────────────────────────────────── -->
+  <div class="prd-toolbar">
+    <div class="prd-toolbar__glass">
+
+      <!-- Search -->
+      <div class="prd-search">
+        <label class="prd-search__label" for="productSearch">Search Products</label>
+        <div class="prd-search__wrap">
+          <span class="prd-search__icon" aria-hidden="true">
+            <svg viewBox="0 0 20 20" fill="none">
+              <circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="1.7"/>
+              <path d="M13 13l3.5 3.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <input
+            id="productSearch"
+            type="text"
+            class="prd-search__input"
+            [(ngModel)]="searchTerm"
+            (input)="onSearchChange()"
+            placeholder="Search by name, composition, or division…"
+            autocomplete="off"
+          />
+        </div>
+      </div>
+
+      <div class="prd-toolbar__sep" aria-hidden="true"></div>
+
+      <!-- Division filters -->
+      <div class="prd-filters">
+        <span class="prd-filters__label">Filter by Division</span>
+        <div class="prd-filters__row">
+          <button
+            type="button"
+            class="prd-pill"
+            [class.prd-pill--active]="selectedDivisionId === null"
+            (click)="showAllProducts()"
+          >All</button>
+          <button
+            *ngFor="let division of divisions"
+            type="button"
+            class="prd-pill"
+            [class.prd-pill--active]="selectedDivisionId === division.id"
+            (click)="selectDivision(division)"
+          >{{ division.name }}</button>
+        </div>
+      </div>
+
     </div>
   </div>
 
+  <!-- ── Loading ──────────────────────────────────────────────── -->
+  <div *ngIf="loading" class="prd-state">
+    <div class="prd-state__inner">
+      <span class="prd-spinner" aria-hidden="true"></span>
+      <span class="prd-state__msg">Loading products…</span>
+    </div>
+  </div>
+
+  <!-- ── Error ────────────────────────────────────────────────── -->
+  <div *ngIf="errorMessage" class="prd-state prd-state--error">
+    <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="prd-state__err-icon">
+      <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M10 6v4M10 14h.01" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <span>{{ errorMessage }}</span>
+  </div>
+
+  <!-- ── Results bar ───────────────────────────────────────────── -->
+  <div *ngIf="!loading && !errorMessage" class="prd-results-bar">
+    <div class="prd-results-bar__left">
+      <h2 class="prd-results-bar__title">
+        {{ selectedDivisionName === 'All' ? 'All Products' : selectedDivisionName }}
+      </h2>
+      <span class="prd-results-bar__count">{{ filteredProducts.length }} Result(s)</span>
+    </div>
+    <div class="prd-results-bar__line" aria-hidden="true"></div>
+  </div>
+
+  <!-- ── Product Grid ──────────────────────────────────────────── -->
   <div
     *ngIf="!loading && !errorMessage && filteredProducts.length > 0"
-    class="product-grid"
+    class="prd-grid"
   >
     <a
-      class="product-card"
+      class="prd-card"
       #revealCard
       *ngFor="let product of filteredProducts; trackBy: trackByProduct"
       [routerLink]="['/products', product.divisions?.slug, product.slug]"
     >
-      <div class="product-image-area">
+      <!-- Shimmer on hover -->
+      <span class="prd-card__shimmer" aria-hidden="true"></span>
+
+      <!-- Image area -->
+      <div class="prd-card__img-wrap">
         <ng-container *ngIf="product.primaryImage?.image_url; else noImage">
           <img
+            class="prd-card__img"
             [src]="product.primaryImage.image_url"
             [alt]="product.primaryImage?.alt_text || product.primaryImage?.file_name || product.name"
             loading="lazy"
@@ -92,48 +143,69 @@
         </ng-container>
 
         <ng-template #noImage>
-          <div class="image-placeholder">
-            <div class="placeholder-box">
+          <div class="prd-card__placeholder">
+            <div class="prd-card__ph-inner">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <rect x="5" y="4" width="14" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/>
-                <path d="M9 8H15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                <path d="M9 12H15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <rect x="5" y="4" width="14" height="16" rx="3"
+                  stroke="currentColor" stroke-width="1.7"/>
+                <path d="M9 8h6M9 12h4"
+                  stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
               </svg>
             </div>
           </div>
         </ng-template>
 
-        <div class="shimmer-line"></div>
+        <!-- Category badge -->
+        <span
+          class="prd-card__badge"
+          [ngClass]="'prd-badge--' + categoryClass(product.divisions?.name)"
+        >{{ product.divisions?.name || 'General' }}</span>
       </div>
 
-      <div class="product-card-body">
-        <span
-          class="category-badge"
-          [ngClass]="categoryClass(product.divisions?.name)"
-        >
-          {{ product.divisions?.name || 'General' }}
-        </span>
+      <!-- Card body -->
+      <div class="prd-card__body">
+        <!-- Top accent bar -->
+        <span class="prd-card__accent-bar" aria-hidden="true"></span>
 
-        <h3>{{ product.name }}</h3>
+        <h3 class="prd-card__name">{{ product.name }}</h3>
+        <p class="prd-card__sku">{{ product.slug }}</p>
 
-        <p class="sku">{{ product.slug }}</p>
-
-        <p class="product-desc">
+        <p class="prd-card__desc">
           {{ product.short_desc || 'Click to explore this product in detail.' }}
         </p>
 
-        <span class="explore-link">
-          Explore product <span>→</span>
+        <span class="prd-card__cta">
+          <span class="prd-card__cta-label">Explore Product</span>
+          <span class="prd-card__cta-arrow" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4"
+                stroke="currentColor" stroke-width="1.6"
+                stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
         </span>
       </div>
+
     </a>
   </div>
 
+  <!-- ── Empty state ───────────────────────────────────────────── -->
   <div
     *ngIf="!loading && !errorMessage && filteredProducts.length === 0"
-    class="empty-state"
+    class="prd-empty"
   >
-    <h3>No matching products found</h3>
-    <p>Try changing the search term or selecting another division.</p>
+    <div class="prd-empty__icon" aria-hidden="true">
+      <svg viewBox="0 0 48 48" fill="none">
+        <circle cx="24" cy="24" r="20" stroke="currentColor"
+          stroke-width="1.5" stroke-dasharray="5 4"/>
+        <path d="M24 16v8M24 30h.01"
+          stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <h3 class="prd-empty__title">No matching products found</h3>
+    <p class="prd-empty__sub">
+      Try changing the search term or selecting another division.
+    </p>
   </div>
+
 </section>

@@ -1,0 +1,81 @@
+<section class="ap-list">
+  <header class="ap-list__head">
+    <h1 class="ap-list__title">Products</h1>
+    <a class="ap-btn ap-btn--primary" routerLink="/admin/products/new">+ New product</a>
+  </header>
+
+  <div class="ap-filters" *ngIf="!loading()">
+    <button class="ap-chip" [class.is-on]="filter() === 'all'" (click)="setFilter('all')">
+      All <span class="ap-chip__n">{{ countAll() }}</span>
+    </button>
+    <button class="ap-chip" [class.is-on]="filter() === 'active'" (click)="setFilter('active')">
+      Active <span class="ap-chip__n">{{ countActive() }}</span>
+    </button>
+    <button class="ap-chip" [class.is-on]="filter() === 'inactive'" (click)="setFilter('inactive')">
+      Inactive <span class="ap-chip__n">{{ countInactive() }}</span>
+    </button>
+    <button class="ap-chip" [class.is-on]="filter() === 'no-image'" (click)="setFilter('no-image')">
+      No image <span class="ap-chip__n">{{ countNoImage() }}</span>
+    </button>
+  </div>
+
+  <p class="ap-error" *ngIf="error()">{{ error() }}</p>
+  <p class="ap-muted" *ngIf="loading()">Loading products…</p>
+
+  <p class="ap-muted" *ngIf="!loading() && products().length === 0">
+    No products yet. Use “New product” to add one.
+  </p>
+
+  <p class="ap-muted" *ngIf="!loading() && products().length > 0 && filtered().length === 0">
+    No products match this filter.
+  </p>
+
+  <table class="ap-table" *ngIf="!loading() && filtered().length > 0">
+    <thead>
+      <tr>
+        <th class="ap-thumb-col">Image</th>
+        <th>Name</th>
+        <th>Division</th>
+        <th>Slug</th>
+        <th class="ap-num">Imgs</th>
+        <th class="ap-num">Sort</th>
+        <th>Status</th>
+        <th class="ap-actions-col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of filtered()" [class.ap-row--inactive]="!p.is_active">
+        <td class="ap-thumb-col">
+          <img *ngIf="primaryUrl(p) as url" class="ap-thumb" [src]="url" [alt]="p.name" />
+          <span *ngIf="!primaryUrl(p)" class="ap-thumb ap-thumb--empty">—</span>
+        </td>
+        <td>{{ p.name }}</td>
+        <td>{{ p.divisions?.name || '—' }}</td>
+        <td><code>{{ p.slug }}</code></td>
+        <td class="ap-num">
+          <span *ngIf="imageCount(p) > 0">{{ imageCount(p) }}</span>
+          <span *ngIf="imageCount(p) === 0" class="ap-warn" title="No images">⚠ none</span>
+        </td>
+        <td class="ap-num">{{ p.sort_order ?? 0 }}</td>
+        <td>
+          <span class="ap-badge" [class.ap-badge--on]="p.is_active" [class.ap-badge--off]="!p.is_active">
+            {{ p.is_active ? 'Active' : 'Inactive' }}
+          </span>
+        </td>
+        <td class="ap-actions">
+          <a class="ap-btn ap-btn--ghost" [routerLink]="['/admin/products', p.id, 'edit']">Edit</a>
+          <a class="ap-btn ap-btn--ghost" [routerLink]="['/admin/products', p.id, 'media']">Media</a>
+          <button
+            class="ap-btn"
+            [class.ap-btn--danger]="p.is_active"
+            [class.ap-btn--ok]="!p.is_active"
+            [disabled]="busyId() === p.id"
+            (click)="toggleActive(p)"
+          >
+            {{ busyId() === p.id ? '…' : (p.is_active ? 'Deactivate' : 'Reactivate') }}
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

@@ -1,31 +1,346 @@
-<section class="page-shell">
-  <div class="page-hero">
-    <span class="section-tag">Contact</span>
-    <h1>Let’s connect with clarity and confidence</h1>
-    <p>
-      Reach VNH Pharmaceuticals for product enquiries, institutional discussions,
-      partnerships, or professional business communication.
-    </p>
+<!-- VNH Pharmaceuticals — Contact Page -->
+<div class="contact-root">
+
+  <!-- ── Ambient canvas ── -->
+  <div class="contact-ambient" aria-hidden="true">
+    <div class="ca-blob ca-blob--1"></div>
+    <div class="ca-blob ca-blob--2"></div>
+    <div class="ca-blob ca-blob--3"></div>
+    <div class="ca-particle ca-particle--1"></div>
+    <div class="ca-particle ca-particle--2"></div>
+    <div class="ca-particle ca-particle--3"></div>
+    <div class="ca-particle ca-particle--4"></div>
+    <svg class="ca-mol" viewBox="0 0 220 220" fill="none" aria-hidden="true">
+      <circle cx="110" cy="110" r="6" fill="var(--red)" opacity=".18"/>
+      <circle cx="60"  cy="70"  r="4" fill="var(--gold)" opacity=".22"/>
+      <circle cx="160" cy="150" r="5" fill="var(--red)" opacity=".15"/>
+      <circle cx="155" cy="65"  r="3" fill="var(--gold)" opacity=".20"/>
+      <circle cx="65"  cy="155" r="4" fill="var(--red)" opacity=".14"/>
+      <line x1="110" y1="110" x2="60"  y2="70"  stroke="var(--gold)" stroke-width="1" opacity=".15"/>
+      <line x1="110" y1="110" x2="160" y2="150" stroke="var(--red)"  stroke-width="1" opacity=".12"/>
+      <line x1="110" y1="110" x2="155" y2="65"  stroke="var(--gold)" stroke-width="1" opacity=".14"/>
+      <line x1="110" y1="110" x2="65"  y2="155" stroke="var(--red)"  stroke-width="1" opacity=".12"/>
+    </svg>
   </div>
 
-  <div class="page-card">
-    <div class="page-card-inner contact-grid">
-      <div>
-        <h3>Corporate Office</h3>
-        <p>Genome Valley, Hyderabad</p>
-      </div>
-      <div>
-        <h3>Dispatch Unit</h3>
-        <p>Mancherial, Telangana</p>
-      </div>
-      <div>
-        <h3>Email</h3>
-        <p>info@vnhpharma.com</p>
-      </div>
-      <div>
-        <h3>Phone</h3>
-        <p>+91 92872 87287</p>
+  <!-- ── Hero ── -->
+  <section class="contact-hero">
+    <div class="hero-inner">
+      <div class="hero-badge reveal-up">Connect With Us</div>
+      <h1 class="hero-title reveal-up">
+        Let's <span class="hero-title__accent">Build</span><br>
+        Something Together
+      </h1>
+      <p class="hero-subtitle reveal-up">
+        Reach out for product enquiries, institutional orders, distribution partnerships,
+        or any healthcare collaboration — our team responds within one business day.
+      </p>
+      <div class="hero-chips reveal-up">
+        <span class="hero-chip">Product Enquiries</span>
+        <span class="hero-chip hero-chip--gold">Distribution Enquiries</span>
+        <span class="hero-chip">Business Partnerships</span>
+        <span class="hero-chip hero-chip--gold">Institutional Orders</span>
       </div>
     </div>
-  </div>
-</section>
+    <div class="hero-divider" aria-hidden="true"></div>
+  </section>
+
+  <!-- ── Main grid ── -->
+  <section class="contact-main">
+    <div class="main-inner">
+
+      <!-- LEFT: Form card -->
+      <div class="form-panel reveal-up">
+        <div class="form-card">
+          <div class="form-card__accent" aria-hidden="true"></div>
+
+          <!-- Idle / sending state -->
+          <ng-container *ngIf="formStatus !== 'success'">
+            <div class="form-head">
+              <h2 class="form-head__title">Send an Enquiry</h2>
+              <p class="form-head__sub">All fields marked <span class="req-star">*</span> are required.</p>
+            </div>
+
+            <form [formGroup]="form" (ngSubmit)="onSubmit()" class="enquiry-form" novalidate autocomplete="off">
+
+              <!-- Name + Mobile row -->
+              <div class="field-row">
+                <div class="field-group" [class.field-group--error]="isInvalid('name')">
+                  <label class="field-label" for="ct-name">Full Name <span class="req-star">*</span></label>
+                  <div class="field-wrap">
+                    <span class="field-icon">
+                      <svg viewBox="0 0 20 20" fill="none"><path d="M10 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm-7 8a7 7 0 0 1 14 0H3z" fill="currentColor"/></svg>
+                    </span>
+                    <input
+                      id="ct-name"
+                      type="text"
+                      class="field-input"
+                      formControlName="name"
+                      placeholder="Dr. / Mr. / Ms. Full Name"
+                      autocomplete="name"
+                    />
+                  </div>
+                  <span class="field-error" *ngIf="isInvalid('name')">Please enter your full name (min 2 characters).</span>
+                </div>
+
+                <div class="field-group" [class.field-group--error]="isInvalid('mobile')">
+                  <label class="field-label" for="ct-mobile">Mobile Number <span class="req-star">*</span></label>
+                  <div class="field-wrap">
+                    <span class="field-icon">
+                      <svg viewBox="0 0 20 20" fill="none"><rect x="5" y="2" width="10" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="16" r=".8" fill="currentColor"/></svg>
+                    </span>
+                    <input
+                      id="ct-mobile"
+                      type="tel"
+                      class="field-input"
+                      formControlName="mobile"
+                      placeholder="+91 98765 43210"
+                      autocomplete="tel"
+                    />
+                  </div>
+                  <span class="field-error" *ngIf="isInvalid('mobile')">Please enter a valid mobile number.</span>
+                </div>
+              </div>
+
+              <!-- Email + City row -->
+              <div class="field-row">
+                <div class="field-group" [class.field-group--error]="isInvalid('email')">
+                  <label class="field-label" for="ct-email">Email Address <span class="req-star">*</span></label>
+                  <div class="field-wrap">
+                    <span class="field-icon">
+                      <svg viewBox="0 0 20 20" fill="none"><rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 7l8 5 8-5" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </span>
+                    <input
+                      id="ct-email"
+                      type="email"
+                      class="field-input"
+                      formControlName="email"
+                      placeholder="your@email.com"
+                      autocomplete="email"
+                    />
+                  </div>
+                  <span class="field-error" *ngIf="isInvalid('email')">Please enter a valid email address.</span>
+                </div>
+
+                <div class="field-group">
+                  <label class="field-label" for="ct-city">City</label>
+                  <div class="field-wrap">
+                    <span class="field-icon">
+                      <svg viewBox="0 0 20 20" fill="none"><path d="M10 2a6 6 0 0 1 6 6c0 4-6 10-6 10S4 12 4 8a6 6 0 0 1 6-6z" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="8" r="2" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </span>
+                    <input
+                      id="ct-city"
+                      type="text"
+                      class="field-input"
+                      formControlName="city"
+                      placeholder="Your city"
+                      autocomplete="address-level2"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Enquiry type -->
+              <div class="field-group field-group--full">
+                <label class="field-label" for="ct-enquiry">Enquiry Type</label>
+                <div class="field-wrap field-wrap--select">
+                  <span class="field-icon">
+                    <svg viewBox="0 0 20 20" fill="none"><path d="M4 5h12M4 10h8M4 15h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  </span>
+                  <select id="ct-enquiry" class="field-input field-select" formControlName="enquiry">
+                    <option *ngFor="let type of enquiryTypes" [value]="type">{{ type }}</option>
+                  </select>
+                  <span class="select-chevron" aria-hidden="true">
+                    <svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                </div>
+              </div>
+
+              <!-- Message -->
+              <div class="field-group field-group--full" [class.field-group--error]="isInvalid('message')">
+                <label class="field-label" for="ct-message">Your Message <span class="req-star">*</span></label>
+                <div class="field-wrap field-wrap--textarea">
+                  <span class="field-icon field-icon--top">
+                    <svg viewBox="0 0 20 20" fill="none"><path d="M3 4h14v10H3zM7 17h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  <textarea
+                    id="ct-message"
+                    class="field-input field-textarea"
+                    formControlName="message"
+                    rows="5"
+                    placeholder="Describe your enquiry — product name, quantity, therapeutic area, or any relevant details…"
+                  ></textarea>
+                </div>
+                <span class="field-error" *ngIf="isInvalid('message')">Please enter at least 20 characters.</span>
+              </div>
+
+              <!-- Submit -->
+              <button
+                type="submit"
+                class="submit-btn"
+                [class.submit-btn--sending]="formStatus === 'sending'"
+                [disabled]="formStatus === 'sending'"
+              >
+                <span class="submit-btn__shimmer" aria-hidden="true"></span>
+                <ng-container *ngIf="formStatus !== 'sending'">
+                  <svg viewBox="0 0 20 20" fill="none" class="submit-btn__icon"><path d="M2 10l16-8-8 16-2-6-6-2z" fill="currentColor"/></svg>
+                  Send Enquiry
+                </ng-container>
+                <ng-container *ngIf="formStatus === 'sending'">
+                  <span class="submit-spinner" aria-hidden="true"></span>
+                  Sending…
+                </ng-container>
+              </button>
+
+            </form>
+          </ng-container>
+
+          <!-- ── Success state ── -->
+          <div class="success-card" *ngIf="formStatus === 'success'">
+            <div class="success-card__glow" aria-hidden="true"></div>
+            <div class="success-icon">
+              <svg viewBox="0 0 52 52" fill="none">
+                <circle cx="26" cy="26" r="25" stroke="url(#sc-grad)" stroke-width="2"/>
+                <path d="M14 26l8 8 16-16" stroke="url(#sc-grad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <defs>
+                  <linearGradient id="sc-grad" x1="0" y1="0" x2="52" y2="52" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#c9251c"/>
+                    <stop offset="1" stop-color="#f3b23a"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <h3 class="success-card__title">Enquiry Received!</h3>
+            <p class="success-card__body">
+              Thank you for reaching out to <strong>VNH Pharmaceuticals</strong>.
+              Our team will respond within one business day.
+            </p>
+            <div class="success-card__promise">
+              <span class="promise-dot"></span>
+              Response within 24 business hours
+            </div>
+            <button class="success-card__reset" (click)="resetForm()">Send Another Enquiry</button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- RIGHT: Info panel -->
+      <div class="info-panel">
+
+        <!-- Office cards -->
+        <div class="info-cards-grid reveal-up">
+          <ng-container *ngFor="let card of officeCards">
+            <a
+              class="info-card"
+              [class.info-card--red]="card.accent === 'red'"
+              [class.info-card--gold]="card.accent === 'gold'"
+              [href]="card.link || null"
+              [attr.target]="card.link ? '_blank' : null"
+              [attr.rel]="card.link ? 'noopener noreferrer' : null"
+            >
+              <div class="info-card__icon">
+                <!-- building -->
+                <svg *ngIf="card.icon === 'building'" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="17" rx="1" stroke="currentColor" stroke-width="1.6"/><path d="M8 21V9M16 21V9M3 9h18M8 13h.01M16 13h.01M8 17h.01M16 17h.01M12 13h.01M12 17h.01" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                <!-- truck -->
+                <svg *ngIf="card.icon === 'truck'" viewBox="0 0 24 24" fill="none"><path d="M1 3h15v13H1z" stroke="currentColor" stroke-width="1.6"/><path d="M16 8h4l3 5v3h-7V8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="5.5" cy="18.5" r="2" stroke="currentColor" stroke-width="1.6"/><circle cx="18.5" cy="18.5" r="2" stroke="currentColor" stroke-width="1.6"/></svg>
+                <!-- mail -->
+                <svg *ngIf="card.icon === 'mail'" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M2 8l10 7 10-7" stroke="currentColor" stroke-width="1.6"/></svg>
+                <!-- phone -->
+                <svg *ngIf="card.icon === 'phone'" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </div>
+              <div class="info-card__body">
+                <div class="info-card__label">{{ card.label }}</div>
+                <div class="info-card__line" *ngFor="let line of card.lines">{{ line }}</div>
+              </div>
+              <div class="info-card__arrow" aria-hidden="true">
+                <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+            </a>
+
+            <!-- WhatsApp row beneath phone card -->
+            <a
+              *ngIf="card.whatsapp"
+              class="whatsapp-row"
+              [href]="card.whatsapp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="whatsapp-row__icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.557 4.125 1.528 5.865L.057 23.54a.75.75 0 0 0 .903.903l5.74-1.46A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.82 9.82 0 0 1-4.997-1.363l-.357-.214-3.71.945.97-3.636-.234-.372A9.818 9.818 0 1 1 12 21.818z"/></svg>
+              </span>
+              Chat on WhatsApp
+              <span class="whatsapp-row__badge">Live</span>
+            </a>
+          </ng-container>
+        </div>
+
+        <!-- Map placeholder -->
+        <div class="map-card reveal-up">
+          <div class="map-card__inner">
+            <div class="map-grid" aria-hidden="true">
+              <div class="map-grid__line map-grid__line--h1"></div>
+              <div class="map-grid__line map-grid__line--h2"></div>
+              <div class="map-grid__line map-grid__line--v1"></div>
+              <div class="map-grid__line map-grid__line--v2"></div>
+              <div class="map-grid__dot mg-d1"></div>
+              <div class="map-grid__dot mg-d2"></div>
+              <div class="map-grid__dot mg-d3"></div>
+            </div>
+            <div class="map-card__overlay">
+              <div class="map-pin" aria-hidden="true">
+                <svg viewBox="0 0 32 40" fill="none">
+                  <path d="M16 0C8.268 0 2 6.268 2 14c0 10.5 14 26 14 26S30 24.5 30 14C30 6.268 23.732 0 16 0z" fill="url(#pin-g)"/>
+                  <circle cx="16" cy="14" r="5" fill="white" opacity=".9"/>
+                  <defs>
+                    <linearGradient id="pin-g" x1="2" y1="0" x2="30" y2="40" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#c9251c"/>
+                      <stop offset="1" stop-color="#f3b23a"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <div class="map-label">
+                <strong>VNH Pharmaceuticals</strong>
+                <span>Genome Valley, Hyderabad, Telangana</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trust badges -->
+        <div class="trust-strip reveal-up">
+          <div class="trust-item">
+            <span class="trust-icon trust-icon--red">✦</span>
+            <span>WHO-GMP Certified</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon trust-icon--gold">✦</span>
+            <span>ISO Quality</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon trust-icon--red">✦</span>
+            <span>Doctor-First Values</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon trust-icon--gold">✦</span>
+            <span>24 hr Response</span>
+          </div>
+        </div>
+
+        <!-- Response promise -->
+        <div class="response-card reveal-up">
+          <div class="response-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <div class="response-card__body">
+            <strong>One Business Day Guarantee</strong>
+            <p>Our medical liaison team reviews every enquiry and responds with accurate, ethical information within one working day.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div>

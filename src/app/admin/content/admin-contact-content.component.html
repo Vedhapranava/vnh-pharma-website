@@ -1,0 +1,42 @@
+<section class="ce">
+  <header class="ce__head">
+    <h1 class="ce__title">Contact details</h1>
+    <a class="ce__btn ce__btn--sm" routerLink="/admin/dashboard">← Dashboard</a>
+  </header>
+  <nav class="ce__tabs">
+    <a routerLink="/admin/content/home">Home</a>
+    <a routerLink="/admin/content/about">About</a>
+    <a routerLink="/admin/content/contact">Contact</a>
+  </nav>
+  <p class="ce__hint">These values appear in the footer and on the contact page.</p>
+
+  <p class="ce__error" *ngIf="error()">{{ error() }}</p>
+  <p class="ce__notice" *ngIf="notice()">{{ notice() }}</p>
+  <p class="ce__muted" *ngIf="loading()">Loading…</p>
+
+  <form class="ce__form" *ngIf="!loading()" (ngSubmit)="save()">
+    <label class="ce__label" for="email">Email</label>
+    <input id="email" class="ce__input" name="email" [(ngModel)]="model['contact_email']" />
+
+    <label class="ce__label" for="pd">Phone (display)</label>
+    <input id="pd" class="ce__input" name="pd" [(ngModel)]="model['contact_phone_display']" placeholder="+91 92872 87287" />
+
+    <label class="ce__label" for="pt">Phone (tel link, digits)</label>
+    <input id="pt" class="ce__input" name="pt" [(ngModel)]="model['contact_phone_tel']" placeholder="+919287287287" />
+
+    <label class="ce__label" for="wa">WhatsApp link</label>
+    <input id="wa" class="ce__input" name="wa" [(ngModel)]="model['contact_whatsapp']" placeholder="https://wa.me/919287287287" />
+
+    <label class="ce__label" for="ac">Corporate office address</label>
+    <textarea id="ac" class="ce__input ce__textarea" name="ac" rows="2" [(ngModel)]="model['address_corporate']"></textarea>
+
+    <label class="ce__label" for="ad">Dispatch unit address</label>
+    <textarea id="ad" class="ce__input ce__textarea" name="ad" rows="2" [(ngModel)]="model['address_dispatch']"></textarea>
+
+    <div class="ce__actions">
+      <button class="ce__btn ce__btn--primary" type="submit" [disabled]="saving()">
+        {{ saving() ? 'Saving…' : 'Save contact details' }}
+      </button>
+    </div>
+  </form>
+</section>

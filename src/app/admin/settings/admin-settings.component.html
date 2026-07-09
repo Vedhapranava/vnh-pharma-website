@@ -1,0 +1,46 @@
+<section class="ce">
+  <header class="ce__head">
+    <h1 class="ce__title">Company settings</h1>
+    <a class="ce__btn ce__btn--sm" routerLink="/admin/dashboard">← Dashboard</a>
+  </header>
+  <p class="ce__hint">Company identity, footer text, social links and basic SEO meta.</p>
+
+  <p class="ce__error" *ngIf="error()">{{ error() }}</p>
+  <p class="ce__notice" *ngIf="notice()">{{ notice() }}</p>
+  <p class="ce__muted" *ngIf="loading()">Loading…</p>
+
+  <form class="ce__form" *ngIf="!loading()" (ngSubmit)="save()">
+    <label class="ce__label" for="cn">Company name</label>
+    <input id="cn" class="ce__input" name="cn" [(ngModel)]="model['company_name']" />
+
+    <label class="ce__label" for="ctg">Company tagline</label>
+    <input id="ctg" class="ce__input" name="ctg" [(ngModel)]="model['company_tagline']" />
+
+    <label class="ce__label" for="ft">Footer text</label>
+    <input id="ft" class="ce__input" name="ft" [(ngModel)]="model['footer_text']" />
+
+    <label class="ce__label" for="li">LinkedIn URL</label>
+    <input id="li" class="ce__input" name="li" [(ngModel)]="model['social_linkedin']" />
+
+    <label class="ce__label" for="ig">Instagram URL</label>
+    <input id="ig" class="ce__input" name="ig" [(ngModel)]="model['social_instagram']" />
+
+    <label class="ce__label" for="tw">Twitter / X URL</label>
+    <input id="tw" class="ce__input" name="tw" [(ngModel)]="model['social_twitter']" />
+
+    <label class="ce__label" for="yt">YouTube URL</label>
+    <input id="yt" class="ce__input" name="yt" [(ngModel)]="model['social_youtube']" />
+
+    <label class="ce__label" for="st">SEO title</label>
+    <input id="st" class="ce__input" name="st" [(ngModel)]="model['seo_title']" />
+
+    <label class="ce__label" for="sd">SEO description</label>
+    <textarea id="sd" class="ce__input ce__textarea" name="sd" rows="3" [(ngModel)]="model['seo_description']"></textarea>
+
+    <div class="ce__actions">
+      <button class="ce__btn ce__btn--primary" type="submit" [disabled]="saving()">
+        {{ saving() ? 'Saving…' : 'Save settings' }}
+      </button>
+    </div>
+  </form>
+</section>

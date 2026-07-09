@@ -1,131 +1,206 @@
-<header class="site-header" [class.scrolled]="isScrolled">
-  <div class="navbar-shell">
-    <div class="navbar-main">
-      <a routerLink="/" class="brand-logo" aria-label="VNH Pharmaceuticals Home">
-        <img src="assets/logo.jpg" alt="VNH Pharma logo" />
+<header
+  class="site-header"
+  [class.scrolled]="isScrolled"
+  [class.mobile-open]="mobileMenuOpen"
+>
+
+  <!-- ── Top accent line ─────────────────────────────── -->
+  <div class="header-accent" aria-hidden="true">
+    <div class="header-accent__bar"></div>
+  </div>
+
+  <!-- ── Primary bar ─────────────────────────────────── -->
+  <div class="navbar-main" role="navigation" aria-label="Primary navigation">
+    <div class="navbar-inner">
+
+      <!-- Brand Logo -->
+      <a
+        routerLink="/"
+        class="brand-logo"
+        aria-label="VNH Pharmaceuticals Home"
+        (click)="closeMobileMenu()"
+      >
+        <span class="brand-logo__aura"  aria-hidden="true"></span>
+        <span class="brand-logo__ring"  aria-hidden="true"></span>
+        <span class="brand-logo__pulse" aria-hidden="true"></span>
+        <span class="brand-logo__inner">
+          <img src="assets/logo.jpg" alt="VNH Pharmaceuticals" />
+          <span class="brand-logo__shine" aria-hidden="true"></span>
+        </span>
       </a>
 
-      <div class="nav-right-group">
-        <nav class="desktop-nav" aria-label="Main navigation">
-          <a
-            routerLink="/"
-            routerLinkActive="active-link"
-            [routerLinkActiveOptions]="{ exact: true }"
-            class="nav-link"
-          >
-            Home
-          </a>
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav" aria-label="Main navigation">
 
-          <a routerLink="/about" routerLinkActive="active-link" class="nav-link">
-            About
-          </a>
-
-          <a routerLink="/products" routerLinkActive="active-link" class="nav-link">
-            Products
-          </a>
-
-          <a
-            routerLink="/distributor-locator"
-            routerLinkActive="active-link"
-            class="nav-link"
-          >
-            Locate Distributor
-          </a>
-
-          <a routerLink="/careers" routerLinkActive="active-link" class="nav-link">
-            Careers
-          </a>
-        </nav>
-
-        <div class="nav-actions">
-          <a routerLink="/contact" class="contact-btn">Contact Us</a>
-
-          <button
-            class="menu-toggle"
-            type="button"
-            aria-label="Toggle navigation menu"
-            (click)="toggleMobileMenu()"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div class="marquee-strip">
-      <div class="marquee-track">
-        <span class="marquee-item">MNC Quality</span>
-        <span class="marquee-item">Economical Pricing</span>
-        <span class="marquee-item">Trusted Healthcare</span>
-        <span class="marquee-item">Baby Care Portfolio</span>
-        <span class="marquee-item">Nutraceutical Brands</span>
-        <span class="marquee-item">Quality-Driven Formulations</span>
-        <span class="marquee-item">VNH Pharmaceuticals</span>
-
-        <span class="marquee-item">MNC Quality</span>
-        <span class="marquee-item">Economical Pricing</span>
-        <span class="marquee-item">Trusted Healthcare</span>
-        <span class="marquee-item">Baby Care Portfolio</span>
-        <span class="marquee-item">Nutraceutical Brands</span>
-        <span class="marquee-item">Quality-Driven Formulations</span>
-        <span class="marquee-item">VNH Pharmaceuticals</span>
-      </div>
-    </div>
-
-    <div class="mobile-panel" [class.open]="mobileMenuOpen">
-      <nav class="mobile-nav" aria-label="Mobile navigation">
-        <a
-          routerLink="/"
-          routerLinkActive="active-link"
-          [routerLinkActiveOptions]="{ exact: true }"
-          class="mobile-link"
-          (click)="closeMobileMenu()"
-        >
-          Home
+        <a routerLink="/" routerLinkActive="active-link"
+           [routerLinkActiveOptions]="{ exact: true }" class="nav-link">
+          <span class="nav-link__label">Home</span>
+          <span class="nav-link__bar" aria-hidden="true"></span>
         </a>
 
-        <a
-          routerLink="/about"
-          routerLinkActive="active-link"
-          class="mobile-link"
-          (click)="closeMobileMenu()"
-        >
-          About
+        <a routerLink="/about" routerLinkActive="active-link" class="nav-link">
+          <span class="nav-link__label">About</span>
+          <span class="nav-link__bar" aria-hidden="true"></span>
         </a>
 
-        <a
-          routerLink="/products"
-          routerLinkActive="active-link"
-          class="mobile-link"
-          (click)="closeMobileMenu()"
-        >
-          Products
+        <a routerLink="/products" routerLinkActive="active-link" class="nav-link">
+          <span class="nav-link__label">Products</span>
+          <span class="nav-link__bar" aria-hidden="true"></span>
         </a>
 
-        <a
-          routerLink="/distributor-locator"
-          routerLinkActive="active-link"
-          class="mobile-link"
-          (click)="closeMobileMenu()"
-        >
-          Locate Distributor
+        <a routerLink="/locate-distributor" routerLinkActive="active-link" class="nav-link">
+          <span class="nav-link__label">Locate Distributor</span>
+          <span class="nav-link__bar" aria-hidden="true"></span>
         </a>
 
-        <a
-          routerLink="/careers"
-          routerLinkActive="active-link"
-          class="mobile-link"
-          (click)="closeMobileMenu()"
-        >
-          Careers
+        <a routerLink="/careers" routerLinkActive="active-link" class="nav-link">
+          <span class="nav-link__label">Careers</span>
+          <span class="nav-link__bar" aria-hidden="true"></span>
         </a>
 
-        <a routerLink="/contact" class="mobile-contact-btn" (click)="closeMobileMenu()">
-          Contact Us
-        </a>
       </nav>
+
+      <!-- Actions -->
+      <div class="nav-actions">
+
+        <a routerLink="/contact" class="contact-cta"
+           aria-label="Contact VNH Pharmaceuticals"
+           (click)="closeMobileMenu()">
+          <span class="contact-cta__label">Contact Us</span>
+          <span class="contact-cta__icon" aria-hidden="true">
+            <svg viewBox="0 0 20 20" fill="none">
+              <path d="M4 10h12M11 5l5 5-5 5"
+                stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="contact-cta__shimmer" aria-hidden="true"></span>
+        </a>
+
+        <button
+          type="button"
+          class="menu-toggle"
+          [class.is-active]="mobileMenuOpen"
+          [attr.aria-expanded]="mobileMenuOpen"
+          aria-label="Toggle navigation menu"
+          aria-controls="vnh-mobile-panel"
+          (click)="toggleMobileMenu()"
+        >
+          <span class="menu-toggle__bar menu-toggle__bar--top"></span>
+          <span class="menu-toggle__bar menu-toggle__bar--mid"></span>
+          <span class="menu-toggle__bar menu-toggle__bar--bot"></span>
+        </button>
+
+      </div>
     </div>
   </div>
+
+  <!-- ── Marquee strip ───────────────────────────────── -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-strip__fade marquee-strip__fade--left"></div>
+    <div class="marquee-track">
+      <span class="marquee-item" *ngFor="let item of marqueeTrack">
+        <span class="marquee-item__dot" aria-hidden="true"></span>
+        <span class="marquee-item__text">{{ item }}</span>
+      </span>
+    </div>
+    <div class="marquee-strip__fade marquee-strip__fade--right"></div>
+  </div>
+
+  <!-- ── Mobile panel ────────────────────────────────── -->
+  <div
+    id="vnh-mobile-panel"
+    class="mobile-panel"
+    [class.open]="mobileMenuOpen"
+    role="dialog"
+    aria-label="Mobile navigation"
+  >
+    <div class="mobile-panel__inner">
+
+      <div class="mobile-panel__prism" aria-hidden="true"></div>
+
+      <nav class="mobile-nav" aria-label="Mobile main navigation">
+
+        <a routerLink="/" routerLinkActive="active-link"
+           [routerLinkActiveOptions]="{ exact: true }"
+           class="mobile-link" (click)="closeMobileMenu()">
+          <span class="mobile-link__label">Home</span>
+          <span class="mobile-link__arrow" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"
+                stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+
+        <a routerLink="/about" routerLinkActive="active-link"
+           class="mobile-link" (click)="closeMobileMenu()">
+          <span class="mobile-link__label">About</span>
+          <span class="mobile-link__arrow" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"
+                stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+
+        <a routerLink="/products" routerLinkActive="active-link"
+           class="mobile-link" (click)="closeMobileMenu()">
+          <span class="mobile-link__label">Products</span>
+          <span class="mobile-link__arrow" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"
+                stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+
+        <a routerLink="/locate-distributor" routerLinkActive="active-link"
+           class="mobile-link" (click)="closeMobileMenu()">
+          <span class="mobile-link__label">Locate Distributor</span>
+          <span class="mobile-link__arrow" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"
+                stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+
+        <a routerLink="/careers" routerLinkActive="active-link"
+           class="mobile-link" (click)="closeMobileMenu()">
+          <span class="mobile-link__label">Careers</span>
+          <span class="mobile-link__arrow" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"
+                stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+
+        <a routerLink="/contact" class="mobile-cta" (click)="closeMobileMenu()">
+          <span>Contact Us</span>
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="mobile-cta__shimmer" aria-hidden="true"></span>
+        </a>
+
+      </nav>
+
+      <div class="mobile-trust" aria-hidden="true">
+        <span class="mobile-trust__badge">WHO-GMP</span>
+        <span class="mobile-trust__sep"></span>
+        <span class="mobile-trust__badge">ISO Certified</span>
+        <span class="mobile-trust__sep"></span>
+        <span class="mobile-trust__badge">Doctor-First</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Overlay -->
+  <div class="mobile-overlay" [class.show]="mobileMenuOpen"
+       (click)="closeMobileMenu()" aria-hidden="true"></div>
+
 </header>

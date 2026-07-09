@@ -1,0 +1,44 @@
+division_slug,category_slug,name,slug,composition
+pediatrics,syrups,RELASMO DS,relasmo-ds,Drotavereine 20 mg/5ml
+pediatrics,syrups,COLANESE PEG,colanese-peg,Polyethylene Glycol 3350 USP 13.125g
+pediatrics,syrups,COLANESE PEG,colanese-peg-2,Polyethylene Glycol 4000 IP 10g
+pediatrics,syrups,ZNPD,znpd,Zinc  Gluconate  20mg syrup/5ml
+pediatrics,syrups,DEFLANORM,deflanorm,Deflazacort  6mg/5ml
+pediatrics,syrups,LETMON,letmon,Levocetirizine DiHcl 2.5mg+Montelukast Sodium 4mg/5ml
+pediatrics,syrups,VYDROX,vydrox,Hydroxyzine  Hcl 10mg Solution/5ml
+pediatrics,syrups,WRNZ SYP,wrnz-syp,Phenylephrine Hcl 5mg+CPM2mg /5 ml syrup
+pediatrics,syrups,CEFDRIX,cefdrix,100-Cefpodoxime oral suspension IP 100mg/5ml
+pediatrics,syrups,CLAVRIX FORTE,clavrix-forte,Amoxycillin 400mg+ Clavulanic Acid 57mg/5ml
+pediatrics,syrups,OFLARIX -100,oflarix-100,Ofloxacin 100mg/5ml
+pediatrics,syrups,TUSNORM,tusnorm,"XT -Acebrophylline 50mg, Guaiphenesin 50mg, Terbutaline 12.5mg /5ml syrup"
+pediatrics,syrups,TUSNORM LS JR SYP,tusnorm-ls-jr-syp,Levosalbutamol0.25 mg + Ambroxol 7.5 mg+ Guaiphensin 12.5 mg/5ml
+pediatrics,syrups,TUSNORM L SYP,tusnorm-l-syp,Levosalbutamol  1mg + Ambroxol 30mg+ Guaiphensin 50mg/5ml syrup
+pediatrics,syrups,"PURNAS 24 100 ML SYP-Multivitamin,Multimineral with L",purnas-24-100-ml-syp-multivitamin-multimineral-with-l,Lysine
+pediatrics,syrups,"PURNAS 24 200 ML SYP-Multivitamin,Multimineral with L",purnas-24-200-ml-syp-multivitamin-multimineral-with-l,Lysine
+pediatrics,syrups,PARA DS,para-ds,Paracetamol 250mg/5ml oral suspension
+pediatrics,syrups,FINEMEF,finemef,100-Mefenamic Acid IP 100mg/5ml
+pediatrics,syrups,FINEMEF-P,finemef-p,Mefenamic Acid 50mg+Paracetamol 125mg/5ml
+pediatrics,syrups,FINEMEF -DS,finemef-ds,Mefenamic Acid 100mg+ Paracetamol 250mg/5ml
+pediatrics,syrups,Daily Solo Pediatric Syrup,daily-solo-pediatric-syrup,"Multivitamins, Multiminerals,Inositiol, L-Carnitine,  Taurine,DHA, Leutin, Natural Fruit Extract, Pre & Probiotics  Syrup"
+pediatrics,syrups,Tangiron Syrup,tangiron-syrup,Iron  & Folic Acid Syrup
+pediatrics,drops,D3 EIGHT,d3-eight,Cholecalciferol (Vitamin D3) 800 IU/ml
+pediatrics,drops,COLONEZ DF DROP,colonez-df-drop,Simethicone 40mg+Dill Oil 0.005ml+ Fennel oil 0.0007ml
+pediatrics,drops,FLORABACI ORAL SUS,florabaci-oral-sus,Bacillus clausii 2 billion spores /5ml
+pediatrics,drops,ZNPD 20 DROPS,znpd-20-drops,Zinc sulphate (monohydrate) 20 mg/ml
+pediatrics,drops,CLAVRIX DROPS,clavrix-drops,Amoxycillin 80mg+Clavulanic Acid 11.4mg/ml
+pediatrics,drops,ONDRIX,ondrix,Ondansetron 2mg/5ml
+pediatrics,drops,VYDROX DROPS,vydrox-drops,Hydroxyzine  Hcl 6mg/ml Drops
+pediatrics,drops,WRNZ DROPS,wrnz-drops,Phenylephrine Hcl 5mg+CPM 2mg / ml drops
+pediatrics,drops,TUSNORM LS DROPS,tusnorm-ls-drops,Levosalbutamol0.25 mg + Ambroxol 7.5 mg+ Guaiphensin 12.5 mg
+pediatrics,drops,"PURNAS 24 30 ML DROPS-Multivitamin,Multimineral with L",purnas-24-30-ml-drops-multivitamin-multimineral-with-l,Lysine
+pediatrics,drops,Daily Solo Advanced Pediatric Drops,daily-solo-advanced-pediatric-drops,"Multivitamins, Multiminerals, DHA, Leutin, Pre & Probiotics"
+pediatrics,drops,Tangiron Drops,tangiron-drops,"Iron 5 mg, Folic Acid 30 mcg, Vitamin B12  0.9 mcg/0.5 ml"
+pediatrics,nasal-ear-drops,LIDOPHEN EAR DROPS,lidophen-ear-drops,"Phenazone 4% w/v, Lidocaine 1% w/v"
+pediatrics,nasal-ear-drops,WRNZ -S  NASAL DROPS,wrnz-s-nasal-drops,Sodium Chloride 0.65 5 w/v
+pediatrics,nasal-ear-drops,WRNZ BABY NASAL DROPS,wrnz-baby-nasal-drops,Oxymetazoline 0.01% w/v
+pediatrics,nasal-ear-drops,WRNZ MINI NASAL DROPS,wrnz-mini-nasal-drops,Oxymetazoline 0.025% w/v
+pediatrics,nasal-ear-drops,WRNZ KID NASAL DROPS,wrnz-kid-nasal-drops,Oxymetazoline 0.05% w/v
+pediatrics,injectables,CEFDRIX,cefdrix-2,TZ INJ-Ceftriaxone 500mg & Tazobactum 62.5mg
+pediatrics,soap,Mimoza,mimoza,Baby Soap
+pediatrics,soap,Mimoza Baby Soap,mimoza-baby-soap,
+pediatrics,shampoo,Mimoza Shampoo,mimoza-shampoo,

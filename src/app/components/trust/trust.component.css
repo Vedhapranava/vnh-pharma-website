@@ -1,7 +1,7 @@
 .trust-section {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(160deg, var(--primary-dark), var(--primary));
+  background: linear-gradient(160deg, #FBFDFD 0%, #F7EECE 55%, #FDFAF2 100%);
   padding: 110px 64px;
   opacity: 0;
   transform: translateY(24px);
@@ -21,7 +21,7 @@
   top: -120px;
   right: -70px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(168, 212, 236, 0.18), transparent 70%);
+  background: radial-gradient(circle, rgba(215, 89, 19, 0.10), transparent 70%);
 }
 
 .trust-inner {
@@ -33,20 +33,21 @@
 }
 
 .section-tag-dark {
-  background: rgba(168, 212, 236, 0.12);
-  color: var(--accent-light);
+  background: rgba(215, 89, 19, 0.08);
+  color: #A84210;
+  border: 1px solid rgba(215, 89, 19, 0.20);
 }
 
 .trust-inner h2 {
   margin: 20px 0 16px;
   font-size: clamp(2rem, 4vw, 3.2rem);
-  color: #fff;
+  color: #2E2C2C;
 }
 
 .trust-inner > p {
   max-width: 760px;
   margin: 0 auto;
-  color: rgba(255, 255, 255, 0.68);
+  color: rgba(46, 44, 44, 0.65);
   line-height: 1.8;
 }
 
@@ -61,14 +62,17 @@
   text-align: left;
   padding: 26px;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(91, 163, 201, 0.2);
+  background: rgba(251, 253, 253, 0.85);
+  border: 1px solid rgba(215, 89, 19, 0.10);
+  box-shadow: 0 2px 16px rgba(46, 44, 44, 0.06);
   transition: all 0.3s ease;
 }
 
 .trust-card:hover {
-  background: rgba(255, 255, 255, 0.11);
+  background: rgba(251, 253, 253, 0.96);
   transform: translateY(-4px);
+  box-shadow: 0 10px 36px rgba(46, 44, 44, 0.10);
+  border-color: rgba(215, 89, 19, 0.22);
 }
 
 .trust-icon {
@@ -77,9 +81,10 @@
   display: grid;
   place-items: center;
   border-radius: 16px;
-  background: rgba(168, 212, 236, 0.12);
-  color: var(--accent-light);
+  background: rgba(215, 89, 19, 0.08);
+  color: #D75913;
   margin-bottom: 18px;
+  border: 1px solid rgba(215, 89, 19, 0.16);
 }
 
 .trust-icon svg {
@@ -88,13 +93,13 @@
 }
 
 .trust-card h3 {
-  color: #fff;
+  color: #2E2C2C;
   margin-bottom: 10px;
   font-size: 1.28rem;
 }
 
 .trust-card p {
-  color: rgba(255, 255, 255, 0.68);
+  color: rgba(46, 44, 44, 0.65);
   line-height: 1.8;
   margin: 0;
 }

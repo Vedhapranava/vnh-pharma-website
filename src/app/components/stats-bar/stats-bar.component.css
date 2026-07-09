@@ -1,5 +1,7 @@
 .stats-bar {
-  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  background: linear-gradient(135deg, #F7EECE 0%, #FBFDFD 100%);
+  border-top: 1px solid rgba(215, 89, 19, 0.12);
+  border-bottom: 1px solid rgba(215, 89, 19, 0.12);
   padding: 28px 64px;
   opacity: 0;
   transform: translateY(26px);
@@ -25,15 +27,18 @@
 }
 
 .stat-value {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Florentia', Georgia, serif;
   font-size: 3rem;
-  color: var(--accent-light);
   font-weight: 700;
+  background: linear-gradient(135deg, #A84210, #D75913, #D52D1E);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .stat-label {
   margin-top: 6px;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(46, 44, 44, 0.60);
   font-size: 0.92rem;
   letter-spacing: 0.04em;
 }
@@ -44,7 +49,7 @@
   right: 0;
   width: 1px;
   height: calc(100% - 32px);
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(215, 89, 19, 0.14);
 }
 
 @media (max-width: 640px) {

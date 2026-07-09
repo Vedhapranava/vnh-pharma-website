@@ -15,5 +15,10 @@ export const routes: Routes = [
   { path: 'careers', component: CareersPage },
   { path: 'contact', component: ContactPage },
   { path: 'locate-distributor', component: DistributorLocatorComponent },
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./admin/admin.routes').then((m) => m.ADMIN_ROUTES),
+  },
   { path: '**', redirectTo: '' }
 ];

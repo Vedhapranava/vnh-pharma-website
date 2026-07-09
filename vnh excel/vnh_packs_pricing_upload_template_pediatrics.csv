@@ -1,0 +1,44 @@
+division_slug,category_slug,product_name,product_slug,pack_label,pack_size_value,pack_size_unit,mrp,ptr,sku,sort_order,is_active
+pediatrics,syrups,RELASMO DS,relasmo-ds,Standard Pack,,,,,,1,True
+pediatrics,syrups,COLANESE PEG,colanese-peg,Standard Pack,,,,,,1,True
+pediatrics,syrups,COLANESE PEG,colanese-peg-2,Standard Pack,,,,,,1,True
+pediatrics,syrups,ZNPD,znpd,Standard Pack,,,,,,1,True
+pediatrics,syrups,DEFLANORM,deflanorm,Standard Pack,,,,,,1,True
+pediatrics,syrups,LETMON,letmon,Standard Pack,,,,,,1,True
+pediatrics,syrups,VYDROX,vydrox,Standard Pack,,,,,,1,True
+pediatrics,syrups,WRNZ SYP,wrnz-syp,Standard Pack,,,,,,1,True
+pediatrics,syrups,CEFDRIX,cefdrix,Standard Pack,,,,,,1,True
+pediatrics,syrups,CLAVRIX FORTE,clavrix-forte,Standard Pack,,,,,,1,True
+pediatrics,syrups,OFLARIX -100,oflarix-100,Standard Pack,,,,,,1,True
+pediatrics,syrups,TUSNORM,tusnorm,Standard Pack,,,,,,1,True
+pediatrics,syrups,TUSNORM LS JR SYP,tusnorm-ls-jr-syp,Standard Pack,,,,,,1,True
+pediatrics,syrups,TUSNORM L SYP,tusnorm-l-syp,Standard Pack,,,,,,1,True
+pediatrics,syrups,"PURNAS 24 100 ML SYP-Multivitamin,Multimineral with L",purnas-24-100-ml-syp-multivitamin-multimineral-with-l,Standard Pack,,,,,,1,True
+pediatrics,syrups,"PURNAS 24 200 ML SYP-Multivitamin,Multimineral with L",purnas-24-200-ml-syp-multivitamin-multimineral-with-l,Standard Pack,,,,,,1,True
+pediatrics,syrups,PARA DS,para-ds,Standard Pack,,,,,,1,True
+pediatrics,syrups,FINEMEF,finemef,Standard Pack,,,,,,1,True
+pediatrics,syrups,FINEMEF-P,finemef-p,Standard Pack,,,,,,1,True
+pediatrics,syrups,FINEMEF -DS,finemef-ds,Standard Pack,,,,,,1,True
+pediatrics,syrups,Daily Solo Pediatric Syrup,daily-solo-pediatric-syrup,Standard Pack,,,,,,1,True
+pediatrics,syrups,Tangiron Syrup,tangiron-syrup,Standard Pack,,,,,,1,True
+pediatrics,drops,D3 EIGHT,d3-eight,Standard Pack,,,,,,1,True
+pediatrics,drops,COLONEZ DF DROP,colonez-df-drop,Standard Pack,,,,,,1,True
+pediatrics,drops,FLORABACI ORAL SUS,florabaci-oral-sus,Standard Pack,,,,,,1,True
+pediatrics,drops,ZNPD 20 DROPS,znpd-20-drops,Standard Pack,,,,,,1,True
+pediatrics,drops,CLAVRIX DROPS,clavrix-drops,Standard Pack,,,,,,1,True
+pediatrics,drops,ONDRIX,ondrix,Standard Pack,,,,,,1,True
+pediatrics,drops,VYDROX DROPS,vydrox-drops,Standard Pack,,,,,,1,True
+pediatrics,drops,WRNZ DROPS,wrnz-drops,Standard Pack,,,,,,1,True
+pediatrics,drops,TUSNORM LS DROPS,tusnorm-ls-drops,Standard Pack,,,,,,1,True
+pediatrics,drops,"PURNAS 24 30 ML DROPS-Multivitamin,Multimineral with L",purnas-24-30-ml-drops-multivitamin-multimineral-with-l,Standard Pack,,,,,,1,True
+pediatrics,drops,Daily Solo Advanced Pediatric Drops,daily-solo-advanced-pediatric-drops,Standard Pack,,,,,,1,True
+pediatrics,drops,Tangiron Drops,tangiron-drops,Standard Pack,,,,,,1,True
+pediatrics,nasal-ear-drops,LIDOPHEN EAR DROPS,lidophen-ear-drops,Standard Pack,,,,,,1,True
+pediatrics,nasal-ear-drops,WRNZ -S  NASAL DROPS,wrnz-s-nasal-drops,Standard Pack,,,,,,1,True
+pediatrics,nasal-ear-drops,WRNZ BABY NASAL DROPS,wrnz-baby-nasal-drops,Standard Pack,,,,,,1,True
+pediatrics,nasal-ear-drops,WRNZ MINI NASAL DROPS,wrnz-mini-nasal-drops,Standard Pack,,,,,,1,True
+pediatrics,nasal-ear-drops,WRNZ KID NASAL DROPS,wrnz-kid-nasal-drops,Standard Pack,,,,,,1,True
+pediatrics,injectables,CEFDRIX,cefdrix-2,Standard Pack,,,,,,1,True
+pediatrics,soap,Mimoza,mimoza,Standard Pack,,,,,,1,True
+pediatrics,soap,Mimoza Baby Soap,mimoza-baby-soap,Standard Pack,,,,,,1,True
+pediatrics,shampoo,Mimoza Shampoo,mimoza-shampoo,Standard Pack,,,,,,1,True

@@ -1,0 +1,42 @@
+<section class="apg">
+  <header class="apg__head">
+    <div>
+      <h1 class="apg__title">Institutional Orders</h1>
+      <p class="apg__sub">Leads from institutional / bulk order requests.</p>
+    </div>
+  </header>
+
+  <p class="apg__error" *ngIf="error()">{{ error() }}</p>
+  <p class="apg__notice" *ngIf="notice()">{{ notice() }}</p>
+  <p class="apg__muted" *ngIf="loading()">Loading…</p>
+  <p class="apg__muted" *ngIf="!loading() && rows().length === 0">No institutional orders yet.</p>
+
+  <table class="apg__table" *ngIf="!loading() && rows().length > 0">
+    <thead>
+      <tr><th>Organization</th><th>Contact</th><th>Details</th><th>Status</th><th>Notes</th><th></th></tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let r of rows()">
+        <td>
+          <strong>{{ r['organization'] || '—' }}</strong>
+          <div class="apg__muted-sm" *ngIf="r['quantity']">Qty: {{ r['quantity'] }}</div>
+        </td>
+        <td>
+          <div *ngIf="r['contact_person']">{{ r['contact_person'] }}</div>
+          <div class="apg__muted-sm" *ngIf="r['email']">{{ r['email'] }}</div>
+          <div class="apg__muted-sm" *ngIf="r['phone']">{{ r['phone'] }}</div>
+        </td>
+        <td>{{ r['product_details'] }}</td>
+        <td>
+          <select class="apg__select" [(ngModel)]="r.status" [disabled]="busyId() === r.id">
+            <option *ngFor="let s of statuses" [ngValue]="s">{{ s }}</option>
+          </select>
+        </td>
+        <td class="apg__notes">
+          <textarea class="apg__textarea" rows="2" [(ngModel)]="r.admin_notes" placeholder="Internal notes…"></textarea>
+        </td>
+        <td><button class="apg__btn apg__btn--primary" type="button" [disabled]="busyId() === r.id" (click)="save(r)">Save</button></td>
+      </tr>
+    </tbody>
+  </table>
+</section>

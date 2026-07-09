@@ -1,51 +1,361 @@
-<footer class="footer">
-  <div class="footer-top">
-    <div class="footer-brand">
-      <div class="brand-line">
-        <span class="footer-logo">
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M12 2L19 5V11C19 15.2 16.3 19 12 21C7.7 19 5 15.2 5 11V5L12 2Z" stroke="currentColor" stroke-width="1.8" />
-            <path d="M9 11.5L11.2 13.7L15.5 9.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
+<footer class="ft-shell">
+
+  <!-- ══ AMBIENT CANVAS ════════════════════════════════ -->
+  <div class="ft-canvas" aria-hidden="true">
+    <div class="ft-blob ft-blob--gold"></div>
+    <div class="ft-blob ft-blob--red"></div>
+    <div class="ft-blob ft-blob--mid"></div>
+    <div class="ft-particle ft-particle--1"></div>
+    <div class="ft-particle ft-particle--2"></div>
+    <div class="ft-particle ft-particle--3"></div>
+    <div class="ft-particle ft-particle--4"></div>
+    <div class="ft-particle ft-particle--5"></div>
+    <svg class="ft-mol-bg" viewBox="0 0 320 200" fill="none" aria-hidden="true">
+      <circle cx="30"  cy="30"  r="5" stroke="currentColor" stroke-width="1" opacity=".12"/>
+      <circle cx="160" cy="18"  r="3" stroke="currentColor" stroke-width="1" opacity=".10"/>
+      <circle cx="290" cy="55"  r="6" stroke="currentColor" stroke-width="1" opacity=".09"/>
+      <circle cx="80"  cy="160" r="4" stroke="currentColor" stroke-width="1" opacity=".11"/>
+      <circle cx="240" cy="170" r="5" stroke="currentColor" stroke-width="1" opacity=".09"/>
+      <line x1="35"  y1="30"  x2="157" y2="20"  stroke="currentColor" stroke-width=".7" opacity=".08"/>
+      <line x1="163" y1="20"  x2="284" y2="53"  stroke="currentColor" stroke-width=".7" opacity=".07"/>
+      <line x1="84"  y1="160" x2="235" y2="168" stroke="currentColor" stroke-width=".7" opacity=".07"/>
+    </svg>
+  </div>
+
+  <!-- ══ PRE-FOOTER CTA BAND ═══════════════════════════ -->
+  <div class="ft-cta-band">
+    <div class="ft-cta-band__glow" aria-hidden="true"></div>
+    <div class="ft-cta-band__inner">
+      <div class="ft-cta-band__content">
+        <span class="ft-eyebrow">
+          <span class="ft-eyebrow__line" aria-hidden="true"></span>
+          VNH Pharmaceuticals
         </span>
-        <h3>VNH Pharmaceuticals</h3>
+        <h2 class="ft-cta-band__title">
+          Quality Healthcare.<br>
+          <em>Trusted Relationships.</em>
+        </h2>
+        <p class="ft-cta-band__sub">
+          Delivering trusted pharmaceutical and nutraceutical solutions with ethics,
+          quality, and long-term healthcare commitment.
+        </p>
+        <div class="ft-cta-band__actions">
+          <a routerLink="/contact" class="ft-btn ft-btn--primary">
+            <span class="ft-btn__shimmer" aria-hidden="true"></span>
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Connect With VNH</span>
+          </a>
+          <a routerLink="/products" class="ft-btn ft-btn--ghost">
+            <span>Explore Products</span>
+          </a>
+        </div>
       </div>
-      <p>
-        Premium pharmaceutical presentation built on healthcare trust, modern market positioning,
-        and long-term brand confidence.
-      </p>
-    </div>
-
-    <div>
-      <h4>Company</h4>
-      <a routerLink="/">Home</a>
-      <a routerLink="/about">About</a>
-      <a routerLink="/careers">Careers</a>
-      <a routerLink="/contact">Contact</a>
-    </div>
-
-    <div>
-      <h4>Products</h4>
-      <a routerLink="/products">General</a>
-      <a routerLink="/products">Pediatrics</a>
-      <a routerLink="/products">Ortho</a>
-      <a routerLink="/products">Uro</a>
-    </div>
-
-    <div>
-      <h4>Contact</h4>
-      <p>Genome Valley, Hyderabad</p>
-      <p>Mancherial Dispatch Unit</p>
-      <p>info@vnhpharma.com</p>
-      <p>+91 92872 87287</p>
+      <div class="ft-cta-band__visual" aria-hidden="true">
+        <div class="ft-cta-ring ft-cta-ring--1"></div>
+        <div class="ft-cta-ring ft-cta-ring--2"></div>
+        <div class="ft-cta-ring ft-cta-ring--3"></div>
+        <div class="ft-cta-center">
+          <svg viewBox="0 0 60 60" fill="none">
+            <path d="M30 10a20 20 0 1 0 0 40 20 20 0 0 0 0-40z" stroke="url(#cta-g)" stroke-width="1.5"/>
+            <path d="M30 20v10l6 6" stroke="url(#cta-g)" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M20 30h4M36 30h4M30 20v-4M30 44v-4" stroke="url(#cta-g)" stroke-width="1" stroke-linecap="round" opacity=".5"/>
+            <defs>
+              <linearGradient id="cta-g" x1="10" y1="10" x2="50" y2="50" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#c9251c"/>
+                <stop offset="1" stop-color="#f3b23a"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="footer-bottom">
-    <span>© 2026 VNH Pharmaceuticals. All rights reserved.</span>
-    <div class="policy-links">
-      <a routerLink="/contact">Privacy Policy</a>
-      <a routerLink="/contact">Terms</a>
+  <!-- ══ GRADIENT DIVIDER ══════════════════════════════ -->
+  <div class="ft-divider" aria-hidden="true">
+    <div class="ft-divider__line"></div>
+  </div>
+
+  <!-- ══ MAIN FOOTER BODY ══════════════════════════════ -->
+  <div class="ft-body">
+    <div class="ft-body__inner">
+
+      <!-- Col 1 — Brand -->
+      <div class="ft-brand">
+
+        <a routerLink="/" class="ft-logo" aria-label="VNH Pharmaceuticals Home">
+          <span class="ft-logo__aura"  aria-hidden="true"></span>
+          <span class="ft-logo__ring"  aria-hidden="true"></span>
+          <span class="ft-logo__pulse" aria-hidden="true"></span>
+          <span class="ft-logo__inner">
+            <img src="assets/logo.jpg" alt="VNH Pharmaceuticals" />
+            <span class="ft-logo__shine" aria-hidden="true"></span>
+          </span>
+        </a>
+
+        <h3 class="ft-brand__name">VNH Pharmaceuticals</h3>
+        <p class="ft-brand__tagline">Vaidhyo Narayano Hari</p>
+        <p class="ft-brand__stmt">
+          Premium pharmaceutical and nutraceutical solutions built on healthcare trust,
+          scientific integrity, and long-term brand excellence.
+        </p>
+
+        <!-- Trust badges inline -->
+        <div class="ft-brand__badges">
+          <span class="ft-brand__badge ft-brand__badge--red">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M8 2l2 4h4.5l-3.6 2.6 1.4 4.4L8 10.8l-4.3 2.2 1.4-4.4L1.5 6H6z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
+            WHO-GMP
+          </span>
+          <span class="ft-brand__badge ft-brand__badge--gold">
+            <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            ISO Certified
+          </span>
+          <span class="ft-brand__badge ft-brand__badge--red">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M8 2l4 1.8V8c0 2.8-1.7 5-4 6.2C5.7 13 4 10.8 4 8V3.8z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
+            Ethical Healthcare
+          </span>
+          <span class="ft-brand__badge ft-brand__badge--gold">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M8 2a6 6 0 1 0 0 12A6 6 0 0 0 8 2z" stroke="currentColor" stroke-width="1.2"/><path d="M8 5v3.5l2 2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+            Doctor-First
+          </span>
+        </div>
+
+        <!-- Social -->
+        <div class="ft-social" role="list" aria-label="Social media links">
+          <a [href]="socialLinkedin" target="_blank" class="ft-social__link" role="listitem" aria-label="LinkedIn" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="1.8"/>
+            </svg>
+          </a>
+          <a [href]="socialInstagram" target="_blank" class="ft-social__link" role="listitem" aria-label="Instagram" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+            </svg>
+          </a>
+          <a [href]="socialTwitter" target="_blank" class="ft-social__link" role="listitem" aria-label="Twitter / X" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 20L20 4M4 4l16 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </a>
+          <a [href]="socialYoutube" target="_blank" class="ft-social__link" role="listitem" aria-label="YouTube" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M22.5 6.4A2.8 2.8 0 0 0 20.5 4.4C18.9 4 12 4 12 4s-6.9 0-8.5.4A2.8 2.8 0 0 0 1.5 6.4 29 29 0 0 0 1 12a29 29 0 0 0 .5 5.6A2.8 2.8 0 0 0 3.5 19.6C5.1 20 12 20 12 20s6.9 0 8.5-.4a2.8 2.8 0 0 0 2-2A29 29 0 0 0 23 12a29 29 0 0 0-.5-5.6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              <polygon points="10 15 15 12 10 9" fill="currentColor"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Col 2 — Quick Links -->
+      <div class="ft-col">
+        <h4 class="ft-col__head">
+          <span class="ft-col__head-bar" aria-hidden="true"></span>
+          Quick Links
+        </h4>
+        <nav class="ft-links" aria-label="Quick navigation">
+          <a routerLink="/"                   class="ft-link"><span class="ft-link__text">Home</span><span class="ft-link__bar" aria-hidden="true"></span></a>
+          <a routerLink="/about"              class="ft-link"><span class="ft-link__text">About VNH</span><span class="ft-link__bar" aria-hidden="true"></span></a>
+          <a routerLink="/products"           class="ft-link"><span class="ft-link__text">Our Products</span><span class="ft-link__bar" aria-hidden="true"></span></a>
+          <a routerLink="/locate-distributor" class="ft-link"><span class="ft-link__text">Locate Distributor</span><span class="ft-link__bar" aria-hidden="true"></span></a>
+          <a routerLink="/careers"            class="ft-link"><span class="ft-link__text">Careers</span><span class="ft-link__bar" aria-hidden="true"></span></a>
+          <a routerLink="/contact"            class="ft-link"><span class="ft-link__text">Contact Us</span><span class="ft-link__bar" aria-hidden="true"></span></a>
+        </nav>
+      </div>
+
+      <!-- Col 3 — Products -->
+      <div class="ft-col">
+        <h4 class="ft-col__head">
+          <span class="ft-col__head-bar" aria-hidden="true"></span>
+          Products
+        </h4>
+        <nav class="ft-links" aria-label="Product categories">
+          <a routerLink="/products" class="ft-link"><span class="ft-link__text">Nutraceuticals</span><span class="ft-link__bar" aria-hidden="true"></span></a>
+          <a routerLink="/products" class="ft-link"><span class="ft-link__text">Pediatric Range</span><span class="ft-link__bar" aria-hidden="true"></span></a>
+          <a routerLink="/products" class="ft-link"><span class="ft-link__text">General Range</span><span class="ft-link__bar" aria-hidden="true"></span></a>
+          <a routerLink="/products" class="ft-link"><span class="ft-link__text">Healthcare Solutions</span><span class="ft-link__bar" aria-hidden="true"></span></a>
+          <a routerLink="/products" class="ft-link"><span class="ft-link__text">Premium Wellness Products</span><span class="ft-link__bar" aria-hidden="true"></span></a>
+        </nav>
+
+        <div class="ft-mfg-block">
+          <h5 class="ft-mfg-block__head">Manufacturing Partners</h5>
+          <div class="ft-partners">
+            <div class="ft-partner"><span class="ft-partner__dot" aria-hidden="true"></span><span class="ft-partner__name">Akums</span></div>
+            <div class="ft-partner"><span class="ft-partner__dot" aria-hidden="true"></span><span class="ft-partner__name">Swiss Garnier</span></div>
+            <div class="ft-partner"><span class="ft-partner__dot" aria-hidden="true"></span><span class="ft-partner__name">Tirupati Lifesciences</span></div>
+            <div class="ft-partner"><span class="ft-partner__dot" aria-hidden="true"></span><span class="ft-partner__name">Unique Biotech</span></div>
+            <div class="ft-partner"><span class="ft-partner__dot" aria-hidden="true"></span><span class="ft-partner__name">Eskag Pharma</span></div>
+          </div>
+          <div class="ft-velgen">
+            <span class="ft-velgen__label">Technical Support by</span>
+            <a href="https://velgenpharma.com" target="_blank" rel="noopener noreferrer" class="ft-velgen__link" aria-label="Velgen Pharma (opens in new tab)">
+              <span>Velgen Pharma</span>
+              <svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Col 4 — Contact -->
+      <div class="ft-col">
+        <h4 class="ft-col__head">
+          <span class="ft-col__head-bar" aria-hidden="true"></span>
+          Contact
+        </h4>
+        <div class="ft-contact-list">
+
+          <!-- Corporate Office -->
+          <div class="ft-contact-item">
+            <span class="ft-contact-item__icon ft-contact-item__icon--red" aria-hidden="true">
+              <svg viewBox="0 0 20 20" fill="none">
+                <rect x="3" y="4" width="14" height="13" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M7 17V10h6v7M7 7h.01M10 7h.01M13 7h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <div class="ft-contact-item__content">
+              <span class="ft-contact-item__label">Corporate Office</span>
+              <span>Building Cronies, Plot No. 4C.MN.SC,</span>
+              <span>Biotech Park, Genome Valley,</span>
+              <span>Hyderabad – 500078</span>
+            </div>
+          </div>
+
+          <!-- Dispatch Unit -->
+          <div class="ft-contact-item">
+            <span class="ft-contact-item__icon ft-contact-item__icon--gold" aria-hidden="true">
+              <svg viewBox="0 0 20 20" fill="none">
+                <path d="M1 3h11v11H1z" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M12 7h3l3 4v3h-6V7z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                <circle cx="4.5" cy="15.5" r="1.5" stroke="currentColor" stroke-width="1.2"/>
+                <circle cx="15.5" cy="15.5" r="1.5" stroke="currentColor" stroke-width="1.2"/>
+              </svg>
+            </span>
+            <div class="ft-contact-item__content">
+              <span class="ft-contact-item__label">Dispatch Unit</span>
+              <span>D.No. 4-125/1-1,</span>
+              <span>Janmabhoomi Nagar,</span>
+              <span>Mancherial – 504208</span>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="ft-contact-item">
+            <span class="ft-contact-item__icon ft-contact-item__icon--red" aria-hidden="true">
+              <svg viewBox="0 0 20 20" fill="none">
+                <rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M2 7l8 5 8-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <div class="ft-contact-item__content">
+              <span class="ft-contact-item__label">Email</span>
+              <a [href]="'mailto:' + contactEmail" class="ft-contact-link">{{ contactEmail }}</a>
+            </div>
+          </div>
+
+          <!-- Phone -->
+          <div class="ft-contact-item">
+            <span class="ft-contact-item__icon ft-contact-item__icon--gold" aria-hidden="true">
+              <svg viewBox="0 0 20 20" fill="none">
+                <path d="M5.4 8.8c1.2 2.4 3.2 4.3 5.6 5.5l1.9-1.9c.2-.2.5-.3.8-.2 1 .3 2 .5 3 .5.5 0 .8.3.8.8V17c0 .5-.3.8-.8.8C8.1 17.8 2 11.7 2 4.2c0-.5.3-.8.8-.8H6c.5 0 .8.3.8.8 0 1.1.2 2.1.5 3 .1.3 0 .6-.2.8L5.4 8.8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <div class="ft-contact-item__content">
+              <span class="ft-contact-item__label">Call / WhatsApp</span>
+              <a [href]="'tel:' + contactPhoneTel" class="ft-contact-link">{{ contactPhoneDisplay }}</a>
+              <a [href]="contactWhatsapp" target="_blank" rel="noopener noreferrer" class="ft-whatsapp-link">
+                <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M11.6 9.6c-.2-.1-1.2-.6-1.4-.6-.2-.1-.3-.1-.5.1-.1.2-.5.6-.6.8-.1.1-.2.2-.4.1-.2-.1-.9-.3-1.7-1-.6-.5-1-1.2-1.1-1.4-.1-.2 0-.3.1-.4l.3-.4c.1-.1.1-.2.2-.3V6.4c-.1-.2-.4-1-.6-1.5-.2-.3-.3-.3-.5-.3h-.4c-.1 0-.3 0-.5.2C6 5 5.6 5.5 5.6 6.5s.7 2 .8 2.1c.1.1 1.4 2.2 3.5 3 1.2.5 1.7.5 2.3.4.4-.1 1.2-.5 1.4-1 .2-.4.2-.8.1-.9-.1-.1-.2-.2-.4-.3-.1 0-.5-.2-.7-.2z"/><path d="M8 0C3.6 0 0 3.6 0 8c0 1.4.4 2.8 1.1 4L0 16l4.1-1.1A7.9 7.9 0 0 0 8 16c4.4 0 8-3.6 8-8S12.4 0 8 0zm0 14.5c-1.3 0-2.5-.4-3.5-.9l-.2-.1-2.6.7.7-2.5-.2-.2C1.6 10.5 1.5 9.3 1.5 8c0-3.6 2.9-6.5 6.5-6.5S14.5 4.4 14.5 8s-2.9 6.5-6.5 6.5z"/></svg>
+                Chat on WhatsApp
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </div>
+
+  <!-- ══ TRUST BADGES STRIP ════════════════════════════ -->
+  <div class="ft-trust-strip">
+    <div class="ft-trust-strip__inner">
+
+      <div class="ft-trust-badge">
+        <span class="ft-trust-badge__icon" aria-hidden="true">
+          <svg viewBox="0 0 18 18" fill="none"><path d="M9 2l2.5 4.5L17 7.5l-4 3.9L14 17 9 14.5 4 17l1-5.6L1 7.5l5.5-1z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+        </span>
+        <span>WHO-GMP Certified</span>
+      </div>
+
+      <span class="ft-trust-sep" aria-hidden="true"></span>
+
+      <div class="ft-trust-badge">
+        <span class="ft-trust-badge__icon" aria-hidden="true">
+          <svg viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.4"/><path d="M5.5 9l2.5 2.5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span>ISO Certified</span>
+      </div>
+
+      <span class="ft-trust-sep" aria-hidden="true"></span>
+
+      <div class="ft-trust-badge">
+        <span class="ft-trust-badge__icon" aria-hidden="true">
+          <svg viewBox="0 0 18 18" fill="none"><path d="M9 2l5.5 2.2V9c0 3.7-2.3 6.6-5.5 8-3.2-1.4-5.5-4.3-5.5-8V4.2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+        </span>
+        <span>Ethical Healthcare</span>
+      </div>
+
+      <span class="ft-trust-sep" aria-hidden="true"></span>
+
+      <div class="ft-trust-badge">
+        <span class="ft-trust-badge__icon" aria-hidden="true">
+          <svg viewBox="0 0 18 18" fill="none"><path d="M9 2a7 7 0 1 0 0 14A7 7 0 0 0 9 2z" stroke="currentColor" stroke-width="1.4"/><path d="M9 5.5v4l2.5 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </span>
+        <span>Doctor-First Approach</span>
+      </div>
+
+      <span class="ft-trust-sep" aria-hidden="true"></span>
+
+      <div class="ft-trust-badge">
+        <span class="ft-trust-badge__icon" aria-hidden="true">
+          <svg viewBox="0 0 18 18" fill="none"><rect x="2" y="2" width="14" height="14" rx="3" stroke="currentColor" stroke-width="1.4"/><path d="M6 9h6M9 6v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </span>
+        <span>20+ Years of Experience</span>
+      </div>
+
+      <span class="ft-trust-sep" aria-hidden="true"></span>
+
+      <div class="ft-trust-badge">
+        <span class="ft-trust-badge__icon" aria-hidden="true">
+          <svg viewBox="0 0 18 18" fill="none"><path d="M9 2L11 7h5.5l-4.5 3.3 1.7 5.2L9 12.5l-4.7 3 1.7-5.2L1.5 7H7z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+        </span>
+        <span>82+ Products</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ COPYRIGHT BAR ═════════════════════════════════ -->
+  <div class="ft-bottom">
+    <div class="ft-bottom__sep" aria-hidden="true">
+      <div class="ft-bottom__sep-line"></div>
+    </div>
+    <div class="ft-bottom__inner">
+      <span class="ft-bottom__copy">© 2026 VNH Pharmaceuticals. All rights reserved.</span>
+      <span class="ft-bottom__tagline" aria-hidden="true">
+        Designed for ethical healthcare excellence.
+      </span>
+      <div class="ft-bottom__links">
+        <a routerLink="/contact" class="ft-bottom__link">Privacy Policy</a>
+        <span class="ft-bottom__dot" aria-hidden="true"></span>
+        <a routerLink="/contact" class="ft-bottom__link">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+
 </footer>

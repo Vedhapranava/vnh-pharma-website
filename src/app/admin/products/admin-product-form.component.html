@@ -1,0 +1,57 @@
+<section class="apf">
+  <header class="apf__head">
+    <h1 class="apf__title">{{ isEdit() ? 'Edit product' : 'New product' }}</h1>
+    <a class="apf__back" routerLink="/admin/products">← Back to products</a>
+  </header>
+
+  <p class="apf__error" *ngIf="error()">{{ error() }}</p>
+  <p class="apf__muted" *ngIf="loading()">Loading…</p>
+
+  <form class="apf__form" *ngIf="!loading()" (ngSubmit)="onSubmit()">
+    <label class="apf__label" for="name">Name *</label>
+    <input id="name" class="apf__input" name="name" [(ngModel)]="name" (input)="onNameInput()" required />
+
+    <label class="apf__label" for="slug">Slug *</label>
+    <input id="slug" class="apf__input" name="slug" [(ngModel)]="slug" (input)="onSlugInput()" required />
+    <small class="apf__hint">Used in the public URL: /products/&lt;division&gt;/&lt;slug&gt;</small>
+
+    <label class="apf__label" for="division">Division *</label>
+    <select id="division" class="apf__input" name="division" [(ngModel)]="divisionId" required>
+      <option value="">— Select division —</option>
+      <option *ngFor="let d of divisions()" [ngValue]="d.id">{{ d.name }}</option>
+    </select>
+
+    <ng-container *ngIf="categoriesAvailable()">
+      <label class="apf__label" for="category">Category</label>
+      <select id="category" class="apf__input" name="category" [(ngModel)]="categoryId">
+        <option value="">— None —</option>
+        <option *ngFor="let c of categories()" [ngValue]="c.id">{{ c.name }}</option>
+      </select>
+    </ng-container>
+
+    <label class="apf__label" for="shortDesc">Short description</label>
+    <input id="shortDesc" class="apf__input" name="shortDesc" [(ngModel)]="shortDesc" />
+
+    <label class="apf__label" for="longDesc">Long description</label>
+    <textarea id="longDesc" class="apf__input apf__textarea" name="longDesc" rows="4" [(ngModel)]="longDesc"></textarea>
+
+    <label class="apf__label" for="composition">Composition</label>
+    <textarea id="composition" class="apf__input apf__textarea" name="composition" rows="3" [(ngModel)]="composition"></textarea>
+    <small class="apf__hint">Separate items with commas, semicolons, or new lines.</small>
+
+    <label class="apf__label" for="sortOrder">Sort order</label>
+    <input id="sortOrder" class="apf__input apf__input--sm" type="number" name="sortOrder" [(ngModel)]="sortOrder" />
+
+    <label class="apf__check">
+      <input type="checkbox" name="isActive" [(ngModel)]="isActive" />
+      Active (visible on the public website)
+    </label>
+
+    <div class="apf__actions">
+      <button class="apf__btn apf__btn--primary" type="submit" [disabled]="saving()">
+        {{ saving() ? 'Saving…' : (isEdit() ? 'Save changes' : 'Create product') }}
+      </button>
+      <a class="apf__btn" routerLink="/admin/products">Cancel</a>
+    </div>
+  </form>
+</section>

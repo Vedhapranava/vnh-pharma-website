@@ -1,186 +1,242 @@
-<section class="hero" [class.hero--ready]="ready">
+<section class="hero" [class.hero--ready]="ready" [class.hero--video]="videoActive">
+  <div class="hero__bg" aria-hidden="true">
+    <div
+      class="hero__bg-blob hero__bg-blob--red"
+      [style.transform]="'translate(' + (parallaxX * -16) + 'px,' + (parallaxY * -10) + 'px)'"
+    ></div>
 
-  <!-- ═══════════════════════════════════════════════
-       LAYER 0 — Ambient canvas (blobs + grid)
-  ════════════════════════════════════════════════ -->
-  <div class="hero__canvas" aria-hidden="true">
+    <div
+      class="hero__bg-blob hero__bg-blob--gold"
+      [style.transform]="'translate(' + (parallaxX * 12) + 'px,' + (parallaxY * 8) + 'px)'"
+    ></div>
 
-    <!-- Floating gradient blobs — driven by CSS keyframes -->
-    <div class="blob blob--a"
-      [style.transform]="'translate(' + (parallaxX * -18) + 'px,' + (parallaxY * -14) + 'px)'">
+    <div
+      class="hero__bg-blob hero__bg-blob--cream"
+      [style.transform]="'translate(' + (parallaxX * -8) + 'px,' + (parallaxY * 12) + 'px)'"
+    ></div>
+
+    <div class="hero__bg-grid"></div>
+
+    <div class="hero__particles" aria-hidden="true">
+      <span
+        class="hero__particle"
+        *ngFor="let p of particles"
+        [style.--p-x]="p.x + '%'"
+        [style.--p-delay]="p.delay + 's'"
+        [style.--p-duration]="p.duration + 's'"
+        [style.--p-size]="p.size + 'px'"
+        [style.--p-hue]="p.hue"
+      ></span>
     </div>
-    <div class="blob blob--b"
-      [style.transform]="'translate(' + (parallaxX * 12) + 'px,' + (parallaxY * 10) + 'px)'">
-    </div>
-    <div class="blob blob--c"
-      [style.transform]="'translate(' + (parallaxX * -8) + 'px,' + (parallaxY * 16) + 'px)'">
-    </div>
-
-    <!-- Dot-grid overlay -->
-    <div class="hero__grid"></div>
-
-    <!-- Horizon line glow -->
-    <div class="hero__glow-line"></div>
   </div>
 
-  <!-- ═══════════════════════════════════════════════
-       LAYER 1 — Main layout
-  ════════════════════════════════════════════════ -->
+  <div class="hero__video-wrap" *ngIf="videoActive" aria-hidden="true">
+    <video
+      class="hero__video"
+      [class.is-ready]="videoLoaded"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      [poster]="videoPoster"
+      (loadeddata)="onVideoLoaded()"
+      (error)="onVideoError()"
+    >
+      <source [src]="videoSrc" type="video/mp4" />
+    </video>
+    <div class="hero__video-veil"></div>
+  </div>
+
   <div class="hero__shell">
-
-    <!-- ─── LEFT COLUMN — Copy ───────────────────── -->
     <div class="hero__copy">
-
-      <!-- Eyebrow -->
       <div class="hero__eyebrow">
-        <span class="eyebrow__pulse"></span>
-        <span class="eyebrow__text">Pharmaceutical Excellence Since 2006</span>
+        <span class="hero__eyebrow-pulse" aria-hidden="true"></span>
+        <span class="hero__eyebrow-text">Pharmaceutical Excellence Since 2006</span>
       </div>
 
-      <!-- Headline -->
       <h1 class="hero__headline">
-        <span class="headline__line headline__line--1">Precision.</span>
-        <span class="headline__line headline__line--2">Trust.</span>
-        <span class="headline__line headline__line--3">
-          <em class="headline__accent">Healthcare.</em>
-        </span>
+        <span class="hero__hl-1">{{ heroLine1 }}</span>
+        <span class="hero__hl-2" *ngIf="heroLine2">{{ heroLine2 }}</span>
       </h1>
 
-      <!-- Sub-copy -->
       <p class="hero__sub">
-        VNH Pharmaceuticals delivers MNC-grade quality at franchise
-        pricing — built on doctor-first values and 18 years of
-        continuous market confidence.
+        {{ heroSubtitle }}
       </p>
 
-      <!-- CTAs -->
       <div class="hero__actions">
-        <a routerLink="/products" class="cta cta--primary">
-          <span class="cta__label">Explore Portfolio</span>
-          <span class="cta__icon" aria-hidden="true">
+        <a routerLink="/products" class="hero__btn hero__btn--primary">
+          <span class="hero__btn-label">{{ heroCta }}</span>
+          <span class="hero__btn-icon" aria-hidden="true">
             <svg viewBox="0 0 20 20" fill="none">
-              <path d="M4 10h12M11 5l5 5-5 5"
-                stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round"/>
+              <path
+                d="M4 10h12M11 5l5 5-5 5"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
             </svg>
           </span>
-          <span class="cta__glow" aria-hidden="true"></span>
+          <span class="hero__btn-shimmer" aria-hidden="true"></span>
         </a>
 
-        <a routerLink="/contact" class="cta cta--ghost">
-          <span class="cta__label">Contact VNH</span>
+        <a routerLink="/contact" class="hero__btn hero__btn--ghost">
+          <span class="hero__btn-label">Contact VNH</span>
+          <span class="hero__btn-icon" aria-hidden="true">
+            <svg viewBox="0 0 20 20" fill="none">
+              <path
+                d="M3 8l7-5 7 5v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8z"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
         </a>
       </div>
 
-      <!-- Trust row -->
-      <div class="hero__trust">
-        <div class="trust__item" *ngFor="let s of stats">
-          <span class="trust__val">{{ s.value }}</span>
-          <span class="trust__lbl">{{ s.label }}</span>
-        </div>
+      <div class="hero__trust-row">
+        <span class="hero__trust-chip">
+          <span class="hero__trust-dot"></span>
+          20+ Years of Experience
+        </span>
+        <span class="hero__trust-chip">
+          <span class="hero__trust-dot"></span>
+          WHO-GMP Quality
+        </span>
+        <span class="hero__trust-chip">
+          <span class="hero__trust-dot"></span>
+          Doctor-First Trust
+        </span>
+        <span class="hero__trust-chip">
+          <span class="hero__trust-dot"></span>
+          Science. Quality. Trust.
+        </span>
       </div>
-
     </div>
 
-    <!-- ─── RIGHT COLUMN — Glass card ───────────── -->
-    <div class="hero__visual"
-      [style.transform]="'perspective(900px) rotateY(' + (parallaxX * -2.5) + 'deg) rotateX(' + (parallaxY * 1.8) + 'deg)'">
+    <div
+      class="hero__visual"
+      [style.transform]="'perspective(1000px) rotateY(' + (parallaxX * -2.2) + 'deg) rotateX(' + (parallaxY * 1.2) + 'deg)'"
+    >
+      <div class="hero__visual-ring hero__visual-ring--outer" aria-hidden="true"></div>
+      <div class="hero__visual-ring hero__visual-ring--inner" aria-hidden="true"></div>
+      <div class="hero__visual-halo" aria-hidden="true"></div>
 
-      <!-- Outer glow ring -->
-      <div class="visual__ring visual__ring--outer" aria-hidden="true"></div>
-      <div class="visual__ring visual__ring--inner" aria-hidden="true"></div>
+      <div class="hero__glass-card">
+        <div class="hero__glass-shine" aria-hidden="true"></div>
 
-      <!-- Main glass panel -->
-      <div class="glass-card">
-
-        <!-- Glass shine overlay -->
-        <div class="glass-card__shine" aria-hidden="true"></div>
-
-        <!-- Titlebar -->
-        <div class="glass-card__bar">
-          <span class="bar__dot bar__dot--r"></span>
-          <span class="bar__dot bar__dot--a"></span>
-          <span class="bar__dot bar__dot--g"></span>
-          <span class="bar__title">VNH · Product Portfolio</span>
-          <span class="bar__live">
-            <span class="live__dot"></span>Live
+        <div class="hero__card-bar">
+          <span class="hero__dot hero__dot--red" aria-hidden="true"></span>
+          <span class="hero__dot hero__dot--amber" aria-hidden="true"></span>
+          <span class="hero__dot hero__dot--green" aria-hidden="true"></span>
+          <span class="hero__card-bar-title">VNH · Product Portfolio</span>
+          <span class="hero__card-live">
+            <span class="hero__live-pulse" aria-hidden="true"></span>
+            Live
           </span>
         </div>
 
-        <!-- Division filter chips -->
-        <div class="glass-card__chips">
-          <span class="chip chip--active">Baby Care</span>
-          <span class="chip">Nutraceuticals</span>
-          <span class="chip">General</span>
-          <span class="chip">Healthcare</span>
+        <div class="hero__card-chips">
+          <span class="hero__chip hero__chip--on">Baby Care</span>
+          <span class="hero__chip">Nutraceuticals</span>
+          <span class="hero__chip">General</span>
+          <span class="hero__chip">Healthcare</span>
         </div>
 
-        <!-- Product rows -->
-        <div class="glass-card__rows">
-          <div class="product-row"
+        <div class="hero__card-rows">
+          <div
+            class="hero__product-row"
             *ngFor="let p of previewProducts; let i = index"
-            [style.--row-delay]="(i * 130) + 'ms'">
-
-            <span class="product-row__icon" aria-hidden="true">
+            [style.--row-delay]="(i * 110) + 'ms'"
+          >
+            <span class="hero__product-icon" aria-hidden="true">
               <svg viewBox="0 0 20 20" fill="none">
-                <rect x="4" y="3" width="12" height="14" rx="2.5"
-                  stroke="currentColor" stroke-width="1.6"/>
-                <path d="M7 7h6M7 10.5h4"
-                  stroke="currentColor" stroke-width="1.6"
-                  stroke-linecap="round"/>
+                <rect
+                  x="4"
+                  y="3"
+                  width="12"
+                  height="14"
+                  rx="2.5"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                />
+                <path
+                  d="M7 7h6M7 10.5h4"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                />
               </svg>
             </span>
 
-            <div class="product-row__body">
-              <span class="product-row__name">{{ p.name }}</span>
-              <span class="product-row__div">{{ p.division }}</span>
+            <div class="hero__product-body">
+              <span class="hero__product-name">{{ p.name }}</span>
+              <span class="hero__product-cat">{{ p.division }}</span>
             </div>
 
-            <span class="product-row__status">{{ p.status }}</span>
+            <span class="hero__product-badge">{{ p.status }}</span>
           </div>
         </div>
 
-        <!-- Cert badges -->
-        <div class="glass-card__certs">
-          <span class="cert-chip" *ngFor="let c of certBadges">{{ c }}</span>
+        <div class="hero__card-certs">
+          <span class="hero__cert" *ngFor="let c of certBadges">{{ c }}</span>
         </div>
+      </div>
 
-      </div><!-- /glass-card -->
-
-      <!-- Floating satellite cards -->
-      <div class="sat-card sat-card--tl">
-        <span class="sat-card__icon" aria-hidden="true">
+      <div class="hero__sat hero__sat--tl">
+        <span class="hero__sat-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
-              stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+            <path
+              d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linejoin="round"
+            />
           </svg>
         </span>
-        <div class="sat-card__copy">
+        <div class="hero__sat-copy">
           <strong>WHO-GMP</strong>
           <span>Certified Partners</span>
         </div>
       </div>
 
-      <div class="sat-card sat-card--br">
-        <span class="sat-card__icon" aria-hidden="true">
+      <div class="hero__sat hero__sat--br">
+        <span class="hero__sat-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none">
-            <path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"
-              stroke="currentColor" stroke-width="1.7"/>
-            <path d="M16 3v4M8 3v4M16 17v4M8 17v4"
-              stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+            <path
+              d="M12 3L19 6V11C19 15 16.5 18.5 12 21C7.5 18.5 5 15 5 11V6L12 3Z"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M9.5 11.5L11.4 13.4L15 9.8"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
           </svg>
         </span>
-        <div class="sat-card__copy">
+        <div class="hero__sat-copy">
           <strong>Doctor-First</strong>
           <span>Trusted by Physicians</span>
         </div>
       </div>
 
-    </div><!-- /hero__visual -->
+      <div class="hero__sat hero__sat--ml">
+        <span class="hero__sat-num">82+</span>
+        <span class="hero__sat-lbl">Products</span>
+      </div>
+    </div>
+  </div>
 
-  </div><!-- /hero__shell -->
-
-  <!-- Bottom scene fade -->
-  <div class="hero__floor" aria-hidden="true"></div>
-
+  <a class="hero__scroll" href="#" (click)="onScrollHint($event)" aria-label="Scroll to content">
+    <span class="hero__scroll-track" aria-hidden="true">
+      <span class="hero__scroll-dot"></span>
+    </span>
+  </a>
 </section>

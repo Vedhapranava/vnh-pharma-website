@@ -1,0 +1,40 @@
+sl_no,brand,composition,mrp,ptr
+1,CEFDRIX - 100,Cefpodoxime oral suspension IP 50/100mg,198,142 
+2,CEFDRIX -TZ INJ,Ceftriaxone 500mg & Tazobactum 62.5mg,140,100 
+3,CEFDRIX -TZ INJ,Ceftriaxone 250mg & Tazobactum mg,90,64 
+4,CLAVRIX DROPS,Amoxycillin 80mg+Clavulanic Acid 11.4mg,110,79 
+5,CLAVRIX FORTE ,Amoxycillin 400mg+ Clavulanic Acid 57mg,198,142 
+6,COLONEZ DF DROP,Simethicone 40mg+Dill Oil 0.005ml+ Fennel oil 0.0007ml/30ml,90,64 
+7,COLONEZ  PEG,Polyethylene glycol 4000,350,250 
+8,D3 EIGHT,Cholecalciferol (Vitamin D3) 800 IU,120,86 
+9,DEFLANORM ,Deflazacort  6mg/5ml,90,64 
+10,FINEMEF -100,Mefenamic Acid IP 100mg,38,27 
+11,FINEMEF -DS,Mefenamic Acid 100mg+ Paracetamol 250mg/5ml,70,50 
+12,FLORABACI ORAL SUS,Bacillus clausii 2 billion spores /5ml,55,39 
+13,LETMON ,Levocetirizine DiHcl 2.5mg+Montelukast Sodium 4mg,100,72 
+14,LIDOPHEN EAR DROPS  ,"Phenazone 4% w/v, Lidocaine 1% w/v",160,114 
+15,OFLARIX -100  ,Ofloxacin 100mg/5ml,120,86 
+16,ONDRIX ,Ondansetron 2mg/5ml,42,30 
+17,PARA DS,Paracetamol250mg/5ml oral suspension,38.30,27 
+18,RELASMO DS,Drotavereine,150,107 
+19,TUBER FORTE  ,"Aceclofenac,Paracetamol & Trypsin chymotrypsin tablets",190,136 
+20,TUSNORM L SYP,Levosalbutamol  1mg + Ambroxol 30mg+ Guaiphensin 50mg/5ml syrup,100,72 
+21,TUSNORM LS JR SYP,Levosalbutamol0.25 mg + Ambroxol 7.5 mg+ Guaiphensin 12.5 mg,90,64 
+22,TUSNORM LS DROPS,Levosalbutamol0.25 mg + Ambroxol 7.5 mg+ Guaiphensin 12.5 mg,70,50 
+23,TUSNORM - XT,Acebrophylline 50mg Guaiphenesin 50mg Terbutaline 12.5mg /5ml syrup,130,93 
+24,VYDROX DROPS,Hydroxyzine  Hcl 6mg Drops,70,50 
+25,VYDROX ,Hydroxyzine  Hcl 10mg Solution,120,86 
+26,WRNZ BABY NASAL DROPS,Oxymetazoline 0.01% w/v,70,50 
+27,WRNZ KID NASAL DROPS,Oxymetazoline 0.05% w/v,90,64 
+28,WRNZ MINI NASAL DROPS,Oxymetazoline 0.025% w/v,85,61 
+29,WRNZ S  NASAL DROPS,Sodium Chloride 0.65 5 w/v,90,64 
+30,WRNZ DROPS,Phenylephrine Hcl 5mg+CPM 2mg / ml drops,90,64 
+31,WRNZ SYP,Phenylephrine Hcl 5mg+CPM2mg / ml syrup,100,72 
+32,ZNPD 20 DROPS ,Zinc sulphate (monohydrate) 20 mg,110,79 
+33,ZNPD SYP,Zinc  Gluconate  20mg syrup,100,72 
+34,MIMOZA SOAP,BABY SYNDET BAR SOAP,180,120.6
+35,MIMOZA SHAMPOO,BABY SHAMPOO,250,16705
+36,TANGIRON SYRUP,LIPOSOMAL IRON ,270,180.9
+37,TANGIRON DROPS,LIPOSOMAL IRON FOLIC ACID,250,167.5
+38,DAILY SOLO DROPS,"VIT A,D,E,K; Vit B1, B2, B6, B12, Folic Acid, Vit C, Multiminerals, DHA, Leutin, Inulin, L.rhamnosus,  ",220,147.4
+39,DAILY SOLO SYRUP 100 ML,"VIT A,D,E,K; Vit B1, B2, B6, B12, Folic Acid, Vit C,Liposomal Iron, Zn, Mg, I, Se, Choline, Inositol, Taurine, L carnitine, DHA, Leutin, Inulin, L.rhamnosus, L acidophilus, B.bifidium, Apple Pomegranite extract, ",100,67

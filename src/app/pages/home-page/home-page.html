@@ -1,248 +1,588 @@
 <app-hero></app-hero>
 
-<!-- ═══════════════════════════════════════════════════
-     ABOUT STRIP
-════════════════════════════════════════════════════ -->
-<section class="hp-section hp-about">
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 2 — Our Healthcare Promise
+══════════════════════════════════════════════════════════ -->
+<section class="hp-promise">
+
+  <div class="hp-promise__ambient" aria-hidden="true">
+    <div class="hp-amb hp-amb--red"></div>
+    <div class="hp-amb hp-amb--gold"></div>
+  </div>
+
   <div class="hp-shell">
-    <div class="about-strip" #reveal>
-      <div class="about-strip__copy">
-        <span class="section-tag">About VNH</span>
-        <h2>MNC Manufacturers.<br>Assured Quality.<br>Attractive Packing.</h2>
-        <p>
-          VNH Pharmaceuticals brings together reputed manufacturing support,
-          dependable quality standards, and premium product presentation to build
-          strong and credible healthcare brands.
+    <div class="hp-promise__layout">
+
+      <!-- LEFT — headline + stats -->
+      <div class="hp-promise__copy hp-reveal" #reveal>
+
+        <div class="hp-eyebrow">
+          <span class="hp-eyebrow__dot"></span>
+          Our Healthcare Promise
+        </div>
+
+        <h2 class="hp-promise__headline">
+          Quality You<br />
+          <span class="hp-promise__hl">Can Trust.</span>
+        </h2>
+
+        <p class="hp-promise__body">
+          VNH Pharmaceuticals is built on a foundation of scientific integrity,
+          certified manufacturing, and long-term relationships with doctors and
+          healthcare professionals across India.
         </p>
-      </div>
 
-      <div class="about-strip__stats">
-        <div class="astat">
-          <span class="astat__val">18+</span>
-          <span class="astat__lbl">Years Experience</span>
-        </div>
-        <div class="astat__divider"></div>
-        <div class="astat">
-          <span class="astat__val">MNC</span>
-          <span class="astat__lbl">Manufacturing Focus</span>
-        </div>
-        <div class="astat__divider"></div>
-        <div class="astat">
-          <span class="astat__val">Premium</span>
-          <span class="astat__lbl">Presentation Standards</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════
-     DIVISIONS / CORE STRENGTHS
-════════════════════════════════════════════════════ -->
-<section class="hp-section hp-divisions">
-  <div class="hp-shell">
-    <div class="section-head" #reveal>
-      <span class="section-tag">Core Strengths</span>
-      <h2>Professional Positioning.<br>Trust-Led Brand Direction.</h2>
-      <p>
-        Our brand direction is built around quality manufacturing, assured
-        product confidence, attractive presentation, and stronger market appeal.
-      </p>
-    </div>
-
-    <div class="divisions-grid">
-      <article
-        class="division-card"
-        *ngFor="let d of divisions; let i = index"
-        #reveal
-        [attr.data-index]="i"
-      >
-        <div class="division-card__top">
-          <span class="division-card__icon" aria-hidden="true">{{ d.icon }}</span>
-          <span class="division-card__label">VNH Value</span>
-        </div>
-        <h3>{{ d.title }}</h3>
-        <p>{{ d.description }}</p>
-        <span class="division-card__arrow" aria-hidden="true">
-          <svg viewBox="0 0 16 16" fill="none">
-            <path
-              d="M3 8h10M9 4l4 4-4 4"
-              stroke="currentColor"
-              stroke-width="1.6"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </span>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════
-     PRODUCT CATALOGUE
-════════════════════════════════════════════════════ -->
-<section class="hp-section hp-catalogue">
-  <div class="hp-shell">
-    <div class="section-head section-head--center" #reveal>
-      <span class="section-tag">Featured Catalogue</span>
-      <h2>Products With Stronger<br>Visual Shelf Appeal.</h2>
-      <p>
-        A product presentation approach shaped by quality confidence, cleaner
-        branding, and attractive market-ready packaging.
-      </p>
-    </div>
-
-    <div class="catalogue-grid">
-      <article
-        class="catalogue-card"
-        *ngFor="let item of cataloguePreview"
-        #reveal
-      >
-        <div class="catalogue-card__media">
-          <div class="catalogue-card__frame">
-            <img
-              [src]="item.image"
-              [alt]="item.title"
-              class="catalogue-card__img"
-              loading="lazy"
-            />
-            <div class="catalogue-card__shimmer" aria-hidden="true"></div>
+        <div class="hp-promise__stats-row">
+          <div class="hp-stat">
+            <span class="hp-stat__val">20+</span>
+            <span class="hp-stat__lbl">Years of Experience</span>
           </div>
-
-          <video
-            *ngIf="item.hasVideo"
-            class="catalogue-card__video"
-            controls
-            muted
-            playsinline
-            preload="metadata"
-          >
-            <source [src]="item.video" type="video/mp4" />
-          </video>
+          <div class="hp-stat__rule" aria-hidden="true"></div>
+          <div class="hp-stat">
+            <span class="hp-stat__val">82+</span>
+            <span class="hp-stat__lbl">Premium Products</span>
+          </div>
+          <div class="hp-stat__rule" aria-hidden="true"></div>
+          <div class="hp-stat">
+            <span class="hp-stat__val">6</span>
+            <span class="hp-stat__lbl">Certified Partners</span>
+          </div>
         </div>
 
-        <div class="catalogue-card__body">
-          <span class="catalogue-card__kicker">{{ item.subtitle }}</span>
-          <h3>{{ item.title }}</h3>
-          <p>{{ item.note }}</p>
-          <span class="catalogue-card__cta">
-            View product
-            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path
-                d="M3 8h10M9 4l4 4-4 4"
-                stroke="currentColor"
-                stroke-width="1.6"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
+        <a routerLink="/about" class="hp-text-link">
+          Our Story
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+      </div>
+
+      <!-- RIGHT — glass pillars -->
+      <div class="hp-promise__pillars">
+
+        <div class="hp-pillar hp-reveal" #reveal>
+          <div class="hp-pillar__icon">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 2L4 6v6c0 5.25 3.5 10.15 8 11.35C16.5 22.15 20 17.25 20 12V6L12 2Z"
+                stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+              <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.7"
+                stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-          </span>
+          </div>
+          <div class="hp-pillar__body">
+            <h3>WHO-GMP Certified Quality</h3>
+            <p>Products manufactured through reputed certified facilities trusted across India's healthcare market.</p>
+          </div>
+          <span class="hp-pillar__bar" aria-hidden="true"></span>
         </div>
+
+        <div class="hp-pillar hp-reveal" #reveal>
+          <div class="hp-pillar__icon">
+            <svg viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/>
+              <path d="M12 7v5l3.5 3.5" stroke="currentColor" stroke-width="1.7"
+                stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="hp-pillar__body">
+            <h3>20+ Years of Expertise</h3>
+            <p>Two decades of pharmaceutical experience delivering consistent standards for doctors and patients.</p>
+          </div>
+          <span class="hp-pillar__bar" aria-hidden="true"></span>
+        </div>
+
+        <div class="hp-pillar hp-reveal" #reveal>
+          <div class="hp-pillar__icon">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 21C12 21 4 15.5 4 9.5A8 8 0 0 1 20 9.5C20 15.5 12 21 12 21Z"
+                stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+              <circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <div class="hp-pillar__body">
+            <h3>Doctor-First Values</h3>
+            <p>Physician trust, ethical practices, and long-term healthcare relationships at the heart of everything we do.</p>
+          </div>
+          <span class="hp-pillar__bar" aria-hidden="true"></span>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 3 — Product Trust Highlights
+══════════════════════════════════════════════════════════ -->
+<section class="hp-highlights">
+
+  <div class="hp-shell">
+
+    <div class="hp-section-head hp-reveal" #reveal>
+      <div class="hp-eyebrow hp-eyebrow--center">
+        <span class="hp-eyebrow__dot"></span>
+        Product Trust Highlights
+      </div>
+      <h2 class="hp-section-head__title">
+        Science-backed.<br />
+        <span class="hp-grad">Doctor-approved.</span>
+      </h2>
+      <p class="hp-section-head__sub">
+        Every VNH product is built around clinical relevance, quality formulation,
+        and professional pharmaceutical presentation.
+      </p>
+    </div>
+
+    <div class="hp-hl-grid">
+
+      <div class="hp-hl-card hp-reveal" #reveal>
+        <div class="hp-hl-card__icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"
+              stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Scientific Formulation</h3>
+        <p>Products developed with clinical precision, aligned with modern therapeutic standards and patient safety.</p>
+        <div class="hp-hl-card__line" aria-hidden="true"></div>
+      </div>
+
+      <div class="hp-hl-card hp-hl-card--featured hp-reveal" #reveal>
+        <div class="hp-hl-card__icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 2L4 6v6c0 5.25 3.5 10.15 8 11.35C16.5 22.15 20 17.25 20 12V6L12 2Z"
+              stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+            <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.7"
+              stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Certified Manufacturing</h3>
+        <p>WHO-GMP and ISO-certified manufacturing partners ensure every batch meets the highest pharmaceutical standards.</p>
+        <div class="hp-hl-card__line" aria-hidden="true"></div>
+        <div class="hp-hl-card__glow" aria-hidden="true"></div>
+      </div>
+
+      <div class="hp-hl-card hp-reveal" #reveal>
+        <div class="hp-hl-card__icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M17 20h5v-2a3 3 0 0 0-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 0 1 5.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 0 1 9.288 0M15 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+              stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Doctor Confidence</h3>
+        <p>Built through consistent quality, ethical relationships, and a doctor-first approach to pharmaceutical care.</p>
+        <div class="hp-hl-card__line" aria-hidden="true"></div>
+      </div>
+
+      <div class="hp-hl-card hp-reveal" #reveal>
+        <div class="hp-hl-card__icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 0 0 .95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 0 0-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 0 0-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 0 0-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 0 0 .951-.69l1.519-4.674Z"
+              stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Premium Presentation</h3>
+        <p>MNC-standard packaging, branding, and product identity that builds patient confidence at the point of dispensing.</p>
+        <div class="hp-hl-card__line" aria-hidden="true"></div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 4 — Product Portfolio Preview
+══════════════════════════════════════════════════════════ -->
+<section class="hp-portfolio">
+
+  <div class="hp-shell">
+
+    <div class="hp-section-head hp-reveal" #reveal>
+      <div class="hp-eyebrow hp-eyebrow--center">
+        <span class="hp-eyebrow__dot"></span>
+        Product Portfolio
+      </div>
+      <h2 class="hp-section-head__title">
+        Trusted products,
+        <span class="hp-grad">crafted for modern care.</span>
+      </h2>
+      <p class="hp-section-head__sub">
+        A growing portfolio of quality pharmaceutical products across multiple therapeutic areas.
+      </p>
+    </div>
+
+    <div class="hp-catalogue">
+      <article class="hp-prod-card hp-reveal" *ngFor="let item of cataloguePreview" #reveal>
+
+        <div class="hp-prod-card__media">
+          <ng-container *ngIf="item.image || item.hasVideo; else noProdImage">
+            <img *ngIf="!item.hasVideo" [src]="item.image" [alt]="item.title" loading="lazy" />
+            <video *ngIf="item.hasVideo" [src]="item.video" [poster]="item.image"
+              autoplay muted loop playsinline></video>
+          </ng-container>
+          <ng-template #noProdImage>
+            <div class="hp-prod-card__ph"><span>{{ item.title }}</span></div>
+          </ng-template>
+          <div class="hp-prod-card__media-glow" aria-hidden="true"></div>
+          <span class="hp-prod-card__tag">{{ item.subtitle }}</span>
+        </div>
+
+        <div class="hp-prod-card__body">
+          <h3 class="hp-prod-card__name">{{ item.title }}</h3>
+          <p class="hp-prod-card__note">{{ item.note }}</p>
+          <a routerLink="/products" class="hp-prod-link">
+            View Product
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor"
+                stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="hp-prod-card__shine" aria-hidden="true"></div>
+
       </article>
     </div>
 
-    <div class="catalogue-footer" #reveal>
-      <a routerLink="/products" class="btn-primary">
-        Explore Full Portfolio
+    <div class="hp-portfolio__cta hp-reveal" #reveal>
+      <a routerLink="/products" class="hp-btn hp-btn--primary">
+        <span class="hp-btn__label">Explore Full Portfolio</span>
         <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
-          <path
-            d="M4 10h12M11 5l5 5-5 5"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
+          <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
+        <span class="hp-btn__shimmer" aria-hidden="true"></span>
       </a>
     </div>
+
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════
-     BRAND PROMISE / WHY VNH
-════════════════════════════════════════════════════ -->
-<section class="hp-section hp-mission">
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 5 — Quality & Manufacturing Standards (LIGHT)
+══════════════════════════════════════════════════════════ -->
+<section class="hp-quality">
+
+  <div class="hp-quality__ambient" aria-hidden="true">
+    <div class="hp-qual-blob hp-qual-blob--red"></div>
+    <div class="hp-qual-blob hp-qual-blob--gold"></div>
+  </div>
+
   <div class="hp-shell">
-    <div class="section-head section-head--center" #reveal>
-      <span class="section-tag">Why VNH</span>
-      <h2>Built On Trust.<br>Presented With Confidence.</h2>
-      <p>
-        Every VNH brand is shaped to reflect dependable manufacturing support,
-        assured quality, and stronger product presentation in the market.
+
+    <div class="hp-quality__layout">
+
+      <!-- LEFT copy -->
+      <div class="hp-quality__copy hp-reveal" #reveal>
+        <div class="hp-eyebrow">
+          <span class="hp-eyebrow__dot"></span>
+          Manufacturing Standards
+        </div>
+        <h2 class="hp-quality__title">
+          Quality Healthcare.<br />
+          <em class="hp-quality__accent">Trusted Relationships.</em>
+        </h2>
+        <p class="hp-quality__body">
+          Our certified manufacturing network delivers consistent pharmaceutical quality
+          backed by rigorous standards — providing doctors and patients with the
+          confidence they deserve.
+        </p>
+        <a routerLink="/about" class="hp-text-link">
+          Learn More
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- RIGHT — cert cards -->
+      <div class="hp-quality__certs">
+
+        <div class="hp-cert-card hp-reveal" #reveal>
+          <div class="hp-cert-card__icon">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 2L4 6v6c0 5.25 3.5 10.15 8 11.35C16.5 22.15 20 17.25 20 12V6L12 2Z"
+                stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="hp-cert-card__text">
+            <strong>WHO-GMP</strong>
+            <span>Certified Manufacturing</span>
+          </div>
+        </div>
+
+        <div class="hp-cert-card hp-reveal" #reveal>
+          <div class="hp-cert-card__icon">
+            <svg viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="8" r="5" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M12 13v8M9 18h6" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="hp-cert-card__text">
+            <strong>ISO Standards</strong>
+            <span>Quality Management Systems</span>
+          </div>
+        </div>
+
+        <div class="hp-cert-card hp-reveal" #reveal>
+          <div class="hp-cert-card__icon">
+            <svg viewBox="0 0 24 24" fill="none">
+              <rect x="3" y="6" width="18" height="14" rx="3" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M3 10h18M8 6V4M16 6V4" stroke="currentColor"
+                stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="hp-cert-card__text">
+            <strong>FSSAI Compliant</strong>
+            <span>Regulatory Standards Met</span>
+          </div>
+        </div>
+
+        <div class="hp-cert-card hp-reveal" #reveal>
+          <div class="hp-cert-card__icon">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 21C12 21 4 15.5 4 9.5A8 8 0 0 1 20 9.5C20 15.5 12 21 12 21Z"
+                stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="hp-cert-card__text">
+            <strong>Doctor-First</strong>
+            <span>Trusted by Physicians</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 6 — Flagship Events Preview
+══════════════════════════════════════════════════════════ -->
+<section class="hp-events">
+
+  <div class="hp-events__ambient" aria-hidden="true">
+    <div class="hp-ev-blob hp-ev-blob--red"></div>
+    <div class="hp-ev-blob hp-ev-blob--gold"></div>
+  </div>
+
+  <div class="hp-shell">
+
+    <div class="hp-section-head hp-reveal" #reveal>
+      <div class="hp-eyebrow hp-eyebrow--center">
+        <span class="hp-eyebrow__dot"></span>
+        Brand Presence
+      </div>
+      <h2 class="hp-section-head__title">
+        Flagship Events &amp;<br />
+        <span class="hp-grad">Scientific Engagements.</span>
+      </h2>
+      <p class="hp-section-head__sub">
+        VNH creates meaningful touchpoints with the medical community through
+        curated scientific events, product launches, and doctor engagement programs.
       </p>
     </div>
 
-    <div class="mission-grid">
-      <article
-        class="mission-card"
-        *ngFor="let item of promiseCards"
-        #reveal
-      >
-        <div class="mission-card__icon" aria-hidden="true">{{ item.icon }}</div>
-        <div class="mission-card__body">
-          <h3>{{ item.title }}</h3>
-          <p>{{ item.text }}</p>
+    <div class="hp-ep-grid">
+
+      <!-- Event Card 1 -->
+      <article class="hp-ep-card hp-reveal" #reveal>
+        <div class="hp-ep-card__media">
+          <div class="hp-ep-card__ph" aria-label="Event photo placeholder">
+            <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+              <rect x="4" y="8" width="40" height="28" rx="4" stroke="currentColor" stroke-width="1.4"/>
+              <circle cx="16" cy="21" r="4" stroke="currentColor" stroke-width="1.4"/>
+              <path d="M4 33l10-9 8 6 8-10 14 13" stroke="currentColor" stroke-width="1.4"
+                stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Photo · Coming Soon</span>
+          </div>
+          <div class="hp-ep-card__media-overlay" aria-hidden="true"></div>
+          <span class="hp-ep-card__badge hp-ep-card__badge--red">Doctor CME · Flagship</span>
         </div>
-        <div class="mission-card__glow" aria-hidden="true"></div>
+        <div class="hp-ep-card__body">
+          <h3>Scientific Engagement Program</h3>
+          <p>A premier continuing medical education event bringing together healthcare professionals and VNH's product portfolio.</p>
+        </div>
+        <div class="hp-ep-card__bar" aria-hidden="true"></div>
       </article>
+
+      <!-- Event Card 2 — Featured -->
+      <article class="hp-ep-card hp-ep-card--featured hp-reveal" #reveal>
+        <div class="hp-ep-card__media">
+          <div class="hp-ep-card__ph hp-ep-card__ph--video" aria-label="Event video placeholder">
+            <div class="hp-ep-card__play" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M10 8l6 4-6 4V8z" fill="currentColor"/>
+              </svg>
+            </div>
+            <span>Video · Coming Soon</span>
+          </div>
+          <div class="hp-ep-card__media-overlay" aria-hidden="true"></div>
+          <span class="hp-ep-card__badge hp-ep-card__badge--gold">Product Launch</span>
+        </div>
+        <div class="hp-ep-card__body">
+          <h3>New Product Introduction</h3>
+          <p>Celebrating VNH's latest additions to its premium pharmaceutical portfolio with industry practitioners across Telangana.</p>
+        </div>
+        <div class="hp-ep-card__bar" aria-hidden="true"></div>
+        <div class="hp-ep-card__shine" aria-hidden="true"></div>
+      </article>
+
+      <!-- Event Card 3 -->
+      <article class="hp-ep-card hp-reveal" #reveal>
+        <div class="hp-ep-card__media">
+          <div class="hp-ep-card__ph" aria-label="Doctor meet photo placeholder">
+            <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+              <rect x="4" y="8" width="40" height="28" rx="4" stroke="currentColor" stroke-width="1.4"/>
+              <circle cx="16" cy="21" r="4" stroke="currentColor" stroke-width="1.4"/>
+              <path d="M4 33l10-9 8 6 8-10 14 13" stroke="currentColor" stroke-width="1.4"
+                stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Photo · Coming Soon</span>
+          </div>
+          <div class="hp-ep-card__media-overlay" aria-hidden="true"></div>
+          <span class="hp-ep-card__badge hp-ep-card__badge--red">Doctor Meet</span>
+        </div>
+        <div class="hp-ep-card__body">
+          <h3>Physician Outreach Program</h3>
+          <p>Building lasting relationships with healthcare professionals across Telangana and Andhra Pradesh.</p>
+        </div>
+        <div class="hp-ep-card__bar" aria-hidden="true"></div>
+      </article>
+
     </div>
+
+    <div class="hp-ep-cta hp-reveal" #reveal>
+      <a routerLink="/about" class="hp-btn hp-btn--primary">
+        <span class="hp-btn__label">View All Events</span>
+        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="hp-btn__shimmer" aria-hidden="true"></span>
+      </a>
+      <a routerLink="/about" class="hp-btn hp-btn--ghost">Learn About VNH</a>
+    </div>
+
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════
-     CTA BANNER
-════════════════════════════════════════════════════ -->
-<section class="hp-section hp-cta">
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 7 — Doctor and Customer Trust
+══════════════════════════════════════════════════════════ -->
+<section class="hp-trust">
+
   <div class="hp-shell">
-    <div class="cta-card" #reveal>
-      <div class="cta-card__bg" aria-hidden="true">
-        <div class="cta-card__orb cta-card__orb--1"></div>
-        <div class="cta-card__orb cta-card__orb--2"></div>
+
+    <div class="hp-section-head hp-reveal" #reveal>
+      <div class="hp-eyebrow hp-eyebrow--center">
+        <span class="hp-eyebrow__dot"></span>
+        Doctor and Customer Trust
       </div>
+      <h2 class="hp-section-head__title">
+        Driven by Trust.<br />
+        <span class="hp-grad">Powered by Quality.</span>
+      </h2>
+    </div>
 
-      <div class="cta-card__inner">
-        <span class="section-tag">Connect With VNH</span>
-        <h2>Let’s Build Stronger<br>Healthcare Reach Together.</h2>
-        <p>
-          Explore our portfolio, discuss product opportunities, or connect with
-          our team to take VNH brands further into the market.
-        </p>
+    <div class="hp-trust-grid">
+      <article class="hp-trust-card hp-reveal" *ngFor="let div of divisions; let i = index"
+        [style.--ci]="i" #reveal>
+        <div class="hp-trust-card__num">0{{ i + 1 }}</div>
+        <span class="hp-trust-card__icon">{{ div.icon }}</span>
+        <h3 class="hp-trust-card__title">{{ div.title }}</h3>
+        <p class="hp-trust-card__desc">{{ div.description }}</p>
+        <div class="hp-trust-card__line" aria-hidden="true"></div>
+      </article>
+    </div>
 
-        <div class="cta-card__contact">
-          <span class="cta-card__contact-label">Call us directly</span>
-          <a class="cta-card__phone" href="tel:7995936524">
-            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
-              <path
-                d="M2 3.5A1.5 1.5 0 0 1 3.5 2h2.16a1 1 0 0 1 .97.757l.887 3.547a1 1 0 0 1-.29.988L5.99 8.527a11.03 11.03 0 0 0 5.483 5.483l1.235-1.234a1 1 0 0 1 .988-.29l3.547.887A1 1 0 0 1 18 14.34V16.5A1.5 1.5 0 0 1 16.5 18C8.492 18 2 11.508 2 3.5z"
-                stroke="currentColor"
-                stroke-width="1.6"
-                stroke-linejoin="round"
-              />
-            </svg>
-            {{ contactNumber }}
-          </a>
-        </div>
-
-        <div class="cta-card__actions">
-          <a routerLink="/products" class="btn-primary">
-            Explore Products
-            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
-              <path
-                d="M4 10h12M11 5l5 5-5 5"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </a>
-
-          <a routerLink="/contact" class="btn-ghost">
-            Contact VNH
-          </a>
-        </div>
+    <!-- Values strip -->
+    <div class="hp-trust-values hp-reveal" #reveal>
+      <div class="hp-trust-val">
+        <span class="hp-trust-val__num">100%</span>
+        <span class="hp-trust-val__lbl">Ethical Standards</span>
+      </div>
+      <div class="hp-trust-val__sep" aria-hidden="true"></div>
+      <div class="hp-trust-val">
+        <span class="hp-trust-val__num">WHO</span>
+        <span class="hp-trust-val__lbl">GMP Manufacturing</span>
+      </div>
+      <div class="hp-trust-val__sep" aria-hidden="true"></div>
+      <div class="hp-trust-val">
+        <span class="hp-trust-val__num">20+</span>
+        <span class="hp-trust-val__lbl">Years of Experience</span>
+      </div>
+      <div class="hp-trust-val__sep" aria-hidden="true"></div>
+      <div class="hp-trust-val">
+        <span class="hp-trust-val__num">360°</span>
+        <span class="hp-trust-val__lbl">Healthcare Support</span>
       </div>
     </div>
+
   </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 8 — Final CTA
+══════════════════════════════════════════════════════════ -->
+<section class="hp-cta">
+
+  <div class="hp-cta__ambient" aria-hidden="true">
+    <div class="hp-cta__blob hp-cta__blob--red"></div>
+    <div class="hp-cta__blob hp-cta__blob--gold"></div>
+    <div class="hp-cta__grid"></div>
+  </div>
+
+  <div class="hp-shell">
+    <div class="hp-cta__card hp-reveal" #reveal>
+
+      <div class="hp-cta__shine" aria-hidden="true"></div>
+
+      <span class="hp-cta__badge">
+        <span class="hp-cta__badge-dot"></span>
+        VNH Pharmaceuticals · Est. 2006
+      </span>
+
+      <h2 class="hp-cta__headline">
+        Science. Quality. Trust.
+      </h2>
+
+      <p class="hp-cta__sub">
+        Premium pharmaceutical solutions built around ethical values, certified quality,
+        and long-term healthcare relationships — trusted by doctors across India.
+      </p>
+
+      <div class="hp-cta__actions">
+        <a routerLink="/products" class="hp-btn hp-btn--gold">
+          <span class="hp-btn__label">View Products</span>
+          <span class="hp-btn__shimmer" aria-hidden="true"></span>
+        </a>
+        <a routerLink="/contact" class="hp-btn hp-btn--ghost">
+          Contact VNH
+        </a>
+      </div>
+
+      <div class="hp-cta__pills">
+        <span class="hp-cta__pill">WHO-GMP</span>
+        <span class="hp-cta__pill">ISO Certified</span>
+        <span class="hp-cta__pill">FSSAI</span>
+        <span class="hp-cta__pill">Doctor-First</span>
+        <span class="hp-cta__pill">20+ Years</span>
+      </div>
+
+    </div>
+  </div>
+
 </section>

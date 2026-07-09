@@ -1,0 +1,60 @@
+<section class="apm">
+  <header class="apm__head">
+    <div>
+      <h1 class="apm__title">Product media</h1>
+      <p class="apm__sub" *ngIf="product() as p">
+        {{ p.name }} <code class="apm__slug">/{{ p.slug }}</code>
+      </p>
+    </div>
+    <a class="apm__btn" routerLink="/admin/products">← Back to products</a>
+  </header>
+
+  <p class="apm__error" *ngIf="error()">{{ error() }}</p>
+  <p class="apm__notice" *ngIf="notice()">{{ notice() }}</p>
+  <p class="apm__muted" *ngIf="loading()">Loading…</p>
+
+  <ng-container *ngIf="!loading() && product()">
+    <div class="apm__upload">
+      <input type="file" accept="image/*" multiple (change)="onFilesSelected($event)" />
+      <button
+        class="apm__btn apm__btn--primary"
+        type="button"
+        [disabled]="uploading() || selectedFiles.length === 0"
+        (click)="uploadSelected()"
+      >
+        {{ uploading() ? 'Uploading…' : 'Upload' }}
+      </button>
+      <span class="apm__muted" *ngIf="selectedFiles.length > 0">
+        {{ selectedFiles.length }} file(s) selected
+      </span>
+    </div>
+
+    <p class="apm__muted" *ngIf="images().length === 0">
+      No images yet. Upload the first image — it will become the primary image.
+    </p>
+
+    <div class="apm__grid" *ngIf="images().length > 0">
+      <article class="apm__card" *ngFor="let img of images()">
+        <div class="apm__thumb-wrap">
+          <img class="apm__thumb" [src]="img.image_url" [alt]="img.alt_text || product()?.name || ''" />
+          <span class="apm__primary-flag" *ngIf="img.is_primary">Primary</span>
+        </div>
+
+        <label class="apm__field-label">Alt text</label>
+        <input class="apm__field" [(ngModel)]="img.alt_text" [name]="'alt-' + img.id" />
+
+        <label class="apm__field-label">Sort order</label>
+        <input class="apm__field apm__field--sm" type="number" [(ngModel)]="img.sort_order" [name]="'sort-' + img.id" />
+
+        <div class="apm__card-actions">
+          <button class="apm__btn apm__btn--sm" type="button" [disabled]="busyId() === img.id" (click)="saveMeta(img)">Save</button>
+          <button class="apm__btn apm__btn--sm" type="button" [disabled]="busyId() === img.id || img.is_primary" (click)="makePrimary(img)">
+            {{ img.is_primary ? 'Primary' : 'Set primary' }}
+          </button>
+          <button class="apm__btn apm__btn--sm" type="button" (click)="copyUrl(img.image_url)">Copy URL</button>
+          <button class="apm__btn apm__btn--sm apm__btn--danger" type="button" [disabled]="busyId() === img.id" (click)="deleteImage(img)">Delete</button>
+        </div>
+      </article>
+    </div>
+  </ng-container>
+</section>

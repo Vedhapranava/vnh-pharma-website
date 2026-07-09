@@ -1,0 +1,42 @@
+<section class="apg">
+  <header class="apg__head">
+    <div>
+      <h1 class="apg__title">Careers · Applications</h1>
+      <p class="apg__sub">Submitted from the public careers page.</p>
+    </div>
+  </header>
+
+  <p class="apg__error" *ngIf="error()">{{ error() }}</p>
+  <p class="apg__notice" *ngIf="notice()">{{ notice() }}</p>
+  <p class="apg__muted" *ngIf="loading()">Loading…</p>
+  <p class="apg__muted" *ngIf="!loading() && apps().length === 0">No applications yet.</p>
+
+  <table class="apg__table" *ngIf="!loading() && apps().length > 0">
+    <thead>
+      <tr><th>Applicant</th><th>Role</th><th>Contact</th><th>Resume</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let a of apps()">
+        <td>
+          <strong>{{ a.full_name }}</strong>
+          <div class="apg__muted-sm" *ngIf="a.city">{{ a.city }}</div>
+          <div class="apg__muted-sm" *ngIf="a.cover_note">{{ a.cover_note }}</div>
+        </td>
+        <td>{{ a.job_title || '—' }}<div class="apg__muted-sm" *ngIf="a.experience">{{ a.experience }}</div></td>
+        <td>
+          <div *ngIf="a.email">{{ a.email }}</div>
+          <div class="apg__muted-sm" *ngIf="a.phone">{{ a.phone }}</div>
+        </td>
+        <td>
+          <a *ngIf="a.resume_url" class="apg__btn apg__btn--ghost" [href]="a.resume_url" target="_blank" rel="noopener">Open</a>
+          <span *ngIf="!a.resume_url" class="apg__muted-sm">—</span>
+        </td>
+        <td>
+          <select class="apg__select" [ngModel]="a.status" (ngModelChange)="changeStatus(a, $event)" [disabled]="busyId() === a.id">
+            <option *ngFor="let s of statuses" [ngValue]="s">{{ s }}</option>
+          </select>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

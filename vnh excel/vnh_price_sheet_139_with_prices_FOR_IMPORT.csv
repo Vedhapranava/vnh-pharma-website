@@ -1,0 +1,140 @@
+sl_no,brand,composition,mrp,ptr
+1,D GOOD,Vitamin D3 oral solution 60000  IU/5 ml,90.0,64.0
+2,17) Daily Solo Syrup,"Multivitamins, Multiminerals, Taurine, Co-enzyme Q10, Alpha Lipolic Acid, Curcumin, Probiotics",,
+3,COLONEZ  PEG,Polyethylene Glycol 3350 USP 13.125g,350.0,250.0
+4,DE SATURATE,"Potassium Citrate 1100mg ,Magnesium Citrate 375 mg & Vitamin B6 20 mg / 5ml Oral Solution",,
+5,"PURNAS 24 200 ML SYP-Multivitamin,Multimineral with L",Lysine,,
+6,TUSNORM,"XT -Acebrophylline 50mg, Guaiphenesin 50mg, Terbutaline 12.5mg/5ml syrup",,
+7,TUSNORM L SYP,Levosalbutamol  1mg + Ambroxol 30mg+ Guaiphensin 50mg/5ml syrup,,
+8,"15) Daily Solo Tablets - Astaxanthin 2mg, Taurine 100mg, Curcuma Longa 50 mg, Liquorice 30mg, Cinnamon 30mg, Clove 30mg, Cranberry 25 mg, Green Tea 25 mg, Boswellia serrata","25mg, Lycopene 2500 mcg , Multiminerals, Multivitamins",,
+9,16) Myotizer,"L carnitine, L  Tartarate, Vit E, Benfotiamine, Vit C, Co Q 10, Pyridoxine, Riboflavin",,
+10,"CALVNH -Elemental Ca- 500 mg+ Vit D3-2000 IU, Methylcobalamin 1500 mcg, L Methylfolate calcium 1mg,Prridoxal 5 Phosphate",20mg Tablets,,
+11,ESMOFRESH,Esomeprazole Gastro-Resistant Tablets IP 40 mg,120.0,86.0
+12,ESMOFRESH DSR,Esomeprazole 40mg & Sustained release Domperidone 30mg Capsules,140.0,100.0
+13,JIOMAX D3,"Calcitriol 0.25mcg,Methylcobalamin 1500mcg,Calcium Carbonate 500mg, Eicosapentaenoic Acid 180mg,Docosahexaenoic Acid 120mg,Folic Acid  400mcg  with Boron1.5mg Capsules",220.0,157.0
+14,TUBER FORTE,"Aceclofenac 100mg ,Paracetamol 325mg & Trypsin & Chymotrypsin (6;1)-1,50,000 IU Tablets",190.0,136.0
+15,"WINHANCE TAB-Benfotiamine 200 mg, Methylcobalamin 1000 nano gram , Alpha Lipoic Acid 200 mg, Folic acid 1.5 mg, Chromium Picolinate 200 mcg, D Chiro inositol 13.8mg,  Myo","Inositol 100 mg & Pyridoxine Hydrochloride 3 mg Tablets, Vitamin D3 600 IU",250.0,179.0
+16,Zanoflex,Ofloxacin 400mg Tablets,,
+17,16) D GOOD,Vitamin D3 oral solution 60000  IU/5 ml,90.0,64.0
+18,11) COLANESE PEG,Polyethylene glycol 3350 USP 13.125g,,
+19,12) COLANESE PEG,Polyethylene Glycol 4000 IP 10g,,
+20,13) DE SATURATE,"Potassium Citrate 1100mg ,Magnesium Citrate 375 mg & Vitamin B6 20 mg / 5ml Oral Solution",,
+21,"14) PURNAS 24 200 ML SYP-Multivitamin,Multimineral with L",Lysine,,
+22,15) Daily Solo Syrup,"Multivitamins, Multiminerals, Taurine, Co-enzyme Q10, Alpha Lipolic Acid, Curcumin, Probiotics",,
+23,1) LAMINIF 100ML,"L Arginine 3g, Vitamin C  40mg, Vitamin E 10mg, Vit B6 2mg, Folic Acid 120mcg, Vitamin B12 1mcg, Zinc 10 mg per 15 ml",,
+24,"10) Daily Solo Tablets - Astaxanthin 2mg, Taurine 100mg, Curcuma Longa 50 mg, Liquorice 30mg, Cinnamon 30mg, Clove 30mg, Cranberry 25 mg, Green Tea 25 mg, Boswellia serrata","25mg, Lycopene 2500 mcg , Multiminerals, Multivitamins",,
+25,2) LAMINIF 210ML,"L Arginine 3g, Vitamin C  40mg, Vitamin E 10mg, Vit B6 2mg, Folic Acid 120mcg, Vitamin B12 1mcg, Zinc 10 mg per 15 ml",,
+26,3) GF -18 Tablets,"Myo-Inositol (40:1) 1100mg , D-Chiro Inositol (40:1) 27.6 mg, Ubiquinone (Coenzyme Q10) 100 mg,Astaxanthin 1mg,L-Carnitine L-Tartrate 50mg,L-Arginine 10mg,  Melatonin 2mg, Berberine 50mg Lecithin 2mg,Quatrefolic Acid 51 mcg tablets",,
+27,"4) CALVNH TAB-Elemental Ca- 500 mg, Vit D3-2000 IU, Methylcobalamin 1500 mcg, L Methylfolate calcium 1mg,Prridoxal 5 Phosphate",20mg,300.0,215.0
+28,5) JIOMAX D3,"Calcitriol 0.25mcg,Methylcobalamin 1500mcg,Calcium Carbonate 500mg, Eicosapentaenoic Acid 180mg,Docosahexaenoic Acid 120mg,Folic Acid  400mcg  with Boron1.5mg capsules",220.0,157.0
+29,6) MIGRACE,"Magnesium oxide,Coenzyme Q10 & Riboflavin  Tablets",280.0,200.0
+30,7) TUBER FORTE,"Aceclofenac 100mg ,Paracetamol 325mg & Trypsin & Chymotrypsin (6;1)-1,50,000 IU Tablets",190.0,136.0
+31,8) ESMOFRESH,Esomeprazole gastro-resistant tablets IP 40 mg,120.0,86.0
+32,9) ESMOFRESH DSR,Esomeprazole 40mg & Sustained release Domperidone 30mg capsules,140.0,100.0
+33,18) COLANESE PEG,Polyethylene glycol 3350 USP 13.125g,,
+34,19) COLANESE PEG,Polyethylene Glycol 4000 IP 10g,,
+35,"21) PURNAS 24 200 ML SYP-Multivitamin,Multimineral with L",Lysine,,
+36,22) Daily Solo Syrup,"Multivitamins, Multiminerals, Taurine, Co-enzyme Q10, Alpha Lipolic Acid, Curcumin, Probiotics",,
+37,Nano Shots - 22 )  D GOOD,Vitamin D3 oral solution 60000  IU/5 ml,,
+38,1) TUFGABA GAT,Gabapentin & Amitriptyline tablets,250.0,179.0
+39,10) Myotizer,"L carnitine, L  Tartarate, Vit E, Benfotiamine, Vit C, Co Q 10, Pyridoxine, Riboflavin",,
+40,"11) CALVNH TAB-Elemental Ca- 500 mg+ Vit D3-2000 IU, Methylcobalamin 1500 mcg, L Methylfolate calcium 1mg,Prridoxal 5 Phosphate",20mg,300.0,215.0
+41,12) JIOMAX D3,"Calcitriol 0.25mcg,Methylcobalamin 1500mcg,Calcium Carbonate 500mg, Eicosapentaenoic Acid 180mg,Docosahexaenoic Acid 120mg,Folic Acid  400mcg  with Boron1.5mg capsules",220.0,157.0
+42,13) TUBER FORTE,"Aceclofenac 100mg ,Paracetamol 325mg & Trypsin & Chymotrypsin (6;1)-1,50,000 IU tablets",190.0,136.0
+43,14) ESMOFRESH,Esomeprazole gastro-resistant tablets IP 40 mg,120.0,86.0
+44,15) ESMOFRESH DSR,Esomeprazole 40mg & Sustained release Domperidone 30mg capsules,140.0,100.0
+45,16) Palminorm,"Palmitoylethanolamide 300 mg, Daidzein 50 mg, Genistein 4 mg Tablets",250.0,167.5
+46,"17) Daily Solo Tablets - Astaxanthin 2mg, Taurine 100mg, Curcuma Longa 50 mg, Liquorice 30mg, Cinnamon 30mg, Clove 30mg, Cranberry 25 mg, Green Tea 25 mg, Boswellia serrata","25mg, Lycopene 2500 mcg , Multiminerals, Multivitamins",,
+47,2) TUFGABA NT 100,Gabapentin 100 mg & Nortriptyline 10 mg tablets,160.0,114.0
+48,20) Myotizer,"L carnitine, L  Tartarate, Vit E, Benfotiamine, Vit C, Co Q 10, Pyridoxine, Riboflavin",,
+49,3) TUFGABA NT 200,Gabapentin 100 mg & Nortriptyline 10 mg tablets,170.0,122.0
+50,4) Tufgaba NT 400,"Gabapentin 400 mg , Nortriptyline 10 mg",330.0,236.0
+51,5) Tufgaba GAT,"Gabapentin 300 mg , Amitriptyline 10 mg",250.0,179.0
+52,6) TUFGABA 100,Gabapentin 100 mg,100.0,72.0
+53,7) MIGRACE,"Magnesium oxide,Coenzyme Q10 & Riboflavin  Tablets",280.0,200.0
+54,8) VESTINE,Duloxetine 20mg tablets,139.0,99.38
+55,"9) WINHANCE TAB-Benfotiamine 200 mg, Methylcobalamin 1000 nano gram , Alpha Lipoic Acid 200 mg, Folic acid 1.5 mg, Chromium Picolinate 200 mcg, D Chiro inositol 13.8mg,  Myo","Inositol 100 mg & Pyridoxine Hydrochloride 3 mg Tablets, Vitamin D3 600 IU",250.0,179.0
+56,D GOOD,Vitamin D3 Oral Solution 60000  IU/5 ml,90.0,64.0
+57,Daily Solo Syrup,"Multivitamins, Multiminerals, Taurine, Co-enzyme Q10, Alpha Lipolic Acid, Curcumin, Probiotics",,
+58,JOINTEE  CIS,"Cissus quadrangularis 500mg,Withania somnifera 200mg, Ergocalciferal 400IU,Phosphorus 10mg,Calcium 100mg,Vitamin B12 300mcg,Folic Acid 300mcg & Vitamin B6 0.75mg / 10 ml Syrup",450.0,322.0
+59,"PURNAS 24 200 ML SYP-Multivitamin,Multimineral with L",Lysine,,
+60,"17) Daily Solo Tablets - Astaxanthin 2mg, Taurine 100mg, Curcuma Longa 50 mg, Liquorice 30mg, Cinnamon 30mg, Clove 30mg, Cranberry 25 mg, Green Tea 25 mg, Boswellia serrata","25mg, Lycopene 2500 mcg , Multiminerals, Multivitamins Syrup",,
+61,"18) WINHANCE TAB-Benfotiamine 200 mg, Methylcobalamin 1000 nano gram , Alpha Lipoic Acid 200 mg, Folic acid 1.5 mg, Chromium Picolinate 200 mcg, D Chiro inositol 13.8mg,  Myo","Inositol 100 mg & Pyridoxine Hydrochloride 3 mg Tablets, Vitamin D3 600 IU",250.0,179.0
+62,19) Myotozer,"L carnitine, L  Tartarate, Vit E, Benfotiamine, Vit C, Co Q 10, Pyridoxine, Riboflavin",,
+63,"CALVNH -Elemental Ca- 500 mg+ Vit D3-2000 IU, Methylcobalamin 1500 mcg, L Methylfolate calcium 1mg,Prridoxal 5 Phosphate",20mg Tablets,,
+64,ESMOFRESH,Esomeprazole Gastro-Resistant Tablets IP 40 mg,120.0,86.0
+65,ESMOFRESH DSR,Esomeprazole 40mg & Sustained Release Domperidone 30mg Capsules,140.0,100.0
+66,JIOMAX D3,"Calcitriol 0.25mcg,Methylcobalamin 1500mcg,Calcium Carbonate 500mg, Eicosapentaenoic Acid 180mg,Docosahexaenoic Acid 120mg,Folic Acid  400mcg  with Boron1.5mg Capsules",220.0,157.0
+67,JOINTEE  TF,"Collagen (Type I, II, V, X) 200 mg, Mucopolysaccharides 50mg , Chondriotin Sulphate 100 mg, Hyaluronic Acid 75mg Capsules",,
+68,TUBER FORTE,"Aceclofenac 100mg ,Paracetamol 325mg & Trypsin & Chymotrypsin (6;1)-1,50,000 IU Tablets",190.0,136.0
+69,Tufgaba 100,Gabapentin 100 mg,100.0,72.0
+70,Tufgaba GAT,"Gabapentin 300 mg , Amitriptyline 10 mg",250.0,179.0
+71,Tufgaba NT 100,"Gabapentin 100 mg , Nortriptyline 10 mg",160.0,114.0
+72,Tufgaba NT 200,"Gabapentin 200 mg , Nortriptyline 10 mg",170.0,122.0
+73,Tufgaba NT 400,"Gabapentin 400 mg , Nortriptyline 10 mg",330.0,236.0
+74,CLAVRIX DROPS,Amoxycillin 80mg+Clavulanic Acid 11.4mg/ml,,
+75,COLONEZ DF DROP,Simethicone 40mg+Dill Oil 0.005ml+ Fennel oil 0.0007ml,,
+76,D3 EIGHT,Cholecalciferol (Vitamin D3) 800 IU/ml,,
+77,Daily Solo Advanced Pediatric Drops,"Multivitamins, Multiminerals, DHA, Leutin, Pre & Probiotics",,
+78,FLORABACI ORAL SUS,Bacillus clausii 2 billion spores /5ml,,
+79,ONDRIX,Ondansetron 2mg/5ml,,
+80,"PURNAS 24 30 ML DROPS-Multivitamin,Multimineral with L",Lysine,,
+81,TUSNORM LS DROPS,Levosalbutamol0.25 mg + Ambroxol 7.5 mg+ Guaiphensin 12.5 mg,,
+82,Tangiron Drops,"Iron 5 mg, Folic Acid 30 mcg, Vitamin B12  0.9 mcg/0.5 ml",,
+83,VYDROX DROPS,Hydroxyzine  Hcl 6mg/ml Drops,,
+84,WRNZ DROPS,Phenylephrine Hcl 5mg+CPM 2mg / ml drops,,
+85,ZNPD 20 DROPS,Zinc sulphate (monohydrate) 20 mg/ml,,
+86,LIDOPHEN EAR DROPS,"Phenazone 4% w/v, Lidocaine 1% w/v",,
+87,WRNZ -S  NASAL DROPS,Sodium Chloride 0.65 5 w/v,,
+88,WRNZ BABY NASAL DROPS,Oxymetazoline 0.01% w/v,,
+89,WRNZ KID NASAL DROPS,Oxymetazoline 0.05% w/v,,
+90,WRNZ MINI NASAL DROPS,Oxymetazoline 0.025% w/v,,
+91,Mimoza Shampoo,,,
+92,Mimoza,Baby Soap,,
+93,Mimoza Baby Soap,,,
+94,CEFDRIX,100-Cefpodoxime oral suspension IP 100mg/5ml,,
+95,CLAVRIX FORTE,Amoxycillin 400mg+ Clavulanic Acid 57mg/5ml,,
+96,COLANESE PEG,Polyethylene Glycol 3350 USP 13.125g,,
+97,DEFLANORM,Deflazacort  6mg/5ml,,
+98,Daily Solo Pediatric Syrup,"Multivitamins, Multiminerals,Inositiol, L-Carnitine,  Taurine,DHA, Leutin, Natural Fruit Extract, Pre & Probiotics  Syrup",,
+99,FINEMEF,100-Mefenamic Acid IP 100mg/5ml,,
+100,FINEMEF -DS,Mefenamic Acid 100mg+ Paracetamol 250mg/5ml,,
+101,FINEMEF-P,Mefenamic Acid 50mg+Paracetamol 125mg/5ml,,
+102,LETMON,Levocetirizine DiHcl 2.5mg+Montelukast Sodium 4mg/5ml,,
+103,OFLARIX -100,Ofloxacin 100mg/5ml,,
+104,PARA DS,Paracetamol 250mg/5ml oral suspension,,
+105,"PURNAS 24 100 ML SYP-Multivitamin,Multimineral with L",Lysine,,
+106,"PURNAS 24 200 ML SYP-Multivitamin,Multimineral with L",Lysine,,
+107,RELASMO DS,Drotavereine 20 mg/5ml,,
+108,TUSNORM,"XT -Acebrophylline 50mg, Guaiphenesin 50mg, Terbutaline 12.5mg /5ml syrup",,
+109,TUSNORM L SYP,Levosalbutamol  1mg + Ambroxol 30mg+ Guaiphensin 50mg/5ml syrup,,
+110,TUSNORM LS JR SYP,Levosalbutamol0.25 mg + Ambroxol 7.5 mg+ Guaiphensin 12.5 mg/5ml,,
+111,Tangiron Syrup,Iron  & Folic Acid Syrup,,
+112,VYDROX,Hydroxyzine  Hcl 10mg Solution/5ml,,
+113,WRNZ SYP,Phenylephrine Hcl 5mg+CPM2mg /5 ml syrup,,
+114,ZNPD,Zinc  Gluconate  20mg syrup/5ml,,
+115,14) D GOOD,Vitamin D3 oral solution 60000  IU/5 ml,90.0,64.0
+116,10) COLONEZ  PEG,Polyethylene glycol 3350 USP 13.125g,350.0,250.0
+117,11) DE SATURATE,"Potassium Citrate 1100mg ,Magnesium Citrate 375 mg & Vitamin B6 20 mg / 5ml Oral Solution",,
+118,"12) PURNAS 24 200 ML SYP-Multivitamin,Multimineral with L",Lysine,,
+119,13) Daily Solo Syrup,"Multivitamins, Multiminerals, Taurine, Co-enzyme Q10, Alpha Lipolic Acid, Curcumin, Probiotics",,
+120,1) Zanoflex,Ofloxacin 400mg Tablets,,
+121,2) TUBER FORTE,"Aceclofenac 100mg ,Paracetamol 325mg & Trypsin & Chymotrypsin (6;1)-1,50,000 IU Tablets",190.0,136.0
+122,"3) WINHANCE TAB-Benfotiamine 200 mg, Methylcobalamin 1000 nano gram , Alpha Lipoic Acid 200 mg, Folic acid 1.5 mg, Chromium Picolinate 200 mcg, D Chiro inositol 13.8mg,  Myo","Inositol 100 mg & Pyridoxine Hydrochloride 3 mg Tablets, Vitamin D3 600 IU",250.0,179.0
+123,"4) CALVNH -Elemental Ca- 500 mg+ Vit D3-2000 IU, Methylcobalamin 1500 mcg, L Methylfolate calcium 1mg,Prridoxal 5 Phosphate",20mg Tablets,,
+124,5) JIOMAX D3,"Calcitriol 0.25mcg,Methylcobalamin 1500mcg,Calcium Carbonate 500mg, Eicosapentaenoic Acid 180mg,Docosahexaenoic Acid 120mg,Folic Acid  400mcg  with Boron1.5mg Capsules",220.0,157.0
+125,6) ESMOFRESH,Esomeprazole gastro-resistant tablets IP 40 mg,120.0,86.0
+126,7) ESMOFRESH DSR,Esomeprazole 40mg & Sustained release Domperidone 30mg capsules,140.0,100.0
+127,"8) Daily Solo Tablets - Astaxanthin 2mg, Taurine 100mg, Curcuma Longa 50 mg, Liquorice 30mg, Cinnamon 30mg, Clove 30mg, Cranberry 25 mg, Green Tea 25 mg, Boswellia serrata","25mg, Lycopene 2500 mcg , Multiminerals, Multivitamins",,
+128,9) Myotizer,"L carnitine, L  Tartarate, Vit E, Benfotiamine, Vit C, Co Q 10, Pyridoxine, Riboflavin",,
+129,D GOOD,Vitamin D3 oral solution 60000  IU/5 ml,90.0,64.0
+130,COLONEZ  PEG,Polyethylene glycol 3350 USP 13.125g,350.0,250.0
+131,DE SATURATE (200 ml),"Potassium Citrate 1100mg ,Magnesium Citrate 375 mg & Vitamin B6 20 mg / 5ml Oral Solution",,
+132,DE SATURATE (450 ml),"Potassium Citrate 1100mg ,Magnesium Citrate 375 mg & Vitamin B6 20 mg / 5ml Oral Solution",,
+133,Daily Solo Syrup,"Multivitamins, Multiminerals, Taurine, Co-enzyme Q10, Alpha Lipolic Acid, Curcumin, Probiotics",,
+134,"PURNAS 24 200 ML SYP-Multivitamin,Multimineral with L",Lysine,,
+135,"Daily Solo Tablets - Astaxanthin 2mg, Taurine 100mg, Curcuma Longa 50 mg, Liquorice 30mg, Cinnamon 30mg, Clove 30mg, Cranberry 25 mg, Green Tea 25 mg, Boswellia serrata","25mg, Lycopene 2500 mcg , Multiminerals, Multivitamins",,
+136,ESMOFRESH,Esomeprazole gastro-resistant tablets IP 40 mg,120.0,86.0
+137,ESMOFRESH DSR,Esomeprazole 40mg & Sustained release Domperidone 30mg capsules,140.0,100.0
+138,TUBER FORTE,"Aceclofenac 100mg ,Paracetamol 325mg & Trypsin & Chymotrypsin (6;1)-1,50,000 IU Tablets",190.0,136.0
+139,Zanoflex,Ofloxacin 400mg Tablets,,

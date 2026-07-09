@@ -1,0 +1,91 @@
+<section class="apg">
+  <header class="apg__head">
+    <div>
+      <h1 class="apg__title">Careers · Jobs</h1>
+      <p class="apg__sub">Active jobs appear on the public careers page (with hardcoded fallback when none exist).</p>
+    </div>
+    <button class="apg__btn apg__btn--primary" type="button" (click)="newJob()">+ New job</button>
+  </header>
+
+  <p class="apg__error" *ngIf="error()">{{ error() }}</p>
+  <p class="apg__notice" *ngIf="notice()">{{ notice() }}</p>
+
+  <form class="apg__form" *ngIf="showForm" (ngSubmit)="save()">
+    <div class="apg__field">
+      <label>Title *</label>
+      <input class="apg__input" name="title" [(ngModel)]="model.title" />
+    </div>
+    <div class="apg__field">
+      <label>Department</label>
+      <input class="apg__input" name="dept" [(ngModel)]="model.department" />
+    </div>
+    <div class="apg__field">
+      <label>Location</label>
+      <input class="apg__input" name="loc" [(ngModel)]="model.location" />
+    </div>
+    <div class="apg__field">
+      <label>Employment type</label>
+      <input class="apg__input" name="etype" [(ngModel)]="model.employment_type" />
+    </div>
+    <div class="apg__field">
+      <label>Experience</label>
+      <input class="apg__input" name="exp" [(ngModel)]="model.experience" />
+    </div>
+    <div class="apg__field">
+      <label>Icon</label>
+      <select class="apg__select" name="icon" [(ngModel)]="model.icon">
+        <option *ngFor="let ic of icons" [ngValue]="ic">{{ ic }}</option>
+      </select>
+    </div>
+    <div class="apg__field apg__field--full">
+      <label>Description</label>
+      <textarea class="apg__textarea" name="desc" rows="2" [(ngModel)]="model.description"></textarea>
+    </div>
+    <div class="apg__field apg__field--full">
+      <label>Responsibilities (one per line)</label>
+      <textarea class="apg__textarea" name="resp" rows="4" [(ngModel)]="respText"></textarea>
+    </div>
+    <div class="apg__field">
+      <label>Sort order</label>
+      <input class="apg__input" type="number" name="sort" [(ngModel)]="model.sort_order" />
+    </div>
+    <div class="apg__field">
+      <label>Active</label>
+      <label class="apg__muted-sm"><input type="checkbox" name="active" [(ngModel)]="model.is_active" /> Visible on site</label>
+    </div>
+    <div class="apg__form-actions">
+      <button class="apg__btn apg__btn--primary" type="submit" [disabled]="saving()">
+        {{ saving() ? 'Saving…' : (editingId ? 'Save changes' : 'Create job') }}
+      </button>
+      <button class="apg__btn" type="button" (click)="cancel()">Cancel</button>
+    </div>
+  </form>
+
+  <p class="apg__muted" *ngIf="loading()">Loading jobs…</p>
+  <p class="apg__muted" *ngIf="!loading() && jobs().length === 0">No jobs yet.</p>
+
+  <table class="apg__table" *ngIf="!loading() && jobs().length > 0">
+    <thead>
+      <tr><th>Title</th><th>Location</th><th>Type</th><th>Status</th><th>Actions</th></tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let j of jobs()" [class.apg__row--off]="!j.is_active">
+        <td>{{ j.title }}</td>
+        <td>{{ j.location || '—' }}</td>
+        <td>{{ j.employment_type || '—' }}</td>
+        <td>
+          <span class="apg__badge" [class.apg__badge--on]="j.is_active" [class.apg__badge--off]="!j.is_active">
+            {{ j.is_active ? 'Active' : 'Inactive' }}
+          </span>
+        </td>
+        <td class="apg__actions">
+          <button class="apg__btn apg__btn--ghost" type="button" (click)="editJob(j)">Edit</button>
+          <button class="apg__btn" [class.apg__btn--danger]="j.is_active" [class.apg__btn--ok]="!j.is_active"
+                  [disabled]="busyId() === j.id" (click)="toggleActive(j)">
+            {{ busyId() === j.id ? '…' : (j.is_active ? 'Deactivate' : 'Reactivate') }}
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

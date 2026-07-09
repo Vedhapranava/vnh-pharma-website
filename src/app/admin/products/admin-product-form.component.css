@@ -1,0 +1,63 @@
+.apf {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  max-width: 640px;
+}
+.apf__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.apf__title { margin: 0; font-size: 1.4rem; color: #0f172a; }
+.apf__back { color: #2563eb; text-decoration: none; font-size: 0.85rem; }
+.apf__muted { color: #64748b; }
+.apf__error { color: #dc2626; font-size: 0.9rem; margin: 0 0 1rem; }
+.apf__form { display: flex; flex-direction: column; }
+.apf__label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #334155;
+  margin: 0.75rem 0 0.3rem;
+}
+.apf__input {
+  padding: 0.55rem 0.7rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  font-family: inherit;
+}
+.apf__input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+.apf__input--sm { max-width: 140px; }
+.apf__textarea { resize: vertical; }
+.apf__hint { color: #94a3b8; font-size: 0.75rem; margin-top: 0.25rem; }
+.apf__check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #334155;
+}
+.apf__actions { display: flex; gap: 0.75rem; margin-top: 1.5rem; }
+.apf__btn {
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  color: #0f172a;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+.apf__btn--primary { background: #2563eb; border-color: #2563eb; color: #fff; }
+.apf__btn:disabled { opacity: 0.6; cursor: not-allowed; }

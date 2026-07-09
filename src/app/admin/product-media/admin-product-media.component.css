@@ -1,0 +1,97 @@
+.apm {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.apm__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.apm__title { margin: 0; font-size: 1.4rem; color: #0f172a; }
+.apm__sub { margin: 0.25rem 0 0; color: #475569; font-size: 0.95rem; }
+.apm__slug { color: #2563eb; font-size: 0.85rem; }
+.apm__btn {
+  padding: 0.45rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  color: #0f172a;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+.apm__btn:disabled { opacity: 0.55; cursor: not-allowed; }
+.apm__btn--primary { background: #2563eb; border-color: #2563eb; color: #fff; }
+.apm__btn--sm { padding: 0.3rem 0.55rem; font-size: 0.78rem; font-weight: 500; }
+.apm__btn--danger { border-color: #fca5a5; color: #b91c1c; }
+.apm__error { color: #dc2626; font-size: 0.9rem; margin: 0 0 0.75rem; }
+.apm__notice { color: #15803d; font-size: 0.9rem; margin: 0 0 0.75rem; }
+.apm__muted { color: #64748b; font-size: 0.9rem; }
+.apm__upload {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  border: 1px dashed #cbd5e1;
+  border-radius: 10px;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+.apm__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.apm__card {
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+}
+.apm__thumb-wrap { position: relative; margin-bottom: 0.6rem; }
+.apm__thumb {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #f1f5f9;
+  display: block;
+}
+.apm__primary-flag {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  background: #16a34a;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+}
+.apm__field-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #475569;
+  margin: 0.4rem 0 0.2rem;
+}
+.apm__field {
+  padding: 0.4rem 0.55rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  font-size: 0.85rem;
+  font-family: inherit;
+}
+.apm__field--sm { max-width: 90px; }
+.apm__card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.7rem;
+}

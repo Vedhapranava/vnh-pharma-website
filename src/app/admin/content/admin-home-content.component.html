@@ -1,0 +1,41 @@
+<section class="ce">
+  <header class="ce__head">
+    <h1 class="ce__title">Home content</h1>
+    <a class="ce__btn ce__btn--sm" routerLink="/admin/dashboard">← Dashboard</a>
+  </header>
+  <nav class="ce__tabs">
+    <a routerLink="/admin/content/home">Home</a>
+    <a routerLink="/admin/content/about">About</a>
+    <a routerLink="/admin/content/contact">Contact</a>
+  </nav>
+  <p class="ce__hint">Edits the homepage hero (section_key: home_hero).</p>
+
+  <p class="ce__error" *ngIf="error()">{{ error() }}</p>
+  <p class="ce__notice" *ngIf="notice()">{{ notice() }}</p>
+  <p class="ce__muted" *ngIf="loading()">Loading…</p>
+
+  <form class="ce__form" *ngIf="!loading()" (ngSubmit)="save()">
+    <label class="ce__label" for="ht">Hero title</label>
+    <input id="ht" class="ce__input" name="ht" [(ngModel)]="heroTitle" />
+
+    <label class="ce__label" for="hs">Hero subtitle</label>
+    <textarea id="hs" class="ce__input ce__textarea" name="hs" rows="2" [(ngModel)]="heroSubtitle"></textarea>
+
+    <label class="ce__label" for="cta">CTA button text</label>
+    <input id="cta" class="ce__input" name="cta" [(ngModel)]="ctaText" />
+
+    <label class="ce__label">Stats</label>
+    <div class="ce__row" *ngFor="let s of stats; let i = index">
+      <input class="ce__input" placeholder="Value (e.g. 20+)" [(ngModel)]="s.value" [name]="'sv' + i" />
+      <input class="ce__input" placeholder="Label (e.g. Years)" [(ngModel)]="s.label" [name]="'sl' + i" />
+      <button class="ce__btn ce__btn--sm ce__btn--danger" type="button" (click)="removeStat(i)">✕</button>
+    </div>
+    <button class="ce__btn ce__btn--sm" type="button" (click)="addStat()">+ Add stat</button>
+
+    <div class="ce__actions">
+      <button class="ce__btn ce__btn--primary" type="submit" [disabled]="saving()">
+        {{ saving() ? 'Saving…' : 'Save home content' }}
+      </button>
+    </div>
+  </form>
+</section>

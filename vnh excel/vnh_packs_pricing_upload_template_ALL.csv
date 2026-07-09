@@ -1,0 +1,142 @@
+division_slug,category_slug,product_name,product_slug,pack_label,pack_size_value,pack_size_unit,mrp,ptr,sku,sort_order,is_active
+pediatrics,syrups,RELASMO DS,relasmo-ds,Standard Pack,,,,,,1,True
+pediatrics,syrups,COLANESE PEG,colanese-peg,Standard Pack,,,,,,1,True
+pediatrics,syrups,COLANESE PEG,colanese-peg-2,Standard Pack,,,,,,1,True
+pediatrics,syrups,ZNPD,znpd,Standard Pack,,,,,,1,True
+pediatrics,syrups,DEFLANORM,deflanorm,Standard Pack,,,,,,1,True
+pediatrics,syrups,LETMON,letmon,Standard Pack,,,,,,1,True
+pediatrics,syrups,VYDROX,vydrox,Standard Pack,,,,,,1,True
+pediatrics,syrups,WRNZ SYP,wrnz-syp,Standard Pack,,,,,,1,True
+pediatrics,syrups,CEFDRIX,cefdrix,Standard Pack,,,,,,1,True
+pediatrics,syrups,CLAVRIX FORTE,clavrix-forte,Standard Pack,,,,,,1,True
+pediatrics,syrups,OFLARIX -100,oflarix-100,Standard Pack,,,,,,1,True
+pediatrics,syrups,TUSNORM,tusnorm,Standard Pack,,,,,,1,True
+pediatrics,syrups,TUSNORM LS JR SYP,tusnorm-ls-jr-syp,Standard Pack,,,,,,1,True
+pediatrics,syrups,TUSNORM L SYP,tusnorm-l-syp,Standard Pack,,,,,,1,True
+pediatrics,syrups,"PURNAS 24 100 ML SYP-Multivitamin,Multimineral with L",purnas-24-100-ml-syp-multivitamin-multimineral-with-l,Standard Pack,,,,,,1,True
+pediatrics,syrups,"PURNAS 24 200 ML SYP-Multivitamin,Multimineral with L",purnas-24-200-ml-syp-multivitamin-multimineral-with-l,Standard Pack,,,,,,1,True
+pediatrics,syrups,PARA DS,para-ds,Standard Pack,,,,,,1,True
+pediatrics,syrups,FINEMEF,finemef,Standard Pack,,,,,,1,True
+pediatrics,syrups,FINEMEF-P,finemef-p,Standard Pack,,,,,,1,True
+pediatrics,syrups,FINEMEF -DS,finemef-ds,Standard Pack,,,,,,1,True
+pediatrics,syrups,Daily Solo Pediatric Syrup,daily-solo-pediatric-syrup,Standard Pack,,,,,,1,True
+pediatrics,syrups,Tangiron Syrup,tangiron-syrup,Standard Pack,,,,,,1,True
+pediatrics,drops,D3 EIGHT,d3-eight,Standard Pack,,,,,,1,True
+pediatrics,drops,COLONEZ DF DROP,colonez-df-drop,Standard Pack,,,,,,1,True
+pediatrics,drops,FLORABACI ORAL SUS,florabaci-oral-sus,Standard Pack,,,,,,1,True
+pediatrics,drops,ZNPD 20 DROPS,znpd-20-drops,Standard Pack,,,,,,1,True
+pediatrics,drops,CLAVRIX DROPS,clavrix-drops,Standard Pack,,,,,,1,True
+pediatrics,drops,ONDRIX,ondrix,Standard Pack,,,,,,1,True
+pediatrics,drops,VYDROX DROPS,vydrox-drops,Standard Pack,,,,,,1,True
+pediatrics,drops,WRNZ DROPS,wrnz-drops,Standard Pack,,,,,,1,True
+pediatrics,drops,TUSNORM LS DROPS,tusnorm-ls-drops,Standard Pack,,,,,,1,True
+pediatrics,drops,"PURNAS 24 30 ML DROPS-Multivitamin,Multimineral with L",purnas-24-30-ml-drops-multivitamin-multimineral-with-l,Standard Pack,,,,,,1,True
+pediatrics,drops,Daily Solo Advanced Pediatric Drops,daily-solo-advanced-pediatric-drops,Standard Pack,,,,,,1,True
+pediatrics,drops,Tangiron Drops,tangiron-drops,Standard Pack,,,,,,1,True
+pediatrics,nasal-ear-drops,LIDOPHEN EAR DROPS,lidophen-ear-drops,Standard Pack,,,,,,1,True
+pediatrics,nasal-ear-drops,WRNZ -S  NASAL DROPS,wrnz-s-nasal-drops,Standard Pack,,,,,,1,True
+pediatrics,nasal-ear-drops,WRNZ BABY NASAL DROPS,wrnz-baby-nasal-drops,Standard Pack,,,,,,1,True
+pediatrics,nasal-ear-drops,WRNZ MINI NASAL DROPS,wrnz-mini-nasal-drops,Standard Pack,,,,,,1,True
+pediatrics,nasal-ear-drops,WRNZ KID NASAL DROPS,wrnz-kid-nasal-drops,Standard Pack,,,,,,1,True
+pediatrics,injectables,CEFDRIX,cefdrix-2,Standard Pack,,,,,,1,True
+pediatrics,soap,Mimoza,mimoza,Standard Pack,,,,,,1,True
+gynac,tablets-capsules,1) LAMINIF 100ML,1-laminif-100ml,Standard Pack,,,,,,1,True
+gynac,tablets-capsules,2) LAMINIF 210ML,2-laminif-210ml,Standard Pack,,,,,,1,True
+gynac,tablets-capsules,3) GF -18 Tablets,3-gf-18-tablets,Standard Pack,,,,,,1,True
+gynac,tablets-capsules,"4) CALVNH TAB-Elemental Ca- 500 mg, Vit D3-2000 IU, Methylcobalamin 1500 mcg, L Methylfolate calcium 1mg,Prridoxal 5 Phosphate",4-calvnh-tab-elemental-ca-500-mg-vit-d3-2000-iu-methylcobalamin-1500-mcg-l-methylfolate-calcium-1mg-prridoxal-5-phosphate,Standard Pack,,,,,,1,True
+gynac,tablets-capsules,5) JIOMAX D3,5-jiomax-d3,Standard Pack,,,,,,1,True
+gynac,tablets-capsules,6) MIGRACE,6-migrace,Standard Pack,,,,,,1,True
+gynac,tablets-capsules,7) TUBER FORTE,7-tuber-forte,Standard Pack,,,,,,1,True
+gynac,tablets-capsules,8) ESMOFRESH,8-esmofresh,Standard Pack,,,,,,1,True
+gynac,tablets-capsules,9) ESMOFRESH DSR,9-esmofresh-dsr,Standard Pack,,,,,,1,True
+gynac,tablets-capsules,"10) Daily Solo Tablets - Astaxanthin 2mg, Taurine 100mg, Curcuma Longa 50 mg, Liquorice 30mg, Cinnamon 30mg, Clove 30mg, Cranberry 25 mg, Green Tea 25 mg, Boswellia serrata",10-daily-solo-tablets-astaxanthin-2mg-taurine-100mg-curcuma-longa-50-mg-liquorice-30mg-cinnamon-30mg-clove-30mg-cranberry-25-mg-green-tea-25-mg-boswellia-serrata,Standard Pack,,,,,,1,True
+gynac,syrups,11) COLANESE PEG,11-colanese-peg,Standard Pack,,,,,,1,True
+gynac,syrups,12) COLANESE PEG,12-colanese-peg,Standard Pack,,,,,,1,True
+gynac,syrups,13) DE SATURATE,13-de-saturate,Standard Pack,,,,,,1,True
+gynac,syrups,"14) PURNAS 24 200 ML SYP-Multivitamin,Multimineral with L",14-purnas-24-200-ml-syp-multivitamin-multimineral-with-l,Standard Pack,,,,,,1,True
+gynac,syrups,15) Daily Solo Syrup,15-daily-solo-syrup,Standard Pack,,,,,,1,True
+gynac,nano-shots,16) D GOOD,16-d-good,Standard Pack,,,,,,1,True
+ortho,tablets-capsules,JOINTEE  TF,jointee-tf,Standard Pack,,,,,,1,True
+ortho,tablets-capsules,"CALVNH -Elemental Ca- 500 mg+ Vit D3-2000 IU, Methylcobalamin 1500 mcg, L Methylfolate calcium 1mg,Prridoxal 5 Phosphate",calvnh-elemental-ca-500-mg-vit-d3-2000-iu-methylcobalamin-1500-mcg-l-methylfolate-calcium-1mg-prridoxal-5-phosphate,Standard Pack,,,,,,1,True
+ortho,tablets-capsules,JIOMAX D3,jiomax-d3,Standard Pack,,,220,157.0,,1,True
+ortho,tablets-capsules,TUBER FORTE,tuber-forte,Standard Pack,,,190,136.0,,1,True
+ortho,tablets-capsules,ESMOFRESH,esmofresh,Standard Pack,,,120,86.0,,1,True
+ortho,tablets-capsules,ESMOFRESH DSR,esmofresh-dsr,Standard Pack,,,140,100.0,,1,True
+ortho,tablets-capsules,Tufgaba 100,tufgaba-100,Standard Pack,,,100,72.0,,1,True
+ortho,tablets-capsules,Tufgaba NT 100,tufgaba-nt-100,Standard Pack,,,160,114.0,,1,True
+ortho,tablets-capsules,Tufgaba NT 200,tufgaba-nt-200,Standard Pack,,,170,122.0,,1,True
+ortho,tablets-capsules,Tufgaba NT 400,tufgaba-nt-400,Standard Pack,,,330,236.0,,1,True
+ortho,tablets-capsules,Tufgaba GAT,tufgaba-gat,Standard Pack,,,250,179.0,,1,True
+ortho,tablets-capsules,"17) Daily Solo Tablets - Astaxanthin 2mg, Taurine 100mg, Curcuma Longa 50 mg, Liquorice 30mg, Cinnamon 30mg, Clove 30mg, Cranberry 25 mg, Green Tea 25 mg, Boswellia serrata",17-daily-solo-tablets-astaxanthin-2mg-taurine-100mg-curcuma-longa-50-mg-liquorice-30mg-cinnamon-30mg-clove-30mg-cranberry-25-mg-green-tea-25-mg-boswellia-serrata,Standard Pack,,,,,,1,True
+ortho,tablets-capsules,"18) WINHANCE TAB-Benfotiamine 200 mg, Methylcobalamin 1000 nano gram , Alpha Lipoic Acid 200 mg, Folic acid 1.5 mg, Chromium Picolinate 200 mcg, D Chiro inositol 13.8mg,  Myo",18-winhance-tab-benfotiamine-200-mg-methylcobalamin-1000-nano-gram-alpha-lipoic-acid-200-mg-folic-acid-1-5-mg-chromium-picolinate-200-mcg-d-chiro-inositol-13-8mg-myo,Standard Pack,,,,,,1,True
+ortho,tablets-capsules,19) Myotozer,19-myotozer,Standard Pack,,,,,,1,True
+ortho,syrups,JOINTEE  CIS,jointee-cis,Standard Pack,,,450,322.0,,1,True
+ortho,syrups,"PURNAS 24 200 ML SYP-Multivitamin,Multimineral with L",purnas-24-200-ml-syp-multivitamin-multimineral-with-l-2,Standard Pack,,,,,,1,True
+ortho,syrups,Daily Solo Syrup,daily-solo-syrup,Standard Pack,,,,,,1,True
+ortho,nano-shots,D GOOD,d-good,Standard Pack,,,90,64.0,,1,True
+neuroshine,tablets-capsules,1) TUFGABA GAT,1-tufgaba-gat,Standard Pack,,,,,,1,True
+neuroshine,tablets-capsules,2) TUFGABA NT 100,2-tufgaba-nt-100,Standard Pack,,,,,,1,True
+neuroshine,tablets-capsules,3) TUFGABA NT 200,3-tufgaba-nt-200,Standard Pack,,,,,,1,True
+neuroshine,tablets-capsules,4) Tufgaba NT 400,4-tufgaba-nt-400,Standard Pack,,,,,,1,True
+neuroshine,tablets-capsules,5) Tufgaba GAT,5-tufgaba-gat,Standard Pack,,,,,,1,True
+neuroshine,tablets-capsules,6) TUFGABA 100,6-tufgaba-100,Standard Pack,,,,,,1,True
+neuroshine,tablets-capsules,7) MIGRACE,7-migrace,Standard Pack,,,,,,1,True
+neuroshine,tablets-capsules,8) VESTINE,8-vestine,Standard Pack,,,,,,1,True
+neuroshine,tablets-capsules,"9) WINHANCE TAB-Benfotiamine 200 mg, Methylcobalamin 1000 nano gram , Alpha Lipoic Acid 200 mg, Folic acid 1.5 mg, Chromium Picolinate 200 mcg, D Chiro inositol 13.8mg,  Myo",9-winhance-tab-benfotiamine-200-mg-methylcobalamin-1000-nano-gram-alpha-lipoic-acid-200-mg-folic-acid-1-5-mg-chromium-picolinate-200-mcg-d-chiro-inositol-13-8mg-myo,Standard Pack,,,,,,1,True
+neuroshine,tablets-capsules,10) Myotizer,10-myotizer,Standard Pack,,,,,,1,True
+neuroshine,tablets-capsules,"11) CALVNH TAB-Elemental Ca- 500 mg+ Vit D3-2000 IU, Methylcobalamin 1500 mcg, L Methylfolate calcium 1mg,Prridoxal 5 Phosphate",11-calvnh-tab-elemental-ca-500-mg-vit-d3-2000-iu-methylcobalamin-1500-mcg-l-methylfolate-calcium-1mg-prridoxal-5-phosphate,Standard Pack,,,,,,1,True
+neuroshine,tablets-capsules,12) JIOMAX D3,12-jiomax-d3,Standard Pack,,,,,,1,True
+neuroshine,tablets-capsules,13) TUBER FORTE,13-tuber-forte,Standard Pack,,,,,,1,True
+neuroshine,tablets-capsules,14) ESMOFRESH,14-esmofresh,Standard Pack,,,,,,1,True
+neuroshine,tablets-capsules,15) ESMOFRESH DSR,15-esmofresh-dsr,Standard Pack,,,,,,1,True
+neuroshine,tablets-capsules,16) Palminorm,16-palminorm,Standard Pack,,,,,,1,True
+neuroshine,tablets-capsules,"17) Daily Solo Tablets - Astaxanthin 2mg, Taurine 100mg, Curcuma Longa 50 mg, Liquorice 30mg, Cinnamon 30mg, Clove 30mg, Cranberry 25 mg, Green Tea 25 mg, Boswellia serrata",17-daily-solo-tablets-astaxanthin-2mg-taurine-100mg-curcuma-longa-50-mg-liquorice-30mg-cinnamon-30mg-clove-30mg-cranberry-25-mg-green-tea-25-mg-boswellia-serrata-2,Standard Pack,,,,,,1,True
+neuroshine,tablets-capsules,20) Myotizer,20-myotizer,Standard Pack,,,,,,1,True
+neuroshine,syrups,18) COLANESE PEG,18-colanese-peg,Standard Pack,,,,,,1,True
+neuroshine,syrups,19) COLANESE PEG,19-colanese-peg,Standard Pack,,,,,,1,True
+neuroshine,syrups,"21) PURNAS 24 200 ML SYP-Multivitamin,Multimineral with L",21-purnas-24-200-ml-syp-multivitamin-multimineral-with-l,Standard Pack,,,,,,1,True
+neuroshine,syrups,22) Daily Solo Syrup,22-daily-solo-syrup,Standard Pack,,,,,,1,True
+neuroshine,syrups,Nano Shots - 22 )  D GOOD,nano-shots-22-d-good,Standard Pack,,,,,,1,True
+uro,tablets-capsules,Zanoflex,zanoflex,Standard Pack,,,,,,1,True
+uro,tablets-capsules,TUBER FORTE,tuber-forte-2,Standard Pack,,,190,136.0,,1,True
+uro,tablets-capsules,ESMOFRESH,esmofresh-2,Standard Pack,,,120,86.0,,1,True
+uro,tablets-capsules,ESMOFRESH DSR,esmofresh-dsr-2,Standard Pack,,,140,100.0,,1,True
+uro,tablets-capsules,"Daily Solo Tablets - Astaxanthin 2mg, Taurine 100mg, Curcuma Longa 50 mg, Liquorice 30mg, Cinnamon 30mg, Clove 30mg, Cranberry 25 mg, Green Tea 25 mg, Boswellia serrata",daily-solo-tablets-astaxanthin-2mg-taurine-100mg-curcuma-longa-50-mg-liquorice-30mg-cinnamon-30mg-clove-30mg-cranberry-25-mg-green-tea-25-mg-boswellia-serrata,Standard Pack,,,,,,1,True
+uro,syrups,COLONEZ  PEG,colonez-peg,Standard Pack,,,350,250.0,,1,True
+uro,syrups,DE SATURATE (200 ml),de-saturate-200-ml,Standard Pack,,,,,,1,True
+uro,syrups,DE SATURATE (450 ml),de-saturate-450-ml,Standard Pack,,,,,,1,True
+uro,syrups,"PURNAS 24 200 ML SYP-Multivitamin,Multimineral with L",purnas-24-200-ml-syp-multivitamin-multimineral-with-l-3,Standard Pack,,,,,,1,True
+uro,syrups,Daily Solo Syrup,daily-solo-syrup-2,Standard Pack,,,,,,1,True
+uro,nano-shots,D GOOD,d-good-2,Standard Pack,,,90,64.0,,1,True
+surgeon,tablets-capsules,1) Zanoflex,1-zanoflex,Standard Pack,,,,,,1,True
+surgeon,tablets-capsules,2) TUBER FORTE,2-tuber-forte,Standard Pack,,,,,,1,True
+surgeon,tablets-capsules,"3) WINHANCE TAB-Benfotiamine 200 mg, Methylcobalamin 1000 nano gram , Alpha Lipoic Acid 200 mg, Folic acid 1.5 mg, Chromium Picolinate 200 mcg, D Chiro inositol 13.8mg,  Myo",3-winhance-tab-benfotiamine-200-mg-methylcobalamin-1000-nano-gram-alpha-lipoic-acid-200-mg-folic-acid-1-5-mg-chromium-picolinate-200-mcg-d-chiro-inositol-13-8mg-myo,Standard Pack,,,,,,1,True
+surgeon,tablets-capsules,"4) CALVNH -Elemental Ca- 500 mg+ Vit D3-2000 IU, Methylcobalamin 1500 mcg, L Methylfolate calcium 1mg,Prridoxal 5 Phosphate",4-calvnh-elemental-ca-500-mg-vit-d3-2000-iu-methylcobalamin-1500-mcg-l-methylfolate-calcium-1mg-prridoxal-5-phosphate,Standard Pack,,,,,,1,True
+surgeon,tablets-capsules,5) JIOMAX D3,5-jiomax-d3-2,Standard Pack,,,,,,1,True
+surgeon,tablets-capsules,6) ESMOFRESH,6-esmofresh,Standard Pack,,,,,,1,True
+surgeon,tablets-capsules,7) ESMOFRESH DSR,7-esmofresh-dsr,Standard Pack,,,,,,1,True
+surgeon,tablets-capsules,"8) Daily Solo Tablets - Astaxanthin 2mg, Taurine 100mg, Curcuma Longa 50 mg, Liquorice 30mg, Cinnamon 30mg, Clove 30mg, Cranberry 25 mg, Green Tea 25 mg, Boswellia serrata",8-daily-solo-tablets-astaxanthin-2mg-taurine-100mg-curcuma-longa-50-mg-liquorice-30mg-cinnamon-30mg-clove-30mg-cranberry-25-mg-green-tea-25-mg-boswellia-serrata,Standard Pack,,,,,,1,True
+surgeon,tablets-capsules,9) Myotizer,9-myotizer,Standard Pack,,,,,,1,True
+surgeon,syrups,10) COLONEZ  PEG,10-colonez-peg,Standard Pack,,,,,,1,True
+surgeon,syrups,11) DE SATURATE,11-de-saturate,Standard Pack,,,,,,1,True
+surgeon,syrups,"12) PURNAS 24 200 ML SYP-Multivitamin,Multimineral with L",12-purnas-24-200-ml-syp-multivitamin-multimineral-with-l,Standard Pack,,,,,,1,True
+surgeon,syrups,13) Daily Solo Syrup,13-daily-solo-syrup,Standard Pack,,,,,,1,True
+surgeon,nano-shots,14) D GOOD,14-d-good,Standard Pack,,,,,,1,True
+general,tablets-capsules,Zanoflex,zanoflex-2,Standard Pack,,,,,,1,True
+general,tablets-capsules,TUBER FORTE,tuber-forte-3,Standard Pack,,,190,136.0,,1,True
+general,tablets-capsules,ESMOFRESH,esmofresh-3,Standard Pack,,,120,86.0,,1,True
+general,tablets-capsules,ESMOFRESH DSR,esmofresh-dsr-3,Standard Pack,,,140,100.0,,1,True
+general,tablets-capsules,"WINHANCE TAB-Benfotiamine 200 mg, Methylcobalamin 1000 nano gram , Alpha Lipoic Acid 200 mg, Folic acid 1.5 mg, Chromium Picolinate 200 mcg, D Chiro inositol 13.8mg,  Myo",winhance-tab-benfotiamine-200-mg-methylcobalamin-1000-nano-gram-alpha-lipoic-acid-200-mg-folic-acid-1-5-mg-chromium-picolinate-200-mcg-d-chiro-inositol-13-8mg-myo,Standard Pack,,,,,,1,True
+general,tablets-capsules,"CALVNH -Elemental Ca- 500 mg+ Vit D3-2000 IU, Methylcobalamin 1500 mcg, L Methylfolate calcium 1mg,Prridoxal 5 Phosphate",calvnh-elemental-ca-500-mg-vit-d3-2000-iu-methylcobalamin-1500-mcg-l-methylfolate-calcium-1mg-prridoxal-5-phosphate-2,Standard Pack,,,,,,1,True
+general,tablets-capsules,JIOMAX D3,jiomax-d3-2,Standard Pack,,,220,157.0,,1,True
+general,tablets-capsules,"15) Daily Solo Tablets - Astaxanthin 2mg, Taurine 100mg, Curcuma Longa 50 mg, Liquorice 30mg, Cinnamon 30mg, Clove 30mg, Cranberry 25 mg, Green Tea 25 mg, Boswellia serrata",15-daily-solo-tablets-astaxanthin-2mg-taurine-100mg-curcuma-longa-50-mg-liquorice-30mg-cinnamon-30mg-clove-30mg-cranberry-25-mg-green-tea-25-mg-boswellia-serrata,Standard Pack,,,,,,1,True
+general,tablets-capsules,16) Myotizer,16-myotizer,Standard Pack,,,,,,1,True
+general,syrups,COLONEZ  PEG,colonez-peg-2,Standard Pack,,,350,250.0,,1,True
+general,syrups,DE SATURATE,de-saturate,Standard Pack,,,,,,1,True
+general,syrups,TUSNORM,tusnorm-2,Standard Pack,,,,,,1,True
+general,syrups,TUSNORM L SYP,tusnorm-l-syp-2,Standard Pack,,,,,,1,True
+general,syrups,"PURNAS 24 200 ML SYP-Multivitamin,Multimineral with L",purnas-24-200-ml-syp-multivitamin-multimineral-with-l-4,Standard Pack,,,,,,1,True
+general,syrups,17) Daily Solo Syrup,17-daily-solo-syrup,Standard Pack,,,,,,1,True
+general,nano-shots,D GOOD,d-good-3,Standard Pack,,,90,64.0,,1,True
+pediatrics,soap,Mimoza Baby Soap,mimoza-baby-soap,Standard Pack,,,,,,1,True
+pediatrics,shampoo,Mimoza Shampoo,mimoza-shampoo,Standard Pack,,,,,,1,True

@@ -1,0 +1,42 @@
+<section class="ce">
+  <header class="ce__head">
+    <h1 class="ce__title">About content</h1>
+    <a class="ce__btn ce__btn--sm" routerLink="/admin/dashboard">← Dashboard</a>
+  </header>
+  <nav class="ce__tabs">
+    <a routerLink="/admin/content/home">Home</a>
+    <a routerLink="/admin/content/about">About</a>
+    <a routerLink="/admin/content/contact">Contact</a>
+  </nav>
+  <p class="ce__hint">Edits the About page (section_key: about_main).</p>
+
+  <p class="ce__error" *ngIf="error()">{{ error() }}</p>
+  <p class="ce__notice" *ngIf="notice()">{{ notice() }}</p>
+  <p class="ce__muted" *ngIf="loading()">Loading…</p>
+
+  <form class="ce__form" *ngIf="!loading()" (ngSubmit)="save()">
+    <label class="ce__label" for="t">Title</label>
+    <input id="t" class="ce__input" name="t" [(ngModel)]="title" />
+
+    <label class="ce__label" for="tg">Tagline / subtitle</label>
+    <input id="tg" class="ce__input" name="tg" [(ngModel)]="tagline" />
+
+    <label class="ce__label" for="d">Company description</label>
+    <textarea id="d" class="ce__input ce__textarea" name="d" rows="4" [(ngModel)]="description"></textarea>
+
+    <label class="ce__label" for="v">Vision</label>
+    <textarea id="v" class="ce__input ce__textarea" name="v" rows="3" [(ngModel)]="vision"></textarea>
+
+    <label class="ce__label" for="m">Mission</label>
+    <textarea id="m" class="ce__input ce__textarea" name="m" rows="3" [(ngModel)]="mission"></textarea>
+
+    <label class="ce__label" for="st">Company story (optional)</label>
+    <textarea id="st" class="ce__input ce__textarea" name="st" rows="4" [(ngModel)]="story"></textarea>
+
+    <div class="ce__actions">
+      <button class="ce__btn ce__btn--primary" type="submit" [disabled]="saving()">
+        {{ saving() ? 'Saving…' : 'Save about content' }}
+      </button>
+    </div>
+  </form>
+</section>

@@ -1,0 +1,46 @@
+<section class="apg">
+  <header class="apg__head">
+    <div>
+      <h1 class="apg__title">About · Strategic Partners</h1>
+      <p class="apg__sub">Cards in “Technical Support & Strategic Guidance”. If none are active, the site shows the built-in Velgen / Future Partner fallback.</p>
+    </div>
+    <button class="apg__btn apg__btn--primary" type="button" (click)="newRow()">+ New partner</button>
+  </header>
+
+  <p class="apg__error" *ngIf="error()">{{ error() }}</p>
+  <p class="apg__notice" *ngIf="notice()">{{ notice() }}</p>
+
+  <form class="apg__form" *ngIf="showForm" (ngSubmit)="save()">
+    <div class="apg__field"><label>Name *</label><input class="apg__input" name="name" [(ngModel)]="model.name" /></div>
+    <div class="apg__field"><label>Badge / label</label><input class="apg__input" name="label" [(ngModel)]="model.label" placeholder="Technical Partner / Coming Soon" /></div>
+    <div class="apg__field apg__field--full"><label>Description</label><textarea class="apg__textarea" name="desc" rows="2" [(ngModel)]="model.description"></textarea></div>
+    <div class="apg__field"><label>Website URL (leave blank = “coming soon” style)</label><input class="apg__input" name="url" [(ngModel)]="model.url" /></div>
+    <div class="apg__field"><label>Icon (optional text key)</label><input class="apg__input" name="icon" [(ngModel)]="model.icon" /></div>
+    <div class="apg__field"><label>Sort order</label><input class="apg__input" type="number" name="sort" [(ngModel)]="model.sort_order" /></div>
+    <div class="apg__field"><label>Active</label><label class="apg__muted-sm"><input type="checkbox" name="active" [(ngModel)]="model.is_active" /> Visible on site</label></div>
+    <div class="apg__form-actions">
+      <button class="apg__btn apg__btn--primary" type="submit" [disabled]="saving()">{{ saving() ? 'Saving…' : (editingId ? 'Save changes' : 'Create') }}</button>
+      <button class="apg__btn" type="button" (click)="cancel()">Cancel</button>
+    </div>
+  </form>
+
+  <p class="apg__muted" *ngIf="loading()">Loading…</p>
+  <p class="apg__muted" *ngIf="!loading() && rows().length === 0">No partner cards yet — the site shows the built-in fallback.</p>
+
+  <table class="apg__table" *ngIf="!loading() && rows().length > 0">
+    <thead><tr><th>Name</th><th>Label</th><th>Link</th><th>Status</th><th>Actions</th></tr></thead>
+    <tbody>
+      <tr *ngFor="let p of rows()" [class.apg__row--off]="!p.is_active">
+        <td>{{ p.name }}</td>
+        <td>{{ p.label || '—' }}</td>
+        <td>{{ p.url ? 'Yes' : '—' }}</td>
+        <td><span class="apg__badge" [class.apg__badge--on]="p.is_active" [class.apg__badge--off]="!p.is_active">{{ p.is_active ? 'Active' : 'Inactive' }}</span></td>
+        <td class="apg__actions">
+          <button class="apg__btn apg__btn--ghost" type="button" (click)="editRow(p)">Edit</button>
+          <button class="apg__btn" [class.apg__btn--danger]="p.is_active" [class.apg__btn--ok]="!p.is_active" [disabled]="busyId() === p.id" (click)="toggleActive(p)">{{ busyId() === p.id ? '…' : (p.is_active ? 'Deactivate' : 'Reactivate') }}</button>
+          <button class="apg__btn apg__btn--danger" type="button" [disabled]="busyId() === p.id" (click)="remove(p)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

@@ -1,178 +1,595 @@
-<section class="detail-shell">
-  <div class="detail-hero" *ngIf="!loading() && !errorMsg() && product() as productData">
-    <div class="detail-left">
-      <a routerLink="/products" class="back-link">← Back to Products</a>
+<div class="pdp-shell">
 
-      <span class="section-tag">Product Detail</span>
-
-      <div class="category-badge" [attr.data-category]="productData.category">
-        {{ productData.category }}
-      </div>
-
-      <h1>{{ productData.name }}</h1>
-
-      <p class="short-text">
-        {{ productData.shortDescription }}
-      </p>
-
-      <div class="meta-row">
-        <div class="meta-card">
-          <span class="meta-label">Product Slug</span>
-          <strong>{{ productData.slug }}</strong>
-        </div>
-
-        <div class="meta-card">
-          <span class="meta-label">Division</span>
-          <strong>{{ productData.divisions?.name || 'General' }}</strong>
-        </div>
-      </div>
-
-      <div class="detail-actions">
-        <a routerLink="/contact" class="btn btn-primary">Enquire Now</a>
-        <a routerLink="/products" class="btn btn-ghost">Explore More</a>
-      </div>
+  <!-- ═══════════════════════════════════════════════
+       AMBIENT BACKGROUND CANVAS
+  ════════════════════════════════════════════════ -->
+  <div class="pdp-canvas" aria-hidden="true">
+    <div class="pdp-blob pdp-blob--gold"></div>
+    <div class="pdp-blob pdp-blob--red"></div>
+    <div class="pdp-blob pdp-blob--cream"></div>
+    <div class="pdp-mol-bg">
+      <svg viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="80"  cy="90"  r="10" stroke="currentColor" stroke-width="1.5" opacity="0.12"/>
+        <circle cx="200" cy="50"  r="6"  stroke="currentColor" stroke-width="1.2" opacity="0.10"/>
+        <circle cx="360" cy="120" r="14" stroke="currentColor" stroke-width="1.5" opacity="0.09"/>
+        <circle cx="500" cy="80"  r="8"  stroke="currentColor" stroke-width="1.2" opacity="0.10"/>
+        <circle cx="150" cy="240" r="9"  stroke="currentColor" stroke-width="1.2" opacity="0.09"/>
+        <circle cx="440" cy="300" r="12" stroke="currentColor" stroke-width="1.5" opacity="0.08"/>
+        <circle cx="550" cy="420" r="7"  stroke="currentColor" stroke-width="1.2" opacity="0.09"/>
+        <circle cx="100" cy="480" r="11" stroke="currentColor" stroke-width="1.5" opacity="0.08"/>
+        <circle cx="300" cy="500" r="8"  stroke="currentColor" stroke-width="1.2" opacity="0.09"/>
+        <line x1="90"  y1="90"  x2="194" y2="52"  stroke="currentColor" stroke-width="0.9" opacity="0.09"/>
+        <line x1="206" y1="52"  x2="346" y2="118" stroke="currentColor" stroke-width="0.9" opacity="0.08"/>
+        <line x1="374" y1="120" x2="492" y2="82"  stroke="currentColor" stroke-width="0.9" opacity="0.08"/>
+        <line x1="159" y1="244" x2="428" y2="298" stroke="currentColor" stroke-width="0.9" opacity="0.07"/>
+        <line x1="448" y1="308" x2="543" y2="415" stroke="currentColor" stroke-width="0.9" opacity="0.07"/>
+        <line x1="108" y1="482" x2="292" y2="502" stroke="currentColor" stroke-width="0.9" opacity="0.07"/>
+      </svg>
     </div>
+  </div>
 
-    <div class="detail-right">
-      <div class="product-visual-card">
-        <div class="visual-top-line"></div>
+  <!-- ═══════════════════════════════════════════════
+       LOADING STATE
+  ════════════════════════════════════════════════ -->
+  <div class="pdp-state" *ngIf="loading()">
+    <div class="pdp-state__inner">
+      <div class="pdp-spinner" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+      <p>Loading product details…</p>
+    </div>
+  </div>
 
-        <div class="visual-bottle-wrap">
-          <div class="product-pack-shot">
-            <ng-container *ngIf="primaryImageUrl(); else detailNoImage">
-              <img
-                [src]="primaryImageUrl()"
-                [alt]="productData.name"
-                class="main-product-image"
-              />
-            </ng-container>
+  <!-- ═══════════════════════════════════════════════
+       ERROR STATE
+  ════════════════════════════════════════════════ -->
+  <div class="pdp-state pdp-state--error" *ngIf="errorMsg() as err">
+    <div class="pdp-state__inner">
+      <span class="pdp-state__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/>
+          <path d="M12 8v4M12 16h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <p>{{ err }}</p>
+    </div>
+  </div>
 
-            <ng-template #detailNoImage>
-              <div class="pack-inner">
-                <div class="pack-badge">{{ productData.category }}</div>
-                <div class="pack-name">{{ productData.name }}</div>
-                <div class="pack-sku">{{ productData.slug }}</div>
+  <!-- ═══════════════════════════════════════════════
+       MAIN CONTENT
+  ════════════════════════════════════════════════ -->
+  <ng-container *ngIf="!loading() && !errorMsg() && product() as productData">
 
-                <div class="pack-icon">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <rect x="5" y="4" width="14" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/>
-                    <path d="M9 8H15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                    <path d="M9 12H15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                  </svg>
+    <!-- ══════════════════════════════════
+         HERO SECTION
+    ═══════════════════════════════════ -->
+    <section class="pdp-hero" [attr.data-category]="productData.category">
+
+      <!-- Hero molecular decoration -->
+      <div class="pdp-hero__mol" aria-hidden="true">
+        <svg viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50"  cy="50"  r="7"  stroke="currentColor" stroke-width="1.4" opacity="0.25"/>
+          <circle cx="140" cy="30"  r="5"  stroke="currentColor" stroke-width="1.2" opacity="0.20"/>
+          <circle cx="220" cy="80"  r="9"  stroke="currentColor" stroke-width="1.4" opacity="0.18"/>
+          <circle cx="90"  cy="150" r="6"  stroke="currentColor" stroke-width="1.2" opacity="0.20"/>
+          <circle cx="190" cy="190" r="8"  stroke="currentColor" stroke-width="1.4" opacity="0.16"/>
+          <circle cx="50"  cy="220" r="5"  stroke="currentColor" stroke-width="1.2" opacity="0.20"/>
+          <line x1="57"  y1="50"  x2="135" y2="32"  stroke="currentColor" stroke-width="0.9" opacity="0.18"/>
+          <line x1="145" y1="32"  x2="211" y2="78"  stroke="currentColor" stroke-width="0.9" opacity="0.15"/>
+          <line x1="96"  y1="150" x2="182" y2="188" stroke="currentColor" stroke-width="0.9" opacity="0.15"/>
+          <line x1="55"  y1="222" x2="88"  y2="156" stroke="currentColor" stroke-width="0.9" opacity="0.15"/>
+        </svg>
+      </div>
+
+      <div class="pdp-hero__inner">
+
+        <!-- LEFT — Product image showcase -->
+        <div class="pdp-hero__visual">
+          <div class="pdp-visual-aura" aria-hidden="true"></div>
+          <div class="pdp-visual-ring" aria-hidden="true"></div>
+
+          <div class="pdp-visual-frame">
+            <div class="pdp-visual-frame__shine" aria-hidden="true"></div>
+
+            <!-- Image stage -->
+            <div class="pdp-image-stage">
+              <div class="pdp-image-glow" aria-hidden="true"></div>
+
+              <ng-container *ngIf="primaryImageUrl(); else pdpNoImage">
+                <img
+                  [src]="primaryImageUrl()"
+                  [alt]="productData.name"
+                  class="pdp-main-image"
+                />
+              </ng-container>
+
+              <ng-template #pdpNoImage>
+                <div class="pdp-placeholder">
+                  <div class="pdp-placeholder__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <rect x="5" y="4" width="14" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/>
+                      <path d="M9 8H15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                      <path d="M9 12H15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                      <path d="M9 16H12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                  <div class="pdp-placeholder__badge">{{ productData.category }}</div>
+                  <div class="pdp-placeholder__name">{{ productData.name }}</div>
+                  <div class="pdp-placeholder__sku">{{ productData.slug }}</div>
                 </div>
-              </div>
-            </ng-template>
+              </ng-template>
+            </div>
+
+            <!-- Thumbnail strip -->
+            <div class="pdp-thumb-row" *ngIf="images().length > 1">
+              <button
+                type="button"
+                class="pdp-thumb-btn"
+                *ngFor="let img of images()"
+                (click)="setPrimary(img.image_url)"
+              >
+                <img [src]="img.image_url" [alt]="img.alt_text || productData.name" />
+              </button>
+            </div>
           </div>
 
-          <div class="thumb-row" *ngIf="images().length > 1">
-            <button
-              type="button"
-              class="thumb-btn"
-              *ngFor="let img of images()"
-              (click)="setPrimary(img.image_url)"
-            >
-              <img
-                [src]="img.image_url"
-                [alt]="img.alt_text || productData.name"
-              />
-            </button>
+          <!-- Floating satellite badges -->
+          <div class="pdp-sat pdp-sat--tl" aria-hidden="true">
+            <span class="pdp-sat__dot"></span>
+            <span class="pdp-sat__label">WHO-GMP</span>
           </div>
-        </div>
-
-        <div class="mini-points">
-          <div class="mini-point">
-            <span></span>
-            Premium product positioning
-          </div>
-          <div class="mini-point">
-            <span></span>
-            Refined therapeutic identity
-          </div>
-          <div class="mini-point">
-            <span></span>
-            Strong visual communication
+          <div class="pdp-sat pdp-sat--br" aria-hidden="true">
+            <span class="pdp-sat__dot"></span>
+            <span class="pdp-sat__label">Quality Tested</span>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="detail-grid" *ngIf="!loading() && !errorMsg() && product() as productData">
-    <article class="info-card">
-      <div class="card-head">
-        <span class="section-tag">Overview</span>
-        <h2>Product overview</h2>
-      </div>
-      <p>{{ productData.overview }}</p>
-    </article>
+        <!-- RIGHT — Product copy -->
+        <div class="pdp-hero__copy">
 
-    <article class="info-card">
-      <div class="card-head">
-        <span class="section-tag">Composition</span>
-        <h2>Key composition highlights</h2>
-      </div>
-
-      <ul class="bullet-list">
-        <li *ngFor="let item of productData.compositionLines">
-          <span class="bullet-icon"></span>
-          {{ item }}
-        </li>
-      </ul>
-    </article>
-
-    <article class="info-card benefits-card">
-      <div class="card-head">
-        <span class="section-tag">Benefits</span>
-        <h2>Positioning advantages</h2>
-      </div>
-
-      <div class="benefit-grid">
-        <div class="benefit-box" *ngFor="let item of productData.benefits">
-          <div class="benefit-icon">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M12 3L19 6V11C19 15 16.5 18.5 12 21C7.5 18.5 5 15 5 11V6L12 3Z" stroke="currentColor" stroke-width="1.8"/>
-              <path d="M9.5 11.5L11.4 13.4L15 9.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <a routerLink="/products" class="pdp-back">
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M12 4L6 10l6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
+            <span>Back to Products</span>
+          </a>
+
+          <!-- Category + Division labels -->
+          <div class="pdp-hero__labels">
+            <span class="pdp-cat-pill" [attr.data-category]="productData.category">
+              {{ productData.category }}
+            </span>
+            <span class="pdp-div-pill">{{ productData.divisions?.name || 'General' }}</span>
           </div>
-          <p>{{ item }}</p>
+
+          <h1 class="pdp-hero__title">{{ productData.name }}</h1>
+
+          <p class="pdp-hero__sub">{{ productData.shortDescription }}</p>
+
+          <!-- Meta row -->
+          <div class="pdp-hero__meta">
+            <div class="pdp-meta-item">
+              <span class="pdp-meta-item__lbl">Product Code</span>
+              <span class="pdp-meta-item__val">{{ productData.slug }}</span>
+            </div>
+            <span class="pdp-meta-sep" aria-hidden="true"></span>
+            <div class="pdp-meta-item">
+              <span class="pdp-meta-item__lbl">Division</span>
+              <span class="pdp-meta-item__val">{{ productData.divisions?.name || 'General' }}</span>
+            </div>
+          </div>
+
+          <!-- Trust badges -->
+          <div class="pdp-trust-row">
+            <div class="pdp-trust-badge">
+              <span class="pdp-trust-badge__icon" aria-hidden="true">
+                <svg viewBox="0 0 20 20" fill="none">
+                  <path d="M10 2l2.5 5L18 8l-4 3.9 1 5.6L10 15l-5 2.5 1-5.6L2 8l5.5-1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span>WHO-GMP Certified</span>
+            </div>
+            <div class="pdp-trust-badge">
+              <span class="pdp-trust-badge__icon" aria-hidden="true">
+                <svg viewBox="0 0 20 20" fill="none">
+                  <path d="M10 2l6 2.5V10c0 3.5-2.1 6.4-6 8-3.9-1.6-6-4.5-6-8V4.5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span>Quality Tested</span>
+            </div>
+            <div class="pdp-trust-badge">
+              <span class="pdp-trust-badge__icon" aria-hidden="true">
+                <svg viewBox="0 0 20 20" fill="none">
+                  <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span>Doctor Trusted</span>
+            </div>
+          </div>
+
+          <!-- CTA buttons -->
+          <div class="pdp-hero__actions">
+            <a routerLink="/contact" class="pdp-btn pdp-btn--primary">
+              <span>Enquire Product</span>
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span class="pdp-btn__shimmer" aria-hidden="true"></span>
+            </a>
+            <a routerLink="/products" class="pdp-btn pdp-btn--ghost">
+              <span>Explore More</span>
+            </a>
+          </div>
+
         </div>
       </div>
-    </article>
-  </div>
+    </section>
 
-  <section class="related-section" *ngIf="!loading() && !errorMsg() && relatedProducts().length > 0">
-    <div class="related-head">
-      <div>
-        <span class="section-tag">Related Products</span>
-        <h2>Explore more from VNH</h2>
+    <!-- ══════════════════════════════════
+         OVERVIEW STRIP
+    ═══════════════════════════════════ -->
+    <section class="pdp-overview">
+      <div class="pdp-overview__inner">
+        <div class="pdp-overview__left">
+          <span class="pdp-section-eyebrow">Overview</span>
+          <h2 class="pdp-section-title">Product <em>overview</em></h2>
+          <div class="pdp-overview__line" aria-hidden="true"></div>
+        </div>
+        <div class="pdp-overview__right">
+          <div class="pdp-overview__glass">
+            <div class="pdp-overview__glass-shine" aria-hidden="true"></div>
+            <p class="pdp-overview__text">{{ productData.overview }}</p>
+          </div>
+        </div>
+        <div class="pdp-overview__mol" aria-hidden="true">
+          <svg viewBox="0 0 160 160" fill="none">
+            <circle cx="30"  cy="30"  r="5"  stroke="currentColor" stroke-width="1.2" opacity="0.20"/>
+            <circle cx="90"  cy="20"  r="3"  stroke="currentColor" stroke-width="1"   opacity="0.16"/>
+            <circle cx="140" cy="60"  r="7"  stroke="currentColor" stroke-width="1.2" opacity="0.14"/>
+            <circle cx="60"  cy="110" r="4"  stroke="currentColor" stroke-width="1"   opacity="0.16"/>
+            <circle cx="130" cy="130" r="5"  stroke="currentColor" stroke-width="1.2" opacity="0.14"/>
+            <line x1="35"  y1="30"  x2="87"  y2="22"  stroke="currentColor" stroke-width="0.8" opacity="0.14"/>
+            <line x1="93"  y1="22"  x2="133" y2="58"  stroke="currentColor" stroke-width="0.8" opacity="0.12"/>
+            <line x1="64"  y1="112" x2="125" y2="128" stroke="currentColor" stroke-width="0.8" opacity="0.12"/>
+          </svg>
+        </div>
       </div>
-      <a routerLink="/products" class="view-all-link">View full portfolio →</a>
-    </div>
+    </section>
 
-    <div class="related-grid">
-      <a
-        class="related-card"
-        *ngFor="let item of relatedProducts()"
-        [routerLink]="['/products', item.divisions?.slug || product()?.divisions?.slug, item.slug]"
-      >
-        <div class="related-top">
-          <span class="category-badge small" [attr.data-category]="item.category">
-            {{ item.category }}
-          </span>
+    <!-- ══════════════════════════════════
+         BENEFITS + COMPOSITION
+    ═══════════════════════════════════ -->
+    <section class="pdp-dual">
+      <div class="pdp-dual__inner">
+
+        <!-- Benefits column -->
+        <div class="pdp-benefits">
+          <div class="pdp-section-head">
+            <span class="pdp-section-eyebrow">Benefits</span>
+            <h2 class="pdp-section-title">Positioning <em>advantages</em></h2>
+          </div>
+          <div class="pdp-benefits__grid">
+            <div class="pdp-benefit-card" *ngFor="let item of productData.benefits">
+              <div class="pdp-benefit-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 3L19 6V11C19 15 16.5 18.5 12 21C7.5 18.5 5 15 5 11V6L12 3Z"
+                    stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                  <path d="M9.5 11.5L11.4 13.4L15 9.8"
+                    stroke="currentColor" stroke-width="1.8"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <p class="pdp-benefit-card__text">{{ item }}</p>
+              <div class="pdp-benefit-card__bar" aria-hidden="true"></div>
+            </div>
+          </div>
         </div>
 
-        <h3>{{ item.name }}</h3>
-        <p>{{ item.slug }}</p>
-        <span class="explore-link">Explore product →</span>
-      </a>
-    </div>
-  </section>
+        <!-- Composition column -->
+        <div class="pdp-composition">
+          <div class="pdp-section-head">
+            <span class="pdp-section-eyebrow">Composition</span>
+            <h2 class="pdp-section-title">Key <em>ingredients</em></h2>
+          </div>
+          <div class="pdp-comp-glass">
+            <div class="pdp-comp-glass__shine" aria-hidden="true"></div>
+            <div class="pdp-comp-glass__accent" aria-hidden="true"></div>
+            <ul class="pdp-comp-list">
+              <li class="pdp-comp-item" *ngFor="let item of productData.compositionLines">
+                <span class="pdp-comp-item__dot" aria-hidden="true">
+                  <svg viewBox="0 0 12 12" fill="none">
+                    <circle cx="6" cy="6" r="3" fill="currentColor"/>
+                  </svg>
+                </span>
+                <span class="pdp-comp-item__text">{{ item }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-  <div class="state-card" *ngIf="loading()">
-    Loading product details...
-  </div>
+      </div>
+    </section>
 
-  <div class="state-card error" *ngIf="errorMsg() as err">
-    {{ err }}
-  </div>
-</section>
+    <!-- ══════════════════════════════════
+         DETAIL CARDS — Usage, Packaging, Storage
+    ═══════════════════════════════════ -->
+    <section class="pdp-detail-section">
+      <div class="pdp-detail-section__inner">
+        <div class="pdp-section-head pdp-section-head--center">
+          <span class="pdp-section-eyebrow">Product Details</span>
+          <h2 class="pdp-section-title">Usage &amp; <em>specifications</em></h2>
+        </div>
+        <div class="pdp-detail-cards">
+
+          <!-- Usage / Direction -->
+          <div class="pdp-detail-card">
+            <div class="pdp-detail-card__glow" aria-hidden="true"></div>
+            <div class="pdp-detail-card__shine" aria-hidden="true"></div>
+            <div class="pdp-detail-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 28 28" fill="none">
+                <path d="M14 4L22 7V14C22 18.4 19.2 22.2 14 24.5C8.8 22.2 6 18.4 6 14V7Z"
+                  stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M10.5 13.5L12.8 15.8L17.5 11" stroke="currentColor" stroke-width="1.8"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="pdp-detail-card__eyebrow">Usage / Direction</span>
+            <h3 class="pdp-detail-card__title">Dosage &amp; Application</h3>
+            <p class="pdp-detail-card__body">Follow the prescription guidelines provided by your healthcare professional. Consult the enclosed leaflet for complete dosage instructions.</p>
+          </div>
+
+          <!-- Packaging -->
+          <div class="pdp-detail-card pdp-detail-card--gold">
+            <div class="pdp-detail-card__glow" aria-hidden="true"></div>
+            <div class="pdp-detail-card__shine" aria-hidden="true"></div>
+            <div class="pdp-detail-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 28 28" fill="none">
+                <rect x="4" y="8" width="20" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M4 13h20" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M10 4v4M18 4v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span class="pdp-detail-card__eyebrow">Packaging</span>
+            <h3 class="pdp-detail-card__title">Presentation</h3>
+            <p class="pdp-detail-card__body">Premium pharmaceutical packaging designed for product integrity, ease of use, and clear therapeutic communication for healthcare professionals.</p>
+          </div>
+
+          <!-- Storage -->
+          <div class="pdp-detail-card">
+            <div class="pdp-detail-card__glow" aria-hidden="true"></div>
+            <div class="pdp-detail-card__shine" aria-hidden="true"></div>
+            <div class="pdp-detail-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 28 28" fill="none">
+                <path d="M4 10L14 3L24 10V24a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"
+                  stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M10 26V16h8v10" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="pdp-detail-card__eyebrow">Storage</span>
+            <h3 class="pdp-detail-card__title">Storage Conditions</h3>
+            <p class="pdp-detail-card__body">Store below 25°C in a cool, dry place. Keep away from direct sunlight, heat, and moisture. Keep out of reach of children.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         SAFETY INFORMATION
+    ═══════════════════════════════════ -->
+    <section class="pdp-safety">
+      <div class="pdp-safety__inner">
+        <div class="pdp-safety-card">
+          <div class="pdp-safety-card__accent" aria-hidden="true"></div>
+          <div class="pdp-safety-card__shine" aria-hidden="true"></div>
+
+          <div class="pdp-safety-card__left">
+            <span class="pdp-section-eyebrow">Safety</span>
+            <h2 class="pdp-section-title">Safety <em>information</em></h2>
+            <p class="pdp-safety-card__desc">This product is intended for prescription use under qualified medical supervision. Always read the product label and enclosed information leaflet carefully before use.</p>
+            <ul class="pdp-safety-list">
+              <li>
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                For use under qualified medical supervision only
+              </li>
+              <li>
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Keep out of reach of children
+              </li>
+              <li>
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Report any adverse reactions to your healthcare provider
+              </li>
+              <li>
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Do not exceed the recommended dosage
+              </li>
+            </ul>
+          </div>
+
+          <div class="pdp-safety-card__right" aria-hidden="true">
+            <div class="pdp-safety-icon">
+              <svg viewBox="0 0 90 90" fill="none">
+                <path d="M45 9L77 22V42C77 61 63 76 45 83C27 76 13 61 13 42V22Z"
+                  stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
+                <path d="M32 45l10 10 18-18"
+                  stroke="currentColor" stroke-width="3.2"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         TRUST SECTION
+    ═══════════════════════════════════ -->
+    <section class="pdp-trust-section">
+      <div class="pdp-trust-section__inner">
+        <div class="pdp-section-head pdp-section-head--center">
+          <span class="pdp-section-eyebrow">Why VNH</span>
+          <h2 class="pdp-section-title">Built on <em>trust &amp; science</em></h2>
+        </div>
+        <div class="pdp-trust-cards">
+
+          <div class="pdp-trust-card">
+            <div class="pdp-trust-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 36 36" fill="none">
+                <path d="M18 5L30 10V18C30 25 25 31 18 34C11 31 6 25 6 18V10Z"
+                  stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M12 18l5 5 9-9" stroke="currentColor" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="pdp-trust-card__title">Certified Facilities</h3>
+            <p class="pdp-trust-card__desc">Manufactured in WHO-GMP compliant state-of-the-art pharmaceutical facilities with rigorous quality controls at every stage.</p>
+            <div class="pdp-trust-card__bar" aria-hidden="true"></div>
+          </div>
+
+          <div class="pdp-trust-card pdp-trust-card--gold">
+            <div class="pdp-trust-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 36 36" fill="none">
+                <circle cx="18" cy="18" r="13" stroke="currentColor" stroke-width="2"/>
+                <path d="M11 18l5 5 10-10" stroke="currentColor" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="pdp-trust-card__title">Quality Formulations</h3>
+            <p class="pdp-trust-card__desc">Every product undergoes comprehensive quality testing ensuring efficacy, purity, and consistent therapeutic outcomes for patients.</p>
+            <div class="pdp-trust-card__bar" aria-hidden="true"></div>
+          </div>
+
+          <div class="pdp-trust-card">
+            <div class="pdp-trust-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 36 36" fill="none">
+                <path d="M18 6C11.4 6 6 11.4 6 18s5.4 12 12 12 12-5.4 12-12S24.6 6 18 6z"
+                  stroke="currentColor" stroke-width="2"/>
+                <path d="M13 18c0-2.8 2.2-5 5-5s5 2.2 5 5-2.2 5-5 5"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="pdp-trust-card__title">Patient-Friendly</h3>
+            <p class="pdp-trust-card__desc">Designed with patient comfort and compliance in mind — clear instructions, elegant presentation, and easy-to-use formulation formats.</p>
+            <div class="pdp-trust-card__bar" aria-hidden="true"></div>
+          </div>
+
+          <div class="pdp-trust-card pdp-trust-card--gold">
+            <div class="pdp-trust-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 36 36" fill="none">
+                <path d="M18 7l3 6.5L28 15l-5 4.8 1.2 7L18 24l-6.2 2.8 1.2-7L8 15l7-1.5z"
+                  stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="pdp-trust-card__title">Ethical Healthcare</h3>
+            <p class="pdp-trust-card__desc">Committed to transparent, ethical pharmaceutical practices guided by Vaidhyo Narayano Hari — healing as a sacred responsibility.</p>
+            <div class="pdp-trust-card__bar" aria-hidden="true"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         RELATED PRODUCTS
+    ═══════════════════════════════════ -->
+    <section class="pdp-related" *ngIf="relatedProducts().length > 0">
+      <div class="pdp-related__inner">
+
+        <div class="pdp-related__head">
+          <div>
+            <span class="pdp-section-eyebrow">Related Products</span>
+            <h2 class="pdp-section-title">Explore more from <em>VNH</em></h2>
+          </div>
+          <a routerLink="/products" class="pdp-related__link">
+            <span>View full portfolio</span>
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="pdp-related-grid">
+          <a
+            class="pdp-related-card"
+            *ngFor="let item of relatedProducts()"
+            [routerLink]="['/products', item.divisions?.slug || product()?.divisions?.slug, item.slug]"
+          >
+            <div class="pdp-related-card__glow" aria-hidden="true"></div>
+            <div class="pdp-related-card__shine" aria-hidden="true"></div>
+            <div class="pdp-related-card__top">
+              <span class="pdp-cat-pill pdp-cat-pill--sm" [attr.data-category]="item.category">
+                {{ item.category }}
+              </span>
+            </div>
+            <h3 class="pdp-related-card__name">{{ item.name }}</h3>
+            <p class="pdp-related-card__slug">{{ item.slug }}</p>
+            <span class="pdp-related-card__arrow">
+              <span>Explore product</span>
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         CTA SECTION
+    ═══════════════════════════════════ -->
+    <section class="pdp-cta-section">
+      <div class="pdp-cta-section__inner">
+        <div class="pdp-cta-section__glow" aria-hidden="true"></div>
+        <div class="pdp-cta-section__mol" aria-hidden="true">
+          <svg viewBox="0 0 200 200" fill="none">
+            <circle cx="30"  cy="30"  r="6"  stroke="currentColor" stroke-width="1.2" opacity="0.18"/>
+            <circle cx="100" cy="20"  r="4"  stroke="currentColor" stroke-width="1"   opacity="0.14"/>
+            <circle cx="170" cy="60"  r="8"  stroke="currentColor" stroke-width="1.2" opacity="0.12"/>
+            <circle cx="60"  cy="140" r="5"  stroke="currentColor" stroke-width="1"   opacity="0.14"/>
+            <circle cx="160" cy="160" r="7"  stroke="currentColor" stroke-width="1.2" opacity="0.12"/>
+            <line x1="36"  y1="30"  x2="96"  y2="22"  stroke="currentColor" stroke-width="0.8" opacity="0.12"/>
+            <line x1="104" y1="22"  x2="162" y2="58"  stroke="currentColor" stroke-width="0.8" opacity="0.10"/>
+            <line x1="65"  y1="142" x2="153" y2="158" stroke="currentColor" stroke-width="0.8" opacity="0.10"/>
+          </svg>
+        </div>
+
+        <span class="pdp-section-eyebrow">Get Started</span>
+        <h2 class="pdp-cta-section__title">Interested in <em>{{ productData.name }}</em>?</h2>
+        <p class="pdp-cta-section__sub">Connect with our team for product details, pricing, and partnership opportunities. We respond within 24 hours.</p>
+
+        <div class="pdp-cta-section__actions">
+          <a routerLink="/contact" class="pdp-btn pdp-btn--primary pdp-btn--lg">
+            <span>Contact VNH</span>
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="pdp-btn__shimmer" aria-hidden="true"></span>
+          </a>
+          <a routerLink="/contact" class="pdp-btn pdp-btn--gold pdp-btn--lg">
+            <span>Enquire Product</span>
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M2 6h16M2 10h16M2 14h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+            <span class="pdp-btn__shimmer" aria-hidden="true"></span>
+          </a>
+          <a routerLink="/contact" class="pdp-btn pdp-btn--ghost pdp-btn--lg">
+            <span>Become Distributor</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </ng-container>
+
+</div>

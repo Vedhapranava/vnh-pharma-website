@@ -1,0 +1,48 @@
+<section class="apg">
+  <header class="apg__head">
+    <div>
+      <h1 class="apg__title">Flagship Events</h1>
+      <p class="apg__sub">Shown in “Flagship Events & Scientific Engagements”. With no active events, the site keeps the built-in “Coming Soon” fallback. No image URL = placeholder.</p>
+    </div>
+    <button class="apg__btn apg__btn--primary" type="button" (click)="newRow()">+ New event</button>
+  </header>
+
+  <p class="apg__error" *ngIf="error()">{{ error() }}</p>
+  <p class="apg__notice" *ngIf="notice()">{{ notice() }}</p>
+
+  <form class="apg__form" *ngIf="showForm" (ngSubmit)="save()">
+    <div class="apg__field"><label>Title *</label><input class="apg__input" name="title" [(ngModel)]="model.title" /></div>
+    <div class="apg__field"><label>Badge / type</label><input class="apg__input" name="etype" [(ngModel)]="model.event_type" placeholder="Doctor CME · Flagship" /></div>
+    <div class="apg__field apg__field--full"><label>Subtitle / description</label><textarea class="apg__textarea" name="sub" rows="2" [(ngModel)]="model.subtitle"></textarea></div>
+    <div class="apg__field"><label>Event date</label><input class="apg__input" name="date" [(ngModel)]="model.event_date" placeholder="e.g. Aug 2025" /></div>
+    <div class="apg__field"><label>Location</label><input class="apg__input" name="loc" [(ngModel)]="model.location" /></div>
+    <div class="apg__field apg__field--full"><label>Image URL (blank = placeholder)</label><input class="apg__input" name="img" [(ngModel)]="model.image_url" placeholder="https://…" /></div>
+    <div class="apg__field apg__field--full"><label>Gallery image URL (optional)</label><input class="apg__input" name="gimg" [(ngModel)]="model.gallery_image_url" /></div>
+    <div class="apg__field"><label>Sort order</label><input class="apg__input" type="number" name="sort" [(ngModel)]="model.sort_order" /></div>
+    <div class="apg__field"><label>Active</label><label class="apg__muted-sm"><input type="checkbox" name="active" [(ngModel)]="model.is_active" /> Visible on site</label></div>
+    <div class="apg__form-actions">
+      <button class="apg__btn apg__btn--primary" type="submit" [disabled]="saving()">{{ saving() ? 'Saving…' : (editingId ? 'Save changes' : 'Create') }}</button>
+      <button class="apg__btn" type="button" (click)="cancel()">Cancel</button>
+    </div>
+  </form>
+
+  <p class="apg__muted" *ngIf="loading()">Loading…</p>
+  <p class="apg__muted" *ngIf="!loading() && rows().length === 0">No events yet — the site shows the built-in “Coming Soon” fallback.</p>
+
+  <table class="apg__table" *ngIf="!loading() && rows().length > 0">
+    <thead><tr><th>Title</th><th>Type</th><th>Image</th><th>Status</th><th>Actions</th></tr></thead>
+    <tbody>
+      <tr *ngFor="let e of rows()" [class.apg__row--off]="!e.is_active">
+        <td>{{ e.title }}<div class="apg__muted-sm" *ngIf="e.event_date">{{ e.event_date }}</div></td>
+        <td>{{ e.event_type || '—' }}</td>
+        <td>{{ e.image_url ? 'Yes' : 'placeholder' }}</td>
+        <td><span class="apg__badge" [class.apg__badge--on]="e.is_active" [class.apg__badge--off]="!e.is_active">{{ e.is_active ? 'Active' : 'Inactive' }}</span></td>
+        <td class="apg__actions">
+          <button class="apg__btn apg__btn--ghost" type="button" (click)="editRow(e)">Edit</button>
+          <button class="apg__btn" [class.apg__btn--danger]="e.is_active" [class.apg__btn--ok]="!e.is_active" [disabled]="busyId() === e.id" (click)="toggleActive(e)">{{ busyId() === e.id ? '…' : (e.is_active ? 'Deactivate' : 'Reactivate') }}</button>
+          <button class="apg__btn apg__btn--danger" type="button" [disabled]="busyId() === e.id" (click)="remove(e)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

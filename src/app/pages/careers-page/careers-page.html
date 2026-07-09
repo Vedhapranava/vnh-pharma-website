@@ -1,138 +1,372 @@
-<section class="careers-page">
+<!-- VNH Pharmaceuticals — Careers Page -->
+<div class="careers-root">
 
-  <!-- Ambient background -->
-  <div class="careers-bg" aria-hidden="true">
-    <div class="careers-orb careers-orb--1"></div>
-    <div class="careers-orb careers-orb--2"></div>
+  <!-- ── Ambient canvas ── -->
+  <div class="careers-ambient" aria-hidden="true">
+    <div class="ca-blob ca-blob--1"></div>
+    <div class="ca-blob ca-blob--2"></div>
+    <div class="ca-blob ca-blob--3"></div>
+    <div class="ca-particle ca-p1"></div>
+    <div class="ca-particle ca-p2"></div>
+    <div class="ca-particle ca-p3"></div>
+    <div class="ca-particle ca-p4"></div>
+    <svg class="ca-mol" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+      <circle cx="100" cy="100" r="5" fill="var(--red)"  opacity=".18"/>
+      <circle cx="55"  cy="60"  r="3" fill="var(--gold)" opacity=".22"/>
+      <circle cx="150" cy="140" r="4" fill="var(--red)"  opacity=".14"/>
+      <circle cx="145" cy="58"  r="3" fill="var(--gold)" opacity=".18"/>
+      <line x1="100" y1="100" x2="55"  y2="60"  stroke="var(--gold)" stroke-width="1" opacity=".14"/>
+      <line x1="100" y1="100" x2="150" y2="140" stroke="var(--red)"  stroke-width="1" opacity=".11"/>
+      <line x1="100" y1="100" x2="145" y2="58"  stroke="var(--gold)" stroke-width="1" opacity=".13"/>
+    </svg>
   </div>
 
-  <div class="careers-shell">
+  <!-- ═══════════════════════════════════════
+       HERO
+  ════════════════════════════════════════ -->
+  <section class="careers-hero" [class.animate-in]="animated">
+    <div class="hero-inner">
 
-    <!-- Hero block -->
-    <header class="careers-hero" [class.animate-in]="animated">
-      <span class="section-pill">
-        <span class="pill-dot"></span>
+      <div class="hero-badge reveal-up">
+        <span class="hero-badge__dot"></span>
         Careers at VNH
-      </span>
-      <h1>Build the future of<br><em>healthcare with us.</em></h1>
-      <p class="careers-hero-sub">
+      </div>
+
+      <h1 class="hero-title reveal-up">
+        Build a Career in<br>
+        <span class="hero-title__accent">Healthcare That Matters</span>
+      </h1>
+
+      <p class="hero-subtitle reveal-up">
         We are building a brand culture shaped by growth, professional integrity,
         and long-term market impact — and we want the right people alongside us.
       </p>
 
-      <div class="hero-meta-row">
-        <div class="hero-meta-chip">
-          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
-            <path d="M10 2C7.24 2 5 4.24 5 7c0 3.75 5 11 5 11s5-7.25 5-11c0-2.76-2.24-5-5-5z"
-              stroke="currentColor" stroke-width="1.6"/>
-            <circle cx="10" cy="7" r="2" stroke="currentColor" stroke-width="1.6"/>
-          </svg>
-          Hyderabad & Field Roles
+      <div class="hero-chips reveal-up">
+        <div class="hero-chip">
+          <svg viewBox="0 0 20 20" fill="none"><path d="M10 2C7.24 2 5 4.24 5 7c0 3.75 5 11 5 11s5-7.25 5-11c0-2.76-2.24-5-5-5z" stroke="currentColor" stroke-width="1.6"/><circle cx="10" cy="7" r="2" stroke="currentColor" stroke-width="1.6"/></svg>
+          Hyderabad &amp; Field Roles
         </div>
-        <div class="hero-meta-chip">
-          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
-            <rect x="3" y="4" width="14" height="13" rx="2" stroke="currentColor" stroke-width="1.6"/>
-            <path d="M3 8h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-            <path d="M7 2v4M13 2v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-          </svg>
+        <div class="hero-chip hero-chip--gold">
+          <svg viewBox="0 0 20 20" fill="none"><rect x="3" y="4" width="14" height="13" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3 8h14M7 2v4M13 2v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           Immediate Openings
         </div>
-        <div class="hero-meta-chip">
-          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
-            <path d="M10 2l2.09 4.26L17 7.27l-3.5 3.41.83 4.82L10 13.27l-4.33 2.23.83-4.82L3 7.27l4.91-.01z"
-              stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-          </svg>
+        <div class="hero-chip">
+          <svg viewBox="0 0 20 20" fill="none"><path d="M10 2l2.09 4.26L17 7.27l-3.5 3.41.83 4.82L10 13.27l-4.33 2.23.83-4.82L3 7.27l4.91-.01z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
           Pharma Experience Preferred
         </div>
       </div>
-    </header>
 
-    <!-- Values grid -->
-    <section class="values-section" aria-label="Why work at VNH">
-      <div class="section-head">
-        <span class="section-tag">Why VNH</span>
-        <h2>A culture built on trust.</h2>
+      <div class="hero-ctas reveal-up">
+        <a routerLink="/contact" class="hero-btn hero-btn--primary">
+          <svg viewBox="0 0 20 20" fill="none"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Apply Now
+        </a>
+        <a href="#open-roles" class="hero-btn hero-btn--ghost">View Open Roles</a>
       </div>
 
-      <div class="values-grid">
-        <article class="value-card" *ngFor="let v of values; let i = index"
+    </div>
+    <div class="hero-divider" aria-hidden="true"></div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       STATS — Grow with VNH
+  ════════════════════════════════════════ -->
+  <section class="grow-section reveal-up">
+    <div class="grow-inner">
+      <div class="grow-header">
+        <span class="section-tag">Grow With VNH</span>
+        <h2 class="section-title">A platform built for your career</h2>
+        <p class="section-sub">
+          VNH Pharmaceuticals offers a structured, ethical, and growth-oriented environment
+          where every professional can build a meaningful career in healthcare.
+        </p>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-card" *ngFor="let stat of stats; let i = index"
           [style.animation-delay]="(i * 80) + 'ms'"
           [class.animate-in]="animated">
-          <span class="value-icon">{{ v.icon }}</span>
-          <h3>{{ v.title }}</h3>
-          <p>{{ v.text }}</p>
-        </article>
+          <div class="stat-card__value">{{ stat.value }}</div>
+          <div class="stat-card__label">{{ stat.label }}</div>
+        </div>
       </div>
-    </section>
 
-    <!-- Roles -->
-    <section class="roles-section" aria-label="Open positions">
-      <div class="section-head">
+      <div class="grow-pillars">
+        <div class="grow-pillar">
+          <div class="grow-pillar__icon">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <strong>Structured Training</strong>
+            <p>Product knowledge, territory management, and soft skills — from day one.</p>
+          </div>
+        </div>
+        <div class="grow-pillar">
+          <div class="grow-pillar__icon grow-pillar__icon--gold">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <strong>Mentored Growth</strong>
+            <p>Work directly with experienced pharma leaders and senior management.</p>
+          </div>
+        </div>
+        <div class="grow-pillar">
+          <div class="grow-pillar__icon">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M12 8v4l3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <strong>Performance Rewards</strong>
+            <p>Clear incentive structures that reward consistent field achievement.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       OPEN ROLES
+  ════════════════════════════════════════ -->
+  <section class="roles-section" id="open-roles">
+    <div class="roles-inner">
+      <div class="section-head reveal-up">
         <span class="section-tag">Open Positions</span>
-        <h2>Current openings.</h2>
+        <h2 class="section-title">Current openings</h2>
+        <p class="section-sub">
+          All roles are based in Telangana / Andhra Pradesh. We welcome applications
+          from motivated professionals with pharma or healthcare backgrounds.
+        </p>
       </div>
 
-      <div class="roles-list">
-        <article class="role-card" *ngFor="let role of roles; let i = index"
-          [style.animation-delay]="(i * 100) + 'ms'"
-          [class.animate-in]="animated">
+      <div class="roles-grid">
+        <article
+          class="role-card reveal-up"
+          *ngFor="let role of roles; let i = index"
+          [style.animation-delay]="(i * 90) + 'ms'"
+          [class.animate-in]="animated"
+        >
+          <div class="role-card__top-accent" aria-hidden="true"></div>
 
-          <div class="role-card-top">
-            <div class="role-main">
-              <h3>{{ role.title }}</h3>
+          <div class="role-card__head">
+            <!-- Icon -->
+            <div class="role-icon" [attr.data-icon]="role.icon">
+              <svg *ngIf="role.icon === 'mr'"  viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="1.6"/><path d="M12 11v3M10.5 13.5h3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+              <svg *ngIf="role.icon === 'asm'" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="1.6"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <svg *ngIf="role.icon === 'pe'"  viewBox="0 0 24 24" fill="none"><path d="M4 5h16M4 10h10M4 15h12M4 20h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <svg *ngIf="role.icon === 'ops'" viewBox="0 0 24 24" fill="none"><rect x="2" y="7" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M12 12v4M10 14h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+              <svg *ngIf="role.icon === 'acc'" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="18" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7 8h10M7 12h6M7 16h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M16 14l1.5 1.5L20 13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+
+            <div class="role-card__title-block">
+              <h3 class="role-card__title">{{ role.title }}</h3>
               <div class="role-meta">
                 <span class="role-chip role-chip--location">
-                  <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path d="M8 1.5C5.79 1.5 4 3.29 4 5.5c0 3 4 9 4 9s4-6 4-9c0-2.21-1.79-4-4-4z"
-                      stroke="currentColor" stroke-width="1.4"/>
-                    <circle cx="8" cy="5.5" r="1.5" stroke="currentColor" stroke-width="1.4"/>
-                  </svg>
+                  <svg viewBox="0 0 16 16" fill="none"><path d="M8 1.5C5.79 1.5 4 3.29 4 5.5c0 3 4 9 4 9s4-6 4-9c0-2.21-1.79-4-4-4z" stroke="currentColor" stroke-width="1.4"/><circle cx="8" cy="5.5" r="1.5" stroke="currentColor" stroke-width="1.4"/></svg>
                   {{ role.location }}
                 </span>
                 <span class="role-chip role-chip--type">{{ role.type }}</span>
               </div>
             </div>
-
-            <a routerLink="/contact" class="btn-apply">
-              Apply Now
-              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"
-                  stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
           </div>
 
-          <p class="role-desc">{{ role.description }}</p>
+          <p class="role-card__desc">{{ role.description }}</p>
 
-          <ul class="role-list">
+          <ul class="role-responsibilities">
             <li *ngFor="let r of role.responsibilities">
-              <span class="role-bullet"></span>
+              <span class="resp-bullet" aria-hidden="true"></span>
               {{ r }}
             </li>
           </ul>
+
+          <div class="role-card__footer">
+            <a routerLink="/contact" class="role-apply-btn">
+              Apply for this Role
+              <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+
         </article>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- CTA -->
-    <section class="careers-cta" [class.animate-in]="animated" aria-label="Apply or enquire">
-      <span class="section-tag">Get In Touch</span>
-      <h2>Don't see the right fit?</h2>
-      <p>
-        Send us your profile and a short note. We are always open to connecting
-        with motivated professionals who believe in what we are building.
-      </p>
-      <div class="cta-actions">
-        <a routerLink="/contact" class="btn-primary">
-          Send Your Profile
-          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
-            <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8"
-              stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+  <!-- ═══════════════════════════════════════
+       FIELD FORCE SECTION
+  ════════════════════════════════════════ -->
+  <section class="fieldforce-section reveal-up">
+    <div class="fieldforce-inner">
+      <div class="fieldforce-content">
+        <span class="section-tag section-tag--gold">Field Force Opportunity</span>
+        <h2 class="section-title">Be the face of VNH in your territory</h2>
+        <p class="fieldforce-text">
+          Our field force is the backbone of VNH Pharmaceuticals. Medical Representatives
+          and Area Sales Managers work directly with doctors, hospitals, and pharmacies —
+          building lasting relationships that drive ethical healthcare outcomes.
+        </p>
+        <ul class="fieldforce-benefits">
+          <li>
+            <span class="ff-bullet ff-bullet--red" aria-hidden="true"></span>
+            Competitive fixed salary + performance incentives
+          </li>
+          <li>
+            <span class="ff-bullet ff-bullet--gold" aria-hidden="true"></span>
+            Territory travel allowances and daily expenses covered
+          </li>
+          <li>
+            <span class="ff-bullet ff-bullet--red" aria-hidden="true"></span>
+            Product and detailing training from corporate team
+          </li>
+          <li>
+            <span class="ff-bullet ff-bullet--gold" aria-hidden="true"></span>
+            Clear promotion path: MR → Sr. MR → ASM → RSM
+          </li>
+        </ul>
+        <a routerLink="/contact" class="ff-apply-btn">
+          <svg viewBox="0 0 20 20" fill="none"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Apply for Field Force
         </a>
-        <a routerLink="/about" class="btn-secondary">Learn About VNH</a>
       </div>
-    </section>
 
-  </div>
-</section>
+      <div class="fieldforce-visual" aria-hidden="true">
+        <div class="ff-ring ff-ring--outer"></div>
+        <div class="ff-ring ff-ring--mid"></div>
+        <div class="ff-ring ff-ring--inner"></div>
+        <div class="ff-center">
+          <svg viewBox="0 0 64 64" fill="none">
+            <circle cx="32" cy="20" r="10" stroke="url(#ff-g)" stroke-width="2"/>
+            <path d="M10 56c0-12.15 9.85-22 22-22s22 9.85 22 22" stroke="url(#ff-g)" stroke-width="2" stroke-linecap="round"/>
+            <path d="M32 30v8M28 35h8" stroke="url(#ff-g)" stroke-width="1.6" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="ff-g" x1="10" y1="10" x2="54" y2="54" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#c9251c"/>
+                <stop offset="1" stop-color="#f3b23a"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="ff-dot ff-dot--1"></div>
+        <div class="ff-dot ff-dot--2"></div>
+        <div class="ff-dot ff-dot--3"></div>
+        <div class="ff-dot ff-dot--4"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CULTURE / VALUES
+  ════════════════════════════════════════ -->
+  <section class="values-section">
+    <div class="values-inner">
+      <div class="section-head reveal-up">
+        <span class="section-tag">Why VNH</span>
+        <h2 class="section-title">A culture built on trust</h2>
+        <p class="section-sub">
+          Everything we do — from formulation to field — is guided by
+          ethical practice, professional growth, and respect for healthcare.
+        </p>
+      </div>
+
+      <div class="values-grid">
+        <article
+          class="value-card reveal-up"
+          *ngFor="let v of values; let i = index"
+          [style.animation-delay]="(i * 80) + 'ms'"
+          [class.animate-in]="animated"
+        >
+          <div class="value-card__icon">{{ v.icon }}</div>
+          <h3 class="value-card__title">{{ v.title }}</h3>
+          <p class="value-card__text">{{ v.text }}</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CTA
+  ════════════════════════════════════════ -->
+  <section class="careers-cta reveal-up" [class.animate-in]="animated">
+    <div class="cta-inner">
+      <div class="cta-card">
+        <div class="cta-card__accent" aria-hidden="true"></div>
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="cta-title">Don't see the right fit?</h2>
+        <p class="cta-body">
+          Send us your profile and a short note. We are always open to connecting
+          with motivated professionals who believe in what we are building.
+        </p>
+        <div class="cta-actions">
+          <a routerLink="/contact" class="cta-btn cta-btn--primary">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M2 10l16-8-8 16-2-6-6-2z" fill="currentColor"/></svg>
+            Send Your Profile
+          </a>
+          <a routerLink="/about" class="cta-btn cta-btn--ghost">Learn About VNH</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       APPLICATION FORM (CMS-backed)
+  ════════════════════════════════════════ -->
+  <section class="apply-section reveal-up" id="apply">
+    <div class="apply-inner">
+      <span class="section-tag">Apply Now</span>
+      <h2 class="section-title">Submit your application</h2>
+      <p class="apply-intro">
+        Share your details and we will get in touch. Fields marked * are required.
+      </p>
+
+      <form class="apply-form" (ngSubmit)="submitApplication()" *ngIf="appStatus !== 'success'">
+        <div class="apply-grid">
+          <label class="apply-field">
+            <span>Full name *</span>
+            <input name="full_name" [(ngModel)]="appModel.full_name" />
+          </label>
+          <label class="apply-field">
+            <span>Email</span>
+            <input type="email" name="email" [(ngModel)]="appModel.email" />
+          </label>
+          <label class="apply-field">
+            <span>Phone</span>
+            <input name="phone" [(ngModel)]="appModel.phone" />
+          </label>
+          <label class="apply-field">
+            <span>City</span>
+            <input name="city" [(ngModel)]="appModel.city" />
+          </label>
+          <label class="apply-field">
+            <span>Role</span>
+            <select name="role" [(ngModel)]="appModel.role">
+              <option value="">General Application</option>
+              <option *ngFor="let r of roles" [ngValue]="r.title">{{ r.title }}</option>
+            </select>
+          </label>
+          <label class="apply-field">
+            <span>Experience</span>
+            <input name="experience" [(ngModel)]="appModel.experience" placeholder="e.g. 3 years" />
+          </label>
+          <label class="apply-field apply-field--full">
+            <span>Resume link (Google Drive / URL)</span>
+            <input name="resume_url" [(ngModel)]="appModel.resume_url" placeholder="https://…" />
+          </label>
+          <label class="apply-field apply-field--full">
+            <span>Short note</span>
+            <textarea name="cover_note" rows="3" [(ngModel)]="appModel.cover_note"></textarea>
+          </label>
+        </div>
+
+        <p class="apply-error" *ngIf="appError">{{ appError }}</p>
+
+        <button class="cta-btn cta-btn--primary" type="submit" [disabled]="appStatus === 'sending'">
+          {{ appStatus === 'sending' ? 'Submitting…' : 'Submit Application' }}
+        </button>
+      </form>
+
+      <p class="apply-success" *ngIf="appStatus === 'success'">
+        Thank you — your application has been received. We will reach out if there is a fit.
+      </p>
+    </div>
+  </section>
+
+</div>

@@ -1,0 +1,52 @@
+<section class="apg">
+  <header class="apg__head">
+    <div>
+      <h1 class="apg__title">Distributors</h1>
+      <p class="apg__sub">Manages the public “Locate Distributor” page (reads active rows).</p>
+    </div>
+    <button class="apg__btn apg__btn--primary" type="button" (click)="newRow()">+ New distributor</button>
+  </header>
+
+  <p class="apg__error" *ngIf="error()">{{ error() }}</p>
+  <p class="apg__notice" *ngIf="notice()">{{ notice() }}</p>
+
+  <form class="apg__form" *ngIf="showForm" (ngSubmit)="save()">
+    <div class="apg__field"><label>Name *</label><input class="apg__input" name="name" [(ngModel)]="model.name" /></div>
+    <div class="apg__field"><label>Region / State</label><input class="apg__input" name="region" [(ngModel)]="model.region" /></div>
+    <div class="apg__field apg__field--full"><label>Address</label><textarea class="apg__textarea" name="address" rows="2" [(ngModel)]="model.address"></textarea></div>
+    <div class="apg__field"><label>Contact person</label><input class="apg__input" name="cp" [(ngModel)]="model.contact_person" /></div>
+    <div class="apg__field"><label>Mobile</label><input class="apg__input" name="mob" [(ngModel)]="model.mobile_no" /></div>
+    <div class="apg__field"><label>Landline</label><input class="apg__input" name="ll" [(ngModel)]="model.landline" /></div>
+    <div class="apg__field"><label>Email</label><input class="apg__input" name="email" [(ngModel)]="model.email" /></div>
+    <div class="apg__field apg__field--full"><label>Map link (Google Maps URL)</label><input class="apg__input" name="map" [(ngModel)]="model.map_url" /></div>
+    <div class="apg__field"><label>Sort order</label><input class="apg__input" type="number" name="sort" [(ngModel)]="model.sort_order" /></div>
+    <div class="apg__field"><label>Active</label><label class="apg__muted-sm"><input type="checkbox" name="active" [(ngModel)]="model.is_active" /> Visible on site</label></div>
+    <div class="apg__form-actions">
+      <button class="apg__btn apg__btn--primary" type="submit" [disabled]="saving()">{{ saving() ? 'Saving…' : (editingId ? 'Save changes' : 'Create') }}</button>
+      <button class="apg__btn" type="button" (click)="cancel()">Cancel</button>
+    </div>
+  </form>
+
+  <p class="apg__muted" *ngIf="loading()">Loading…</p>
+  <p class="apg__muted" *ngIf="!loading() && rows().length === 0">No distributors yet.</p>
+
+  <table class="apg__table" *ngIf="!loading() && rows().length > 0">
+    <thead><tr><th>Name</th><th>Region</th><th>Contact</th><th>Status</th><th>Actions</th></tr></thead>
+    <tbody>
+      <tr *ngFor="let d of rows()" [class.apg__row--off]="!d.is_active">
+        <td>{{ d.name }}</td>
+        <td>{{ d.region || '—' }}</td>
+        <td>
+          <div *ngIf="d.contact_person">{{ d.contact_person }}</div>
+          <div class="apg__muted-sm" *ngIf="d.mobile_no">{{ d.mobile_no }}</div>
+        </td>
+        <td><span class="apg__badge" [class.apg__badge--on]="d.is_active" [class.apg__badge--off]="!d.is_active">{{ d.is_active ? 'Active' : 'Inactive' }}</span></td>
+        <td class="apg__actions">
+          <button class="apg__btn apg__btn--ghost" type="button" (click)="editRow(d)">Edit</button>
+          <button class="apg__btn" [class.apg__btn--danger]="d.is_active" [class.apg__btn--ok]="!d.is_active" [disabled]="busyId() === d.id" (click)="toggleActive(d)">{{ busyId() === d.id ? '…' : (d.is_active ? 'Deactivate' : 'Reactivate') }}</button>
+          <button class="apg__btn apg__btn--danger" type="button" [disabled]="busyId() === d.id" (click)="remove(d)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

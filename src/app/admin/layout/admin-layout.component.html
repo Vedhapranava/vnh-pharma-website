@@ -1,0 +1,26 @@
+<div class="admin-shell">
+  <aside class="admin-sidebar">
+    <div class="admin-sidebar__brand">VNH Admin</div>
+    <nav class="admin-sidebar__nav">
+      <a routerLink="/admin/dashboard" routerLinkActive="is-active" class="admin-sidebar__link">Dashboard</a>
+      <a routerLink="/admin/products" routerLinkActive="is-active" class="admin-sidebar__link">Products</a>
+      <a routerLink="/admin/content/home" routerLinkActive="is-active" class="admin-sidebar__link">Content</a>
+      <a routerLink="/admin/about/partners" routerLinkActive="is-active" class="admin-sidebar__link">About Partners</a>
+      <a routerLink="/admin/events" routerLinkActive="is-active" class="admin-sidebar__link">Events</a>
+      <a routerLink="/admin/distributors" routerLinkActive="is-active" class="admin-sidebar__link">Distributors</a>
+      <a routerLink="/admin/careers/jobs" routerLinkActive="is-active" class="admin-sidebar__link">Careers</a>
+      <a routerLink="/admin/careers/applications" routerLinkActive="is-active" class="admin-sidebar__link">Applications</a>
+      <a routerLink="/admin/enquiries" routerLinkActive="is-active" class="admin-sidebar__link">Enquiries</a>
+      <a routerLink="/admin/orders" routerLinkActive="is-active" class="admin-sidebar__link">Orders</a>
+      <a routerLink="/admin/partners" routerLinkActive="is-active" class="admin-sidebar__link">Partners</a>
+      <a routerLink="/admin/settings" routerLinkActive="is-active" class="admin-sidebar__link">Settings</a>
+    </nav>
+    <button class="admin-sidebar__signout" type="button" (click)="signOut()">
+      Sign out
+    </button>
+  </aside>
+
+  <main class="admin-content">
+    <router-outlet></router-outlet>
+  </main>
+</div>

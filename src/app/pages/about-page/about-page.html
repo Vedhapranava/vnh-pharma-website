@@ -1,110 +1,735 @@
-<section class="about-page">
-  <div class="page-shell">
-    <section class="hero-card">
-      <div class="hero-copy">
-        <span class="section-tag">About VNH</span>
-        <h1>Built on trust. Framed by quality.</h1>
-        <p>
-          VNH Pharmaceuticals brings together ethical healthcare thinking,
-          premium product presentation, and value-led market positioning.
-        </p>
+<div class="about-page">
 
-        <div class="hero-pills">
-          <span class="hero-pill">MNC Standards</span>
-          <span class="hero-pill">Franchise Pricing</span>
-          <span class="hero-pill">Doctor-First Values</span>
+  <!-- ══════════════════════════════════════════════
+       SECTION 1 — Premium About Hero
+  ══════════════════════════════════════════════ -->
+  <section class="ab-hero">
+
+    <div class="ab-hero__bg-glow"  aria-hidden="true"></div>
+    <div class="ab-hero__bg-arc"   aria-hidden="true"></div>
+    <div class="ab-hero__bg-dots"  aria-hidden="true"></div>
+
+    <div class="ab-shell ab-hero__shell">
+
+      <!-- Left: Copy -->
+      <div class="ab-hero__copy ab-fadein--left">
+
+        <div class="ab-hero__overline">
+          <span class="ab-hero__overline-dot" aria-hidden="true"></span>
+          About VNH Pharmaceuticals
+        </div>
+
+        <h1 class="ab-hero__heading">
+          {{ aboutLine1 }}<br *ngIf="aboutAccent">
+          <span class="ab-hero__accent" *ngIf="aboutAccent">{{ aboutAccent }}</span>
+        </h1>
+
+        <p class="ab-hero__sub" *ngIf="!aboutSubFromDb">
+          VNH Pharmaceuticals — <em>Vaidhyo Narayano Hari</em> — is built on deep
+          respect for the doctor's role and an unwavering commitment to patient trust.
+          We deliver quality-focused pharmaceutical products supported by certified
+          manufacturing, scientific presentation, and long-term healthcare relationships.
+        </p>
+        <p class="ab-hero__sub" *ngIf="aboutSubFromDb">{{ aboutSub }}</p>
+
+        <div class="ab-hero__pills">
+          <span class="ab-pill">
+            <svg class="ab-pill__icon" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.4"/>
+              <path d="M7 4v3l2 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+            20+ Years Experience
+          </span>
+          <span class="ab-pill">
+            <svg class="ab-pill__icon" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <circle cx="7" cy="5" r="2.5" stroke="currentColor" stroke-width="1.4"/>
+              <path d="M2.5 12c0-2.5 2-4.5 4.5-4.5s4.5 2 4.5 4.5"
+                stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+            Doctor Trust
+          </span>
+          <span class="ab-pill">
+            <svg class="ab-pill__icon" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M7 1.5L12.5 4V7C12.5 9.8 10.5 12 7 13.5C3.5 12 1.5 9.8 1.5 7V4L7 1.5Z"
+                stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              <path d="M5 7L6.5 8.5L9.5 5.5" stroke="currentColor" stroke-width="1.4"
+                stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Ethical Healthcare
+          </span>
+        </div>
+
+      </div>
+
+      <!-- Right: Brand visual with premium halo + float animations -->
+      <div class="ab-hero__visual ab-fadein--right">
+
+        <div class="ab-brand-frame">
+
+          <span class="ab-brand-frame__corner ab-brand-frame__corner--tl" aria-hidden="true"></span>
+          <span class="ab-brand-frame__corner ab-brand-frame__corner--br" aria-hidden="true"></span>
+
+          <!-- Floating logo wrap — entire cluster floats up/down -->
+          <div class="ab-brand-logo-wrap">
+
+            <!-- Deep golden aura (largest, most blurred) -->
+            <div class="ab-logo-glow ab-logo-glow--aura"  aria-hidden="true"></div>
+            <!-- Close pulsing glow -->
+            <div class="ab-logo-glow ab-logo-glow--pulse" aria-hidden="true"></div>
+
+            <!-- Halo rings: outermost → innermost -->
+            <!-- Glass floating ring — largest, slow subtle pulse -->
+            <div class="ab-halo ab-halo--glass"  aria-hidden="true"></div>
+            <!-- Gold thin ring, slow forward spin -->
+            <div class="ab-halo ab-halo--outer"  aria-hidden="true"></div>
+            <!-- Dashed red ring, reverse spin -->
+            <div class="ab-halo ab-halo--mid"    aria-hidden="true"></div>
+            <!-- Dotted gold ring, fast forward spin -->
+            <div class="ab-halo ab-halo--inner"  aria-hidden="true"></div>
+
+            <!-- Logo circle with shine sweep inside -->
+            <div class="ab-brand-logo">
+              <img src="assets/logo.jpg" alt="VNH Pharmaceuticals logo" />
+              <span class="ab-logo-shine" aria-hidden="true"></span>
+            </div>
+
+          </div>
+
+          <p class="ab-brand-tagline">Vaidhyo Narayano Hari</p>
+
+          <div class="ab-brand-stat ab-brand-stat--tl">
+            <span class="ab-brand-stat__num">20<sup>+</sup></span>
+            <span class="ab-brand-stat__lbl">Years in Pharma</span>
+          </div>
+
+          <div class="ab-brand-stat ab-brand-stat--br">
+            <span class="ab-brand-stat__icon" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none">
+                <path d="M8 1.5L13.5 4V7C13.5 10.5 11 13 8 14.5C5 13 2.5 10.5 2.5 7V4L8 1.5Z"
+                  stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+                <path d="M5.5 8L7 9.5L10.5 6" stroke="currentColor" stroke-width="1.4"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="ab-brand-stat__num ab-brand-stat__num--sm">WHO</span>
+            <span class="ab-brand-stat__lbl">GMP Partners</span>
+          </div>
+
         </div>
       </div>
 
-      <div class="hero-badge-card">
-        <div class="badge-ring">
-          <div class="badge-core badge-logo-core">
-            <img src="assets/logo.jpg" alt="VNH Pharmaceuticals logo" class="badge-logo" />
+    </div>
+
+    <div class="ab-hero__divider" aria-hidden="true"></div>
+  </section>
+
+
+  <div class="ab-body">
+    <div class="ab-shell">
+
+      <!-- ══════════════════════════════════════════════
+           SECTION 2 — Our Story (Editorial Timeline)
+      ══════════════════════════════════════════════ -->
+      <section class="ab-section ab-story">
+        <div class="ab-story__layout">
+
+          <!-- Left: Editorial copy -->
+          <div class="ab-story__left">
+            <span class="ab-tag">Our Journey</span>
+            <h2 class="ab-story__headline">
+              Two Decades<br>of <span class="ab-story__accent">Trust &amp; Science.</span>
+            </h2>
+            <p class="ab-story__lead">
+              Founded on the belief that quality healthcare is a right, VNH Pharmaceuticals
+              has spent 20+ years earning the trust of physicians and patients across India —
+              one ethical, science-backed product at a time.
+            </p>
+            <div class="ab-story__founder">
+              <div class="ab-story__founder-avatar" aria-hidden="true">SM</div>
+              <div class="ab-story__founder-meta">
+                <div class="ab-story__founder-name">Mr. Srinivas Mateti</div>
+                <div class="ab-story__founder-title">Founder &amp; CEO, VNH Pharmaceuticals</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Timeline -->
+          <div class="ab-story__right">
+            <div class="ab-story__timeline">
+
+              <div class="ab-tl-item">
+                <div class="ab-tl-item__marker">
+                  <div class="ab-tl-item__year">2003</div>
+                  <div class="ab-tl-item__dot" aria-hidden="true"></div>
+                </div>
+                <div class="ab-tl-item__content">
+                  <h4>The Beginning</h4>
+                  <p>VNH established with a clear doctor-first vision and deep roots in pharmaceutical marketing across Telangana.</p>
+                </div>
+              </div>
+
+              <div class="ab-tl-item">
+                <div class="ab-tl-item__marker">
+                  <div class="ab-tl-item__year">2010</div>
+                  <div class="ab-tl-item__dot" aria-hidden="true"></div>
+                </div>
+                <div class="ab-tl-item__content">
+                  <h4>Regional Growth</h4>
+                  <p>Expanded across Telangana with certified manufacturing partners and MNC-grade product standards.</p>
+                </div>
+              </div>
+
+              <div class="ab-tl-item">
+                <div class="ab-tl-item__marker">
+                  <div class="ab-tl-item__year">2018</div>
+                  <div class="ab-tl-item__dot" aria-hidden="true"></div>
+                </div>
+                <div class="ab-tl-item__content">
+                  <h4>Quality Leadership</h4>
+                  <p>Partnered with WHO-GMP certified facilities and built a science-backed portfolio for modern healthcare.</p>
+                </div>
+              </div>
+
+              <div class="ab-tl-item ab-tl-item--now">
+                <div class="ab-tl-item__marker">
+                  <div class="ab-tl-item__year ab-tl-item__year--now">Now</div>
+                  <div class="ab-tl-item__dot ab-tl-item__dot--now" aria-hidden="true"></div>
+                </div>
+                <div class="ab-tl-item__content">
+                  <h4>Premium Brand</h4>
+                  <p>A trusted, MNC-quality pharmaceutical brand serving the healthcare community with scientific confidence.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ══════════════════════════════════════════════
+           SECTION 3 — Leadership
+      ══════════════════════════════════════════════ -->
+      <section class="ab-section ab-leadership">
+        <div class="ab-section__head ab-section__head--center">
+          <span class="ab-tag">Our People</span>
+          <h2>Leadership &amp; Team</h2>
+          <p>The people behind VNH's vision — decades of pharmaceutical expertise, strategic leadership, and unwavering commitment to healthcare.</p>
+        </div>
+
+        <div class="ab-leadership__grid">
+
+          <!-- CEO / MD — Featured (spans 2 columns) -->
+          <div class="ab-leader-card ab-leader-card--featured">
+            <div class="ab-leader-card__accent-bar" aria-hidden="true"></div>
+            <div class="ab-leader-card__featured-inner">
+              <div class="ab-leader-photo ab-leader-photo--lg" aria-label="CEO photo placeholder">
+                <span class="ab-leader-photo__initials">SM</span>
+                <div class="ab-leader-photo__glow" aria-hidden="true"></div>
+                <div class="ab-leader-photo__ring" aria-hidden="true"></div>
+              </div>
+              <div class="ab-leader-card__body">
+                <span class="ab-leader-card__role">CEO &amp; Managing Director</span>
+                <h3>Mr. Srinivas Mateti</h3>
+                <p>20+ years of pharmaceutical marketing expertise. Built VNH on deep physician trust, ethical brand values, and quality-first thinking across Telangana and Andhra Pradesh. A visionary leader shaping modern healthcare relationships one doctor at a time.</p>
+                <div class="ab-leader-card__chips">
+                  <span class="ab-leader-chip">20+ Years</span>
+                  <span class="ab-leader-chip">Founder</span>
+                  <span class="ab-leader-chip">Doctor-First</span>
+                </div>
+              </div>
+            </div>
+            <div class="ab-leader-card__shimmer" aria-hidden="true"></div>
+          </div>
+
+          <!-- Director -->
+          <div class="ab-leader-card">
+            <div class="ab-leader-card__accent-bar" aria-hidden="true"></div>
+            <div class="ab-leader-photo" aria-label="Director photo placeholder">
+              <span class="ab-leader-photo__initials">DIR</span>
+            </div>
+            <span class="ab-leader-card__role">Director</span>
+            <h3>Director</h3>
+            <p>Strategic oversight and governance, ensuring VNH upholds its commitment to quality, compliance, and ethical healthcare across all operations.</p>
+          </div>
+
+          <!-- Operations / Business Development -->
+          <div class="ab-leader-card">
+            <div class="ab-leader-card__accent-bar" aria-hidden="true"></div>
+            <div class="ab-leader-photo" aria-label="Operations head photo placeholder">
+              <span class="ab-leader-photo__initials">OPS</span>
+            </div>
+            <span class="ab-leader-card__role">Operations &amp; Business Development</span>
+            <h3>Operations Head</h3>
+            <p>Driving operational excellence and expanding VNH's market presence through strategic partnerships and field engagement programs.</p>
+          </div>
+
+          <!-- Quality / Product Strategy -->
+          <div class="ab-leader-card">
+            <div class="ab-leader-card__accent-bar" aria-hidden="true"></div>
+            <div class="ab-leader-photo" aria-label="Quality head photo placeholder">
+              <span class="ab-leader-photo__initials">QPS</span>
+            </div>
+            <span class="ab-leader-card__role">Quality &amp; Product Strategy</span>
+            <h3>Quality Head</h3>
+            <p>Ensuring every product meets MNC-grade standards through rigorous quality management, scientific oversight, and certified manufacturing alignment.</p>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- What Defines VNH -->
+      <section class="ab-section">
+        <div class="ab-section__head ab-section__head--center">
+          <span class="ab-tag">What Defines VNH</span>
+          <h2>Our Defining Strengths</h2>
+        </div>
+        <div class="ab-highlights">
+          <article class="ab-highlight" *ngFor="let item of highlights; let i = index">
+            <span class="ab-highlight__no">0{{ i + 1 }}</span>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.text }}</p>
+          </article>
+        </div>
+      </section>
+
+
+      <!-- Doctor-First Foundation -->
+      <section class="ab-foundation">
+        <div class="ab-foundation__copy">
+          <span class="ab-kicker ab-kicker--alt">Doctor-First Philosophy</span>
+          <h2>A company shaped by trust and long-term support.</h2>
+          <p>
+            VNH was built with strong market confidence and a mission to deliver
+            quality products, stronger presentation, and better patient outcomes
+            for every practitioner we serve.
+          </p>
+        </div>
+        <div class="ab-foundation__points">
+          <div class="ab-point" *ngFor="let item of differentiators">
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.text }}</p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="info-grid">
-      <article class="story-card philosophy-card">
-        <span class="card-kicker">Philosophy</span>
-        <h2>Why VNH</h2>
-        <p>
-          VNH stands for <strong>Vaidhyo Narayano Hari</strong> — a belief that
-          respects the doctor’s role and keeps patient trust at the center.
-        </p>
-      </article>
 
-      <article class="story-card founder-card">
-        <span class="card-kicker">Founder</span>
-        <h2>Led by experience</h2>
-        <p>
-          Founded by <strong>Mr. Srinivas Mateti</strong>, VNH is built on
-          <strong>18 years</strong> of continuous pharmaceutical marketing experience.
-        </p>
-      </article>
-    </section>
-
-    <section class="highlights-section">
-      <div class="section-head centered">
-        <span class="section-tag">What Defines VNH</span>
-        <h2>Short. Clear. Credible.</h2>
-      </div>
-
-      <div class="highlights-grid">
-        <article class="highlight-card" *ngFor="let item of highlights; let i = index">
-          <span class="highlight-no">0{{ i + 1 }}</span>
-          <h3>{{ item.title }}</h3>
-          <p>{{ item.text }}</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="experience-panel">
-      <div class="experience-copy">
-        <span class="card-kicker">Foundation</span>
-        <h2>A company shaped by trust and support.</h2>
-        <p>
-          VNH was founded with strong market confidence and a mission to deliver
-          quality products, stronger presentation, and better affordability.
-        </p>
-      </div>
-
-      <div class="experience-points">
-        <div class="point-card" *ngFor="let item of differentiators">
-          <h3>{{ item.title }}</h3>
-          <p>{{ item.text }}</p>
+      <!-- ══════════════════════════════════════════════
+           SECTION 4 — Manufacturing Partners
+      ══════════════════════════════════════════════ -->
+      <section class="ab-section ab-mfg">
+        <div class="ab-section__head ab-section__head--center">
+          <span class="ab-tag">Manufacturing Excellence</span>
+          <h2>Our Manufacturing Partners</h2>
+          <p>
+            We collaborate with India's most recognized certified facilities
+            upholding WHO-GMP, ISO, and FSSAI standards across every product category.
+          </p>
         </div>
-      </div>
-    </section>
 
-    <section class="partners-section">
-      <div class="section-head centered">
-        <span class="section-tag">Manufacturing Network</span>
-        <h2>Trusted quality ecosystem.</h2>
-        <p>
-          We work with reputed manufacturing partners and recognized compliance systems.
-        </p>
-      </div>
+        <div class="ab-mfg__grid">
 
-      <div class="partners-grid">
-        <div class="partner-chip" *ngFor="let partner of partners">
-          {{ partner }}
+          <a href="https://www.akums.in" target="_blank" rel="noopener noreferrer"
+             class="ab-mfg-card" aria-label="Visit Akums website">
+            <div class="ab-mfg-card__logo"><span class="ab-mfg-card__initials">AK</span></div>
+            <div class="ab-mfg-card__body">
+              <h3>Akums</h3>
+              <p>Pharmaceuticals</p>
+            </div>
+            <span class="ab-mfg-card__arrow" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none">
+                <path d="M3 13L13 3M13 3H7M13 3v6" stroke="currentColor"
+                  stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </a>
+
+          <a href="https://www.swissgarnier.com" target="_blank" rel="noopener noreferrer"
+             class="ab-mfg-card" aria-label="Visit Swiss Garnier website">
+            <div class="ab-mfg-card__logo"><span class="ab-mfg-card__initials">SG</span></div>
+            <div class="ab-mfg-card__body">
+              <h3>Swiss Garnier</h3>
+              <p>Life Sciences</p>
+            </div>
+            <span class="ab-mfg-card__arrow" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none">
+                <path d="M3 13L13 3M13 3H7M13 3v6" stroke="currentColor"
+                  stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </a>
+
+          <a href="https://www.tirupatilifesciences.com" target="_blank" rel="noopener noreferrer"
+             class="ab-mfg-card" aria-label="Visit Tirupati Lifesciences website">
+            <div class="ab-mfg-card__logo"><span class="ab-mfg-card__initials">TL</span></div>
+            <div class="ab-mfg-card__body">
+              <h3>Tirupati Lifesciences</h3>
+              <p>Pharmaceuticals</p>
+            </div>
+            <span class="ab-mfg-card__arrow" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none">
+                <path d="M3 13L13 3M13 3H7M13 3v6" stroke="currentColor"
+                  stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </a>
+
+          <a href="https://www.uniquebiotech.com" target="_blank" rel="noopener noreferrer"
+             class="ab-mfg-card" aria-label="Visit Unique Biotech website">
+            <div class="ab-mfg-card__logo"><span class="ab-mfg-card__initials">UB</span></div>
+            <div class="ab-mfg-card__body">
+              <h3>Unique Biotech</h3>
+              <p>Biotechnology</p>
+            </div>
+            <span class="ab-mfg-card__arrow" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none">
+                <path d="M3 13L13 3M13 3H7M13 3v6" stroke="currentColor"
+                  stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </a>
+
+          <a href="https://www.eskagpharma.com" target="_blank" rel="noopener noreferrer"
+             class="ab-mfg-card" aria-label="Visit Eskag Pharma website">
+            <div class="ab-mfg-card__logo"><span class="ab-mfg-card__initials">EP</span></div>
+            <div class="ab-mfg-card__body">
+              <h3>Eskag Pharma</h3>
+              <p>Pharmaceuticals</p>
+            </div>
+            <span class="ab-mfg-card__arrow" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none">
+                <path d="M3 13L13 3M13 3H7M13 3v6" stroke="currentColor"
+                  stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </a>
+
         </div>
-      </div>
-    </section>
 
-    <section class="cta-card">
-      <span class="section-tag">Move Forward With VNH</span>
-      <h2>Built for trust. Designed for growth.</h2>
-      <p>
-        Explore our portfolio, connect with our team, or discover partnership opportunities.
-      </p>
+        <div class="ab-mfg__badges">
+          <span class="ab-badge-chip">WHO-GMP Certified</span>
+          <span class="ab-badge-chip">ISO Certified</span>
+          <span class="ab-badge-chip">FSSAI Approved</span>
+          <span class="ab-badge-chip">Doctor-First</span>
+        </div>
+      </section>
 
-      <div class="cta-actions">
-        <a routerLink="/products" class="btn-primary">Explore Products</a>
-        <a routerLink="/contact" class="btn-secondary">Contact VNH</a>
-      </div>
-    </section>
+
+      <!-- ══════════════════════════════════════════════
+           SECTION 5 — Technical Support
+      ══════════════════════════════════════════════ -->
+      <section class="ab-section ab-support">
+        <div class="ab-section__head ab-section__head--center">
+          <span class="ab-tag">Strategic Backing</span>
+          <h2>Technical Support &amp; Strategic Guidance</h2>
+          <p>
+            VNH benefits from strong technical mentorship and industry guidance that
+            shapes our product strategy, formulation confidence, and market approach.
+          </p>
+        </div>
+
+        <div class="ab-support__grid" *ngIf="!partnersFromDb">
+
+          <a href="https://velgenpharma.com" target="_blank" rel="noopener noreferrer"
+             class="ab-support-card ab-support-card--primary ab-support-card--link"
+             aria-label="Visit Velgen Pharma website">
+            <div class="ab-support-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="1.7"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.7"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="ab-support-card__content">
+              <div class="ab-support-card__label">Technical Partner</div>
+              <h3>Velgen Pharma</h3>
+              <p>
+                Strategic technical support and pharmaceutical guidance from Velgen Pharma —
+                bringing deep industry expertise to VNH's product development and market strategy.
+              </p>
+            </div>
+            <span class="ab-support-card__ext" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none">
+                <path d="M3 13L13 3M13 3H7M13 3v6" stroke="currentColor"
+                  stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </a>
+
+          <div class="ab-support-card ab-support-card--placeholder">
+            <div class="ab-support-card__icon ab-support-card__icon--dim" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="9" stroke="currentColor"
+                  stroke-width="1.4" stroke-dasharray="4 3"/>
+                <path d="M12 8v4M12 16h.01" stroke="currentColor"
+                  stroke-width="1.4" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="ab-support-card__content">
+              <div class="ab-support-card__label ab-support-card__label--dim">Coming Soon</div>
+              <h3>Future Partner</h3>
+              <p>
+                This space is reserved for additional strategic and technical support partners
+                as VNH continues to grow its collaborative industry network.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="ab-support__grid" *ngIf="partnersFromDb">
+          <ng-container *ngFor="let p of supportPartners">
+            <a *ngIf="p.url" [href]="p.url" target="_blank" rel="noopener noreferrer"
+               class="ab-support-card ab-support-card--primary ab-support-card--link">
+              <div class="ab-support-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="ab-support-card__content">
+                <div class="ab-support-card__label">{{ p.label }}</div>
+                <h3>{{ p.name }}</h3>
+                <p>{{ p.description }}</p>
+              </div>
+              <span class="ab-support-card__ext" aria-hidden="true">
+                <svg viewBox="0 0 16 16" fill="none">
+                  <path d="M3 13L13 3M13 3H7M13 3v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+            <div *ngIf="!p.url" class="ab-support-card ab-support-card--placeholder">
+              <div class="ab-support-card__icon ab-support-card__icon--dim" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.4" stroke-dasharray="4 3"/>
+                  <path d="M12 8v4M12 16h.01" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="ab-support-card__content">
+                <div class="ab-support-card__label ab-support-card__label--dim">{{ p.label }}</div>
+                <h3>{{ p.name }}</h3>
+                <p>{{ p.description }}</p>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </section>
+
+
+      <!-- ══════════════════════════════════════════════
+           SECTION 6 — Flagship Events Slider (FIXED)
+           All controls are inside the section container.
+           Arrows overlay the viewport (position: absolute).
+           Dots are inside the card body. Nothing escapes.
+      ══════════════════════════════════════════════ -->
+      <section class="ab-section ab-events">
+        <div class="ab-section__head ab-section__head--center">
+          <span class="ab-tag">Brand Presence</span>
+          <h2>Flagship Events &amp; Scientific Engagements</h2>
+          <p>
+            VNH creates meaningful touchpoints with the medical community through
+            curated scientific events, product launches, and doctor engagement programs.
+          </p>
+        </div>
+
+        <!-- Carousel: fully self-contained, no overflow outside this element -->
+        <div class="ab-carousel" role="region" aria-label="Flagship events carousel">
+
+          <!-- Viewport: overflow:hidden clips everything. Arrows positioned inside. -->
+          <div class="ab-carousel__viewport">
+
+            <!-- Slide track -->
+            <div class="ab-carousel__track">
+              <div
+                class="ab-carousel__slide"
+                *ngFor="let slide of eventSlides; let i = index"
+                [class.slide--active]="i === currentSlide"
+                [class.slide--hidden]="i !== currentSlide"
+                [attr.aria-hidden]="i !== currentSlide"
+              >
+                <div class="ab-event-card" [class.ab-event-card--featured]="slide.type === 'featured'">
+
+                  <!-- Media area -->
+                  <div class="ab-event-card__media">
+                    <img
+                      *ngIf="!slide.placeholder && slide.type !== 'video' && slide.mediaSrc"
+                      [src]="slide.mediaSrc" [alt]="slide.title" class="ab-event-card__img" />
+                    <video
+                      *ngIf="!slide.placeholder && slide.type === 'video' && slide.mediaSrc"
+                      [src]="slide.mediaSrc" [poster]="slide.posterSrc || ''"
+                      class="ab-event-card__video" autoplay muted loop playsinline></video>
+
+                    <div
+                      *ngIf="slide.placeholder && slide.type !== 'video'"
+                      class="ab-placeholder"
+                      [class.ab-placeholder--featured]="slide.type === 'featured'"
+                      [attr.aria-label]="slide.title + ' — Coming Soon'">
+                      <div class="ab-placeholder__icon" aria-hidden="true">
+                        <svg viewBox="0 0 48 48" fill="none">
+                          <rect x="4" y="8" width="40" height="28" rx="4"
+                            stroke="currentColor" stroke-width="1.4"/>
+                          <circle cx="16" cy="21" r="4" stroke="currentColor" stroke-width="1.4"/>
+                          <path d="M4 33l10-9 8 6 8-10 14 13" stroke="currentColor"
+                            stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </div>
+                      <span class="ab-placeholder__label">Photo · Coming Soon</span>
+                    </div>
+
+                    <div
+                      *ngIf="slide.placeholder && slide.type === 'video'"
+                      class="ab-placeholder ab-placeholder--video"
+                      aria-label="Event video — Coming Soon">
+                      <div class="ab-placeholder__play" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+                          <path d="M10 8l6 4-6 4V8z" fill="currentColor"/>
+                        </svg>
+                      </div>
+                      <span class="ab-placeholder__label">Video · Coming Soon</span>
+                    </div>
+
+                    <div class="ab-event-card__media-overlay" aria-hidden="true"></div>
+                  </div>
+
+                  <!-- Card body with dots inside -->
+                  <div class="ab-event-card__body">
+                    <span class="ab-event-card__type"
+                      [class.ab-event-card__type--teal]="slide.badgeVariant === 'teal'"
+                      [class.ab-event-card__type--blue]="slide.badgeVariant === 'blue'"
+                      [class.ab-event-card__type--orange]="slide.badgeVariant === 'orange'"
+                    >{{ slide.badgeLabel }}</span>
+                    <h3>{{ slide.title }}</h3>
+                    <p>{{ slide.description }}</p>
+
+                    <!-- Dot indicators — inside the card body, inside the section -->
+                    <div class="ab-carousel__dots" role="tablist" aria-label="Event slides">
+                      <button type="button" class="ab-carousel__dot"
+                        *ngFor="let s of eventSlides; let di = index"
+                        [class.ab-carousel__dot--active]="di === currentSlide"
+                        (click)="goToSlide(di)"
+                        [attr.aria-selected]="di === currentSlide"
+                        [attr.aria-label]="'Go to event ' + (di + 1)"
+                        role="tab"></button>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+            </div><!-- end track -->
+
+            <!-- Prev arrow — absolutely positioned inside viewport, cannot escape -->
+            <button type="button" class="ab-carousel__arrow ab-carousel__arrow--prev"
+              (click)="prevSlide()" [disabled]="isAnimating" aria-label="Previous event">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M12 5l-5 5 5 5" stroke="currentColor" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+
+            <!-- Next arrow — absolutely positioned inside viewport, cannot escape -->
+            <button type="button" class="ab-carousel__arrow ab-carousel__arrow--next"
+              (click)="nextSlide()" [disabled]="isAnimating" aria-label="Next event">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M8 5l5 5-5 5" stroke="currentColor" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+
+          </div><!-- end viewport -->
+
+          <!-- Counter — below viewport, still inside .ab-carousel, still inside .ab-events section -->
+          <div class="ab-carousel__counter" aria-live="polite" aria-atomic="true">
+            {{ currentSlide + 1 }} / {{ totalSlides }}
+          </div>
+
+        </div><!-- end carousel -->
+
+        <p class="ab-events__note">
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.3"/>
+            <path d="M8 7v3.5M8 5.5h.01" stroke="currentColor"
+              stroke-width="1.3" stroke-linecap="round"/>
+          </svg>
+          Event images and videos will be updated as programs are conducted.
+          <a routerLink="/contact">Contact VNH</a> to participate in upcoming engagements.
+        </p>
+      </section>
+
+
+      <!-- ══════════════════════════════════════════════
+           SECTION 7 — Vision & Mission (2 glass cards)
+      ══════════════════════════════════════════════ -->
+      <section class="ab-section ab-vision">
+        <div class="ab-section__head ab-section__head--center">
+          <span class="ab-tag">Who We Are</span>
+          <h2>Vision &amp; Mission</h2>
+          <p>The principles that guide every product we create and every relationship we build.</p>
+        </div>
+
+        <div class="ab-vision__grid">
+          <div class="ab-vision-card"
+            *ngFor="let item of visionMission; let i = index"
+            [class.ab-vision-card--featured]="i === 0">
+
+            <div class="ab-vision-card__icon-wrap">
+              <svg *ngIf="item.icon === 'vision'" viewBox="0 0 24 24" fill="none">
+                <path d="M2 12C2 12 5 5 12 5s10 7 10 7-3 7-10 7S2 12 2 12z"
+                  stroke="currentColor" stroke-width="1.7"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.7"/>
+              </svg>
+              <svg *ngIf="item.icon === 'mission'" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2L4 6v6c0 5.25 3.5 10.15 8 11.35C16.5 22.15 20 17.25 20 12V6L12 2Z"
+                  stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.7"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+
+            <div class="ab-vision-card__label">{{ item.label }}</div>
+            <h3 class="ab-vision-card__title">{{ item.title }}</h3>
+            <p class="ab-vision-card__text">{{ item.text }}</p>
+            <div class="ab-vision-card__bar" aria-hidden="true"></div>
+
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Final CTA -->
+      <section class="ab-cta">
+        <div class="ab-cta__shine" aria-hidden="true"></div>
+        <div class="ab-cta__top-line" aria-hidden="true"></div>
+        <span class="ab-tag">Move Forward With VNH</span>
+        <h2>Built for trust. Designed for quality.</h2>
+        <p>
+          Explore our portfolio, connect with our team, or discover partnership
+          opportunities with VNH Pharmaceuticals.
+        </p>
+        <div class="ab-cta__actions">
+          <a routerLink="/products" class="ab-btn-primary">
+            Explore Products
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a routerLink="/contact" class="ab-btn-ghost">Contact VNH</a>
+        </div>
+        <div class="ab-cta__pills">
+          <span class="ab-cta__pill">WHO-GMP</span>
+          <span class="ab-cta__pill">ISO Certified</span>
+          <span class="ab-cta__pill">20+ Years</span>
+          <span class="ab-cta__pill">Doctor-First</span>
+        </div>
+      </section>
+
+    </div>
   </div>
-</section>
+
+</div>

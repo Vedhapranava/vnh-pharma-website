@@ -1,25 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import { DataService, Distributor } from '../../core/data.service';
 
 @Component({
   selector: 'app-distributor-locator',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterLink],
   templateUrl: './distributor-locator.component.html',
   styleUrl: './distributor-locator.component.css'
 })
-export class DistributorLocatorComponent implements OnInit {
+export class DistributorLocatorComponent implements OnInit, OnDestroy {
   searchTerm = '';
   distributors: Distributor[] = [];
   loading = true;
   errorMessage = '';
+  private observer?: IntersectionObserver;
 
   constructor(private dataService: DataService) {}
 
   async ngOnInit(): Promise<void> {
     await this.loadDistributors();
+    this.initRevealObserver();
+  }
+
+  ngOnDestroy(): void {
+    this.observer?.disconnect();
   }
 
   async loadDistributors(): Promise<void> {
@@ -37,6 +44,8 @@ export class DistributorLocatorComponent implements OnInit {
 
     this.distributors = data ?? [];
     this.loading = false;
+    // re-observe after data loads
+    setTimeout(() => this.initRevealObserver(), 60);
   }
 
   get filteredDistributors(): Distributor[] {
@@ -70,5 +79,22 @@ export class DistributorLocatorComponent implements OnInit {
 
   trackByDistributor(_: number, item: Distributor): number | string {
     return item.id ?? item.name;
+  }
+
+  private initRevealObserver(): void {
+    if (typeof window === 'undefined' || !('IntersectionObserver' in window)) return;
+    this.observer?.disconnect();
+    this.observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            this.observer!.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.06 }
+    );
+    document.querySelectorAll('.reveal-up').forEach(el => this.observer!.observe(el));
   }
 }

@@ -1,0 +1,58 @@
+<section class="dash">
+  <header class="dash__head">
+    <h1 class="dash__title">Dashboard</h1>
+    <a class="dash__link" routerLink="/admin/products">Manage products →</a>
+  </header>
+
+  <p class="dash__error" *ngIf="error()">{{ error() }}</p>
+  <p class="dash__muted" *ngIf="loading()">Loading live stats…</p>
+
+  <ng-container *ngIf="!loading() && stats() as s">
+    <div class="dash__grid">
+      <a class="dash__card" routerLink="/admin/products">
+        <span class="dash__num">{{ s.totalProducts }}</span>
+        <span class="dash__label">Total products</span>
+      </a>
+      <a class="dash__card dash__card--ok" routerLink="/admin/products">
+        <span class="dash__num">{{ s.activeProducts }}</span>
+        <span class="dash__label">Active</span>
+      </a>
+      <a class="dash__card dash__card--muted" routerLink="/admin/products">
+        <span class="dash__num">{{ s.inactiveProducts }}</span>
+        <span class="dash__label">Inactive</span>
+      </a>
+      <a class="dash__card dash__card--warn" routerLink="/admin/products">
+        <span class="dash__num">{{ s.productsWithoutImages }}</span>
+        <span class="dash__label">Without images</span>
+      </a>
+      <div class="dash__card dash__card--warn">
+        <span class="dash__num">{{ s.productsWithoutPrimary }}</span>
+        <span class="dash__label">No primary image</span>
+      </div>
+      <div class="dash__card">
+        <span class="dash__num">{{ s.totalImages }}</span>
+        <span class="dash__label">Total images</span>
+      </div>
+      <div class="dash__card" [class.dash__card--danger]="s.multiplePrimary > 0">
+        <span class="dash__num">{{ s.multiplePrimary }}</span>
+        <span class="dash__label">Multiple primary (fix)</span>
+      </div>
+    </div>
+
+    <h2 class="dash__subtitle">Latest products</h2>
+    <p class="dash__muted" *ngIf="s.latest.length === 0">No products yet.</p>
+    <ul class="dash__latest" *ngIf="s.latest.length > 0">
+      <li class="dash__latest-item" *ngFor="let p of s.latest; trackBy: trackById">
+        <span class="dash__latest-name">{{ p.name }}</span>
+        <span class="dash__latest-meta">
+          <span class="dash__pill" [class.dash__pill--off]="!p.is_active">
+            {{ p.is_active ? 'Active' : 'Inactive' }}
+          </span>
+          <span class="dash__latest-imgs">{{ (p.product_images || []).length }} img</span>
+          <a class="dash__latest-link" [routerLink]="['/admin/products', p.id, 'edit']">Edit</a>
+          <a class="dash__latest-link" [routerLink]="['/admin/products', p.id, 'media']">Media</a>
+        </span>
+      </li>
+    </ul>
+  </ng-container>
+</section>
